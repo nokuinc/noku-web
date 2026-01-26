@@ -186,7 +186,7 @@ function Home() {
                             <div className="w-full md:w-1/2 lg:w-1/3 px-3 mb-6">
                                 <a href="https://wexun.com" target="_blank" rel="noopener noreferrer"
                                     className="block p-12 bg-white shadow rounded hover-up-5 transition duration-500 h-full">
-                                    <img className="h-20 mx-auto mb-4" src="/assets/imgs/icons/WeXun.png" alt="WeXun" />
+                                    <img className="h-20 mx-auto mb-4" src="/assets/imgs/icons/wexun.png" alt="WeXun" />
                                     <h3 className="mb-2 font-bold font-heading text-2xl text-blue-600">WeXun（微讯）</h3>
                                     <p className="text-sm font-bold text-brand mb-4 uppercase tracking-widest">
                                         正在运行：用工 / 找工 / 订单
@@ -201,7 +201,7 @@ function Home() {
                             <div className="w-full md:w-1/2 lg:w-1/3 px-3 mb-6">
                                 <a href="https://yuobo.com" target="_blank" rel="noopener noreferrer"
                                     className="block p-12 bg-white shadow rounded hover-up-5 transition duration-500 h-full">
-                                    <img className="h-20 mx-auto mb-4" src="/assets/imgs/icons/YuoBo.png" alt="Yuobo" />
+                                    <img className="h-20 mx-auto mb-4" src="/assets/imgs/icons/yuobo.png" alt="Yuobo" />
                                     <h3 className="mb-2 font-bold font-heading text-2xl text-blue-600">Yuobo（优博）</h3>
                                     <p className="text-sm font-bold text-brand mb-4 uppercase tracking-widest">
                                         正在运行：交易 / 合作 / 对接
@@ -222,7 +222,7 @@ function Home() {
                                 >
                                     <img
                                         className="h-20 mx-auto mb-4"
-                                        src="/assets/imgs/icons/PledgeDoc.png"
+                                        src="/assets/imgs/icons/pledgedoc.png"
                                         alt="PledgeDoc"
                                     />
                                     <h3 className="mb-2 font-bold font-heading text-2xl text-blue-600">
