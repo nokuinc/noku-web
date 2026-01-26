@@ -201,7 +201,7 @@ function Home() {
                             <div className="w-full md:w-1/2 lg:w-1/3 px-3 mb-6">
                                 <a href="https://yuobo.com" target="_blank" rel="noopener noreferrer"
                                     className="block p-12 bg-white shadow rounded hover-up-5 transition duration-500 h-full">
-                                    <img className="h-20 mx-auto mb-4" src="/assets/imgs/icons/Yuobo.png" alt="Yuobo" />
+                                    <img className="h-20 mx-auto mb-4" src="/assets/imgs/icons/YuoBo.png" alt="Yuobo" />
                                     <h3 className="mb-2 font-bold font-heading text-2xl text-blue-600">Yuobo（优博）</h3>
                                     <p className="text-sm font-bold text-brand mb-4 uppercase tracking-widest">
                                         正在运行：交易 / 合作 / 对接
