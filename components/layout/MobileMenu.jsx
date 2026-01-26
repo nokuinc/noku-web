@@ -69,7 +69,7 @@ const MobileMenu = ({ hiddenClass, handleRemove }) => {
 
           {/* 语言切换按钮（B：中文显示 EN，英文显示 中） */}
           <div className="mt-6">
-            <button type="button" onClick={toggleLangRoute} className="btn-primary w-full">
+            <button type="button" onClick={toggleLangRoute} className="btn-primary w-[30%] mx-auto">
               {isEn ? "中" : "EN"}
             </button>
           </div>
