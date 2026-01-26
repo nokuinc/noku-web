@@ -40,7 +40,7 @@ const ServiceCard = ({ title, icon, name, description, features, accentColor, bg
         <div className="mb-8 flex justify-center">
           <a href={href} target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 hover:scale-105">
             <div style={{ width: "144px", height: "144px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <img src={`/assets/imgs/icons/${icon}.png`} alt={icon} style={{ maxWidth: "100%", maxHeight: "100%", width: "auto", height: "auto", objectFit: "contain" }} />
+              <img src={`/assets/imgs/icons/${icon === "WeXun" ? "wexun" : icon === "YuoBo" ? "yuobo" : "pledgedoc"}.png`} alt={icon} style={{ maxWidth: "100%", maxHeight: "100%", width: "auto", height: "auto", objectFit: "contain" }} />
             </div>
           </a>
         </div>
