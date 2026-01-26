@@ -207,7 +207,7 @@ function Home() {
                 >
                   <img
                     className="h-20 mx-auto mb-4"
-                    src="/assets/imgs/icons/WeXun.png"
+                    src="/assets/imgs/icons/wexun.png"
                     alt="WeXun"
                   />
                   <h3 className="mb-2 font-bold font-heading text-2xl text-blue-600">
@@ -237,7 +237,7 @@ function Home() {
                 >
                   <img
                     className="h-20 mx-auto mb-4"
-                    src="/assets/imgs/icons/Yuobo.png"
+                    src="/assets/imgs/icons/yuobo.png"
                     alt="Yuobo"
                   />
                   <h3 className="mb-2 font-bold font-heading text-2xl text-blue-600">
@@ -268,7 +268,7 @@ function Home() {
                 >
                   <img
                     className="h-20 mx-auto mb-4"
-                    src="/assets/imgs/icons/PledgeDoc.png"
+                    src="/assets/imgs/icons/pledgedoc.png"
                     alt="PledgeDoc"
                   />
                   <h3 className="mb-2 font-bold font-heading text-2xl text-blue-600">
