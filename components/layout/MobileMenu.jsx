@@ -31,7 +31,7 @@ const MobileMenu = ({ hiddenClass, handleRemove }) => {
       <div className={`${hiddenClass} navbar-menu relative z-50 transition duration-300`}>
         <div className="navbar-backdrop fixed inset-0 bg-blueGray-800 opacity-25"></div>
 
-        <nav className="fixed top-0 left-0 bottom-0 flex flex-col px-6 bg-white border-r overflow-y-auto transition duration-300">
+        <nav className="fixed top-0 left-0 bottom-0 w-[30vw] flex flex-col px-6 bg-white border-r overflow-y-auto transition duration-300">
           <div className="flex items-center mb-8">
             <Link href={href("index")} className="flex items-center flex-shrink-0 mr-auto text-3xl font-semibold leading-none">
               <Image className="h-14 w-auto" src="/assets/imgs/logos/monst-logo.svg" alt="NoKu" width={175} height={56} />
