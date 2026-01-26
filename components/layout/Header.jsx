@@ -97,7 +97,7 @@ const Header = ({ handleHidden }) => {
                 {isEn ? "Log In" : "登录"}
               </Link>
 
-              <button type="button" onClick={toggleLangRoute} className="btn-primary hover-up-2 w-[2.5ch] flex justify-center">
+              <button type="button" onClick={toggleLangRoute} className="btn-primary hover-up-2">
                 {isEn ? "中" : "EN"}
               </button>
             </div>
