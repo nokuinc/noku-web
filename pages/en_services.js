@@ -31,6 +31,12 @@ const styles = {
 
 const ServiceCard = ({ title, icon, name, description, features, accentColor, bgGradient }) => {
   const href = icon === "WeXun" ? "https://wexun.com" : icon === "YuoBo" ? "https://yuobo.com" : "https://pledgedoc.com";
+  const iconMap = {
+    "WeXun": "wexun",
+    "YuoBo": "yuobo",
+    "PledgeDoc": "pledgedoc"
+  };
+  const iconFileName = iconMap[icon] || "pledgedoc";
   return (
     <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-12">
       <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-6 text-center px-4 leading-tight" style={{ color: accentColor }}>
@@ -40,7 +46,7 @@ const ServiceCard = ({ title, icon, name, description, features, accentColor, bg
         <div className="mb-8 flex justify-center">
           <a href={href} target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 hover:scale-105">
             <div style={{ width: "144px", height: "144px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <img src={`/assets/imgs/icons/${icon}.png`} alt={icon} style={{ maxWidth: "100%", maxHeight: "100%", width: "auto", height: "auto", objectFit: "contain" }} />
+              <img src={`/assets/imgs/icons/${iconFileName}.png`} alt={icon} style={{ maxWidth: "100%", maxHeight: "100%", width: "auto", height: "auto", objectFit: "contain" }} />
             </div>
           </a>
         </div>

@@ -41,11 +41,14 @@ const Header = ({ handleHidden }) => {
     "text-lg lg:text-xl font-semibold tracking-wide " + // 英文更友好
     "px-4 " + // 每项自身更宽（中文不挤），但不会太占宽
     "text-blueGray-600 " +
-    "transition-all duration-300 ease-out " +
-    "hover:text-blue-600 hover:-translate-y-0.5 " +
-    "after:content-[''] after:absolute after:left-0 after:-bottom-1 " +
-    "after:h-[2px] after:w-full after:bg-blue-500 after:scale-x-0 after:origin-left " +
-    "after:transition-transform after:duration-300 hover:after:scale-x-100";
+    "transition-all duration-200 ease-out " +
+    "hover:text-blue-600 hover:opacity-90 active:opacity-70 " +
+    "hover:-translate-y-[1px] active:translate-y-0 " +
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/40 focus-visible:ring-offset-2 " +
+    "after:content-[''] after:absolute after:left-0 after:-bottom-1.5 " +
+    "after:h-[2px] after:w-full after:bg-current after:scale-x-0 after:origin-center " +
+    "after:transition-transform after:duration-200 after:ease-out " +
+    "hover:after:scale-x-100 focus-visible:after:scale-x-100";
 
   return (
     <>
@@ -54,7 +57,7 @@ const Header = ({ handleHidden }) => {
         <div className="container bg-transparent">
           <nav className="bg-transparent flex justify-between items-center py-3">
             {/* Logo */}
-            <Link href={href("index")} className="text-3xl font-semibold leading-none">
+            <Link href="https://nokuinc.com" className="text-3xl font-semibold leading-none">
               <Image className="h-10" src="/assets/imgs/logos/noku-noku.png" alt="NoKu" width={125} height={40} />
             </Link>
 

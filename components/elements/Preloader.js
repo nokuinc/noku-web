@@ -5,7 +5,7 @@ const Preloader = () => {
         <>
             <div id="preloader-active">
                 <div className="preloader flex-1 content-center">
-                    <div className="logo absolute inset-y-2/4 jump">
+                    <div className="logo flex items-center justify-center h-screen w-screen jump">
                         <img
                             src="/assets/imgs/logos/noku-icon.svg"
                             alt="NoKu"

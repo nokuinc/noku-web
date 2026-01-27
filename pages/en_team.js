@@ -1,7 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../components/layout/Layout';
 
 const Team = () => {
+    const [termsAgreed, setTermsAgreed] = useState(false);
+    const toEmail = "nokuinc@outlook.com";
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        
+        if (!termsAgreed) {
+            alert("Please agree to the Terms & Conditions before submitting.");
+            return;
+        }
+
+        const form = e.currentTarget;
+        const department = form.department?.value || "";
+        const role = form.querySelector('input[type="text"][placeholder="Role"]')?.value?.trim() || "";
+        const name = form.querySelector('input[type="text"][placeholder="Name"]')?.value?.trim() || "";
+        const email = form.querySelector('input[type="email"]')?.value?.trim() || "";
+        const message = form.querySelector('textarea')?.value?.trim() || "";
+
+        const subject = `NOKU Team Application | ${department}${role ? " | " + role : ""}${name ? " | " + name : ""}`;
+        const body = [
+            `Department: ${department || "-"}`,
+            `Role: ${role || "-"}`,
+            `Name: ${name || "-"}`,
+            `Email: ${email || "-"}`,
+            "",
+            "Message:",
+            message || "-",
+            "",
+            "----",
+            "Sent from nokuinc.com team form",
+        ].join("\n");
+
+        const mailto = `mailto:${toEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = mailto;
+    };
+
     return (
         <>
             <Layout>
@@ -23,7 +59,7 @@ const Team = () => {
                                     </svg>
                                 </li>
                                 <li className="inline-flex items-center text-gray-400">
-                                   
+                                    Team
                                 </li>
                             </ul>
                         </div>
@@ -37,11 +73,15 @@ const Team = () => {
                                 Leads
                             </span>
                             <h2 className="text-3xl md:text-4xl mt-2 mb-4 font-bold font-heading wow animate__animated animate__fadeIn" data-wow-delay=".1s">
-                                Meet Your <span className="text-blue-500">Partners</span> <br />
-                                A team that works like family
+                                More Than Partners <br />
+                                People Who Get Things Done Together
                             </h2>
                             <p className="text-blueGray-400 leading-loose wow animate__animated animate__fadeIn" data-wow-delay=".1s">
-                                Clients are highly satisfied with our delivery.
+                                We believe real collaboration is not a one-time transaction,<br />
+                                but a long-term relationship built on trust, understanding, and shared responsibility.<br />
+                                <br />
+                                What you see here is not a group of temporary executors,<br />
+                                but people who are willing to take responsibility for long-term collaboration.
                             </p>
                         </div>
 
@@ -219,7 +259,7 @@ const Team = () => {
                             </div>
 
                             <div>
-                                <form>
+                                <form onSubmit={handleSubmit}>
                                     <div className="mb-4 text-sm wow animate__animated animate__fadeIn" data-wow-delay=".1s">
                                         <span className="mr-4 font-semibold">Join the Team：</span>
                                         <label className="mr-4">
@@ -260,10 +300,10 @@ const Team = () => {
 
                                     <div className="flex justify-between items-center">
                                         <label>
-                                            <input className="mr-1" type="checkbox" name="terms" value="1" />
+                                            <input className="mr-1" type="checkbox" name="terms" value="1" checked={termsAgreed} onChange={(e) => setTermsAgreed(e.target.checked)} />
                                             <span className="text-sm font-semibold">I agree to the Terms & Conditions（Privacy）</span>
                                         </label>
-                                        <button className="py-4 px-8 text-sm text-white font-semibold leading-none bg-blue-400 hover:bg-blue-500 rounded" type="submit">
+                                        <button className="py-4 px-8 text-sm text-white font-semibold leading-none bg-blue-400 hover:bg-blue-500 rounded disabled:opacity-50 disabled:cursor-not-allowed" type="submit" disabled={!termsAgreed}>
                                             Submit
                                         </button>
                                     </div>

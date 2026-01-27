@@ -63,7 +63,7 @@ function Home() {
                                 </div>
 
                             {/* CTA（仅更换文案与链接，不改变结构与样式） */}
-                            <div className="mb-8 flex flex-wrap justify-center gap-10">
+                            <div className="mb-8 flex flex-wrap justify-center gap-[14px]">
                                 <a
                                     href="https://wexun.com"
                                     target="_blank"

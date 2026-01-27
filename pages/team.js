@@ -1,7 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../components/layout/Layout';
 
 const Team = () => {
+    const [termsAgreed, setTermsAgreed] = useState(false);
+    const toEmail = "nokuinc@outlook.com";
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        
+        if (!termsAgreed) {
+            alert('请先勾选"我同意条款与条件（隐私保护）"');
+            return;
+        }
+
+        const form = e.currentTarget;
+        const department = form.department?.value || "";
+        const role = form.querySelector('input[type="text"][placeholder="岗位"]')?.value?.trim() || "";
+        const name = form.querySelector('input[type="text"][placeholder="姓名"]')?.value?.trim() || "";
+        const email = form.querySelector('input[type="email"]')?.value?.trim() || "";
+        const message = form.querySelector('textarea')?.value?.trim() || "";
+
+        const subject = `NOKU Team Application | ${department}${role ? " | " + role : ""}${name ? " | " + name : ""}`;
+        const body = [
+            `Department: ${department || "-"}`,
+            `Role: ${role || "-"}`,
+            `Name: ${name || "-"}`,
+            `Email: ${email || "-"}`,
+            "",
+            "Message:",
+            message || "-",
+            "",
+            "----",
+            "Sent from nokuinc.com team form",
+        ].join("\n");
+
+        const mailto = `mailto:${toEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = mailto;
+    };
+
     return (
         <>
             <Layout>
@@ -23,25 +59,29 @@ const Team = () => {
                                     </svg>
                                 </li>
                                 <li className="inline-flex items-center text-gray-400">
-
+                                    团队
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </section>
 
-                <section className="py-20 bg-blueGray-50">
+                <section className="pt-10 pb-20 bg-blueGray-50">
                     <div className="container">
                         <div className="max-w-lg mx-auto mb-12 text-center">
                             <span className="inline-block py-1 px-3 text-xs font-semibold bg-blue-100 text-blue-600 rounded-xl wow animate__animated animate__fadeIn" data-wow-delay=".1s">
-                                我们的负责人
+                                值得信任的那群人
                             </span>
                             <h2 className="text-3xl md:text-4xl mt-2 mb-4 font-bold font-heading wow animate__animated animate__fadeIn" data-wow-delay=".1s">
-                                认识你的 <span className="text-blue-500">合作伙伴</span> <br />
-                                如同家人一般的团队成员
+                                不只是合作伙伴 <br />
+                                更像一起把事做成的自己人
                             </h2>
                             <p className="text-blueGray-400 leading-loose wow animate__animated animate__fadeIn" data-wow-delay=".1s">
-                                客户对我们的服务非常满意。
+                                我们相信，真正的合作不是一次交易，<br />
+                                而是彼此理解、长期信任和共同承担。<br />
+                                <br />
+                                你看到的不是临时拼凑的执行者，<br />
+                                而是一群愿意为长期合作承担责任的人。
                             </p>
                         </div>
 
@@ -258,10 +298,10 @@ const Team = () => {
 
                                     <div className="flex justify-between items-center">
                                         <label>
-                                            <input className="mr-1" type="checkbox" name="terms" value="1" />
+                                            <input className="mr-1" type="checkbox" name="terms" value="1" checked={termsAgreed} onChange={(e) => setTermsAgreed(e.target.checked)} />
                                             <span className="text-sm font-semibold">我同意条款与条件（隐私保护）</span>
                                         </label>
-                                        <button className="py-4 px-8 text-sm text-white font-semibold leading-none bg-blue-400 hover:bg-blue-500 rounded" type="submit">
+                                        <button className="py-4 px-8 text-sm text-white font-semibold leading-none bg-blue-400 hover:bg-blue-500 rounded disabled:opacity-50 disabled:cursor-not-allowed" type="submit" disabled={!termsAgreed}>
                                             提交
                                         </button>
                                     </div>
