@@ -3,18 +3,17 @@
   "version": "3.4.0",
   "private": true,
   "scripts": {
-  "dev": "next dev",
-  "build": "npm run tailwindcss && next build",
-  "start": "next start",
-  "tailwindcss": "postcss public/assets/css/tailwind.css -o public/assets/css/tailwind-built.css"
-},
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "tailwindcss": "postcss public/assets/css/tailwind.css -o public/assets/css/tailwind-built.css -w"
+  },
   "dependencies": {
     "@headlessui/react": "^1.4.2",
     "@heroicons/react": "^1.0.5",
     "next": "^13.1.5",
     "postcss-cli": "^10.1.0",
     "react": "^18.2.0",
-    "react-collapse": "^5.1.1",
     "react-dom": "^18.2.0",
     "react-scroll-up": "^1.3.7",
     "react-typing-effect": "^2.0.5",
