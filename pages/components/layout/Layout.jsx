@@ -1,0 +1,24 @@
+import { useState } from "react"
+import BackToTop from "../elements/BackToTop"
+import Footer from "./Footer"
+import Header from "./Header"
+import MobileMenu from "./MobileMenu"
+
+const Layout = ({ children }) => {
+  const [hiddenClass, setHiddenClass] = useState("hidden")
+
+  const handleHidden = () => setHiddenClass("")
+  const handleRemove = () => setHiddenClass("hidden")
+
+  return (
+    <div className="main font-body text-body">
+      <Header handleHidden={handleHidden} />
+      <MobileMenu hiddenClass={hiddenClass} handleRemove={handleRemove} />
+      {children}
+      <Footer />
+      <BackToTop />
+    </div>
+  )
+}
+
+export default Layout
