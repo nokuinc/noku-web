@@ -10,7 +10,7 @@ const Contact = () => {
     const form = e.currentTarget;
     const name = form.name?.value?.trim() || "";
     const email = form.email?.value?.trim() || "";
-    const dept = form.dept?.value || "商务合作";
+    const dept = form.dept?.value || "Business Partnership";
     const message = form.message?.value?.trim() || "";
 
     const subject = `NOKU Contact | ${dept}${name ? " | " + name : ""}`;
@@ -44,12 +44,12 @@ const Contact = () => {
               <div className="w-full lg:w-1/2 px-3 mb-10 lg:mb-0">
                 <div className="max-w-md">
                   <h2 className="text-3xl lg:text-5xl font-bold font-heading mb-6">
-                    与诺库 <span className="text-blue-600">建立联系</span>
+                    Connect with NoKu <span className="text-blue-600">Get in Touch</span>
                   </h2>
 
                   <p className="text-blueGray-400 leading-relaxed mb-8">
-                    无论是寻求 PledgeDoc(诺书) 协议的接口集成，还是探讨跨平台、跨地域的信任机制，
-                    我们都欢迎与你进行严肃、长期的沟通。
+                    Whether you're integrating the PromiseBook protocol or exploring cross-platform, cross-region trust mechanisms,
+                    we welcome serious, long-term conversations.
                   </p>
 
                   <div className="flex items-start mb-6">
@@ -69,7 +69,7 @@ const Contact = () => {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-1">电子邮件</h4>
+                      <h4 className="font-bold text-gray-900 mb-1">Email</h4>
                       <a
                         className="text-blueGray-400 hover:underline break-all"
                         href={`mailto:${toEmail}`}
@@ -102,7 +102,7 @@ const Contact = () => {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-1">全球运营</h4>
+                      <h4 className="font-bold text-gray-900 mb-1">Global Operations</h4>
                       <p className="text-blueGray-400">
                         Global Presence, Digitally Native
                       </p>
@@ -121,7 +121,7 @@ const Contact = () => {
                         name="name"
                         className="w-full p-4 text-base font-semibold leading-none bg-blueGray-50 rounded outline-none"
                         type="text"
-                        placeholder="您的姓名"
+                        placeholder="Your Name"
                         autoComplete="name"
                       />
                     </div>
@@ -131,7 +131,7 @@ const Contact = () => {
                         name="email"
                         className="w-full p-4 text-base font-semibold leading-none bg-blueGray-50 rounded outline-none"
                         type="email"
-                        placeholder="邮箱地址"
+                        placeholder="Email Address"
                         autoComplete="email"
                       />
                     </div>
@@ -143,19 +143,19 @@ const Contact = () => {
                           className="mr-2"
                           type="radio"
                           name="dept"
-                          value="商务合作"
+                          value="Business Partnership"
                           defaultChecked
                         />{" "}
-                        商务合作
+                        Business Partnership
                       </label>
                       <label className="flex items-center">
                         <input
                           className="mr-2"
                           type="radio"
                           name="dept"
-                          value="一般咨询"
+                          value="General Inquiry"
                         />{" "}
-                        一般咨询
+                        General Inquiry
                       </label>
                     </div>
 
@@ -163,7 +163,7 @@ const Contact = () => {
                       <textarea
                         name="message"
                         className="w-full h-32 p-4 text-base font-semibold leading-relaxed resize-none bg-blueGray-50 rounded outline-none"
-                        placeholder="您的留言..."
+                        placeholder="Your Message..."
                       />
                     </div>
 
@@ -188,7 +188,7 @@ const Contact = () => {
                       "
                       style={{ backgroundColor: "#2563EB", color: "#FFFFFF" }}
                     >
-                      提交申请
+                      Submit
                     </button>
 
                     <p className="mt-4 text-xs text-blueGray-400">

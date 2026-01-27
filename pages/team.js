@@ -9,14 +9,14 @@ const Team = () => {
         e.preventDefault();
         
         if (!termsAgreed) {
-            alert('请先勾选"我同意条款与条件（隐私保护）"');
+            alert("Please agree to the Terms & Conditions before submitting.");
             return;
         }
 
         const form = e.currentTarget;
         const department = form.department?.value || "";
-        const role = form.querySelector('input[type="text"][placeholder="岗位"]')?.value?.trim() || "";
-        const name = form.querySelector('input[type="text"][placeholder="姓名"]')?.value?.trim() || "";
+        const role = form.querySelector('input[type="text"][placeholder="Role"]')?.value?.trim() || "";
+        const name = form.querySelector('input[type="text"][placeholder="Name"]')?.value?.trim() || "";
         const email = form.querySelector('input[type="email"]')?.value?.trim() || "";
         const message = form.querySelector('textarea')?.value?.trim() || "";
 
@@ -48,18 +48,18 @@ const Team = () => {
                         <div className="pt-8 max-w-4xl mx-auto mb-2">
                             <h1 className="text-3xl lg:text-5xl lg:leading-normal mb-3 font-bold font-heading text-blueGray-900 wow animate__animated animate__fadeIn break-words">
                                 NoKu LLC <br />
-                                <span className="text-blue-500">我们的团队</span>
+                                <span className="text-blue-500">Our Team</span>
                             </h1>
 
                             <ul className="flex justify-center mx-auto text-gray-500 text-sm lg:text-sm pb-6 wow animate__animated animate__fadeIn">
                                 <li className="inline-flex items-center">
-                                    <a href="#" className="hover:text-blue-500 text-gray-800">首页</a>
+                                    <a href="#" className="hover:text-blue-500 text-gray-800">Home</a>
                                     <svg fill="currentColor" viewBox="0 0 20 20" className="h-5 w-auto text-gray-300">
                                         <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"></path>
                                     </svg>
                                 </li>
                                 <li className="inline-flex items-center text-gray-400">
-                                    团队
+                                    Team
                                 </li>
                             </ul>
                         </div>
@@ -70,18 +70,18 @@ const Team = () => {
                     <div className="container px-4 mx-auto">
                         <div className="max-w-4xl mx-auto mb-12 text-center">
                             <span className="inline-block py-1 px-3 text-xs font-semibold bg-blue-100 text-blue-600 rounded-xl wow animate__animated animate__fadeIn" data-wow-delay=".1s">
-                                值得信任的那群人
+                                Leads
                             </span>
                             <h2 className="text-3xl md:text-4xl mt-2 mb-4 font-bold font-heading wow animate__animated animate__fadeIn break-words" data-wow-delay=".1s">
-                                不只是合作伙伴 <br />
-                                更像一起把事做成的自己人
+                                More Than Partners <br />
+                                People Who Get Things Done Together
                             </h2>
                             <p className="text-blueGray-400 leading-loose wow animate__animated animate__fadeIn break-words" data-wow-delay=".1s">
-                                我们相信，真正的合作不是一次交易，<br />
-                                而是彼此理解、长期信任和共同承担。<br />
+                                We believe real collaboration is not a one-time transaction,<br />
+                                but a long-term relationship built on trust, understanding, and shared responsibility.<br />
                                 <br />
-                                你看到的不是临时拼凑的执行者，<br />
-                                而是一群愿意为长期合作承担责任的人。
+                                What you see here is not a group of temporary executors,<br />
+                                but people who are willing to take responsibility for long-term collaboration.
                             </p>
                         </div>
 
@@ -92,11 +92,11 @@ const Team = () => {
                                         <img className="h-16 w-16 rounded-full object-cover" src="/assets/imgs/placeholders/avatar-1.png" alt="Monst" />
                                         <div className="pl-4">
                                             <strong className="mt-6 mb-2 text-md">Geraldine Tusoy</strong>
-                                            <p className="text-gray-500 text-xs mt-3">CTO / 首席技术官</p>
+                                            <p className="text-gray-500 text-xs mt-3">CTO / Chief Technology Officer</p>
                                         </div>
                                     </div>
                                     <p className="leading-loose text-blueGray-400 mb-5">
-                                        我们坚持长期主义与高标准交付，用稳定的执行与优秀的技能，把细节每一步做到位。
+                                        We build long-term and deliver to a high bar—steady execution and strong skills, down to every detail.
                                     </p>
                                     <div className="flex space-x-2">
                                         <a href="#"><img src="/assets/imgs/icons/facebook-blue.svg" alt="Monst" /></a>
@@ -111,11 +111,11 @@ const Team = () => {
                                         <img className="h-16 w-16 rounded-full object-cover" src="/assets/imgs/placeholders/avatar-2.png" alt="Monst" />
                                         <div className="pl-4">
                                             <strong className="mt-6 mb-2 text-md">Clara Kolawole</strong>
-                                            <p className="text-gray-500 text-xs mt-3">CDO / 首席数字官</p>
+                                            <p className="text-gray-500 text-xs mt-3">CDO / Chief Digital Officer</p>
                                         </div>
                                     </div>
                                     <p className="leading-loose text-blueGray-400 mb-5">
-                                        我们用数据与体验驱动决策，把复杂流程拆解成可执行的步骤，让结果更可控。
+                                        We use data and experience to drive decisions, breaking complexity into executable steps for more predictable outcomes.
                                     </p>
                                     <div className="flex space-x-2">
                                         <a href="#"><img src="/assets/imgs/icons/facebook-blue.svg" alt="Monst" /></a>
@@ -130,11 +130,11 @@ const Team = () => {
                                         <img className="h-16 w-16 rounded-full object-cover" src="/assets/imgs/placeholders/avatar-3.png" alt="Monst" />
                                         <div className="pl-4">
                                             <strong className="mt-6 mb-2 text-md">Chris Fulton</strong>
-                                            <p className="text-gray-500 text-xs mt-3">项目经理</p>
+                                            <p className="text-gray-500 text-xs mt-3">Project Manager</p>
                                         </div>
                                     </div>
                                     <p className="leading-loose text-blueGray-400 mb-5">
-                                        关注节奏与交付质量，确保跨团队/个人订单的顺畅推进，按客户要求完成每一次服务。
+                                        We manage cadence and quality, ensuring smooth delivery across teams and individuals—meeting requirements every time.
                                     </p>
                                     <div className="flex space-x-2">
                                         <a href="#"><img src="/assets/imgs/icons/facebook-blue.svg" alt="Monst" /></a>
@@ -149,11 +149,11 @@ const Team = () => {
                                         <img className="h-16 w-16 rounded-full object-cover" src="/assets/imgs/placeholders/avatar-4.png" alt="Monst" />
                                         <div className="pl-4">
                                             <strong className="mt-6 mb-2 text-md">Dany Connolly</strong>
-                                            <p className="text-gray-500 text-xs mt-3">技术经理</p>
+                                            <p className="text-gray-500 text-xs mt-3">Engineering Manager</p>
                                         </div>
                                     </div>
                                     <p className="leading-loose text-blueGray-400 mb-5">
-                                        以增长与协作为核心，推动平台与订单联动，让团队把正确的事情持续做深做透。
+                                        We focus on growth and collaboration—aligning product and execution so the team can go deep on the right work.
                                     </p>
                                     <div className="flex space-x-2">
                                         <a href="#"><img src="/assets/imgs/icons/facebook-blue.svg" alt="Monst" /></a>
@@ -169,29 +169,29 @@ const Team = () => {
                 {/* 下面模块保持你原本结构与中文 */}
                 <section className="pt-20">
                     <div className="container text-center">
-                        <div className="max-w-[90vw] sm:max-w-lg mx-auto mb-12">
+                        <div className="max-w-lg mx-auto mb-12">
                             <span className="inline-block py-1 px-3 text-xs font-semibold bg-blue-100 text-blue-600 rounded-xl wow animate__animated animate__fadeIn" data-wow-delay=".1s">
-                                我们的团队
+                                Our Team
                             </span>
-                            <h2 className="text-3xl md:text-4xl mt-2 mb-4 font-bold font-heading wow animate__animated animate__fadeIn break-words" data-wow-delay=".3s">
-                                我们超棒的 <br />
-                                <span className="text-blue-500">技能</span> 团队成员
+                            <h2 className="text-3xl md:text-4xl mt-2 mb-4 font-bold font-heading wow animate__animated animate__fadeIn" data-wow-delay=".3s">
+                                Our Awesome <br />
+                                <span className="text-blue-500">Skilled</span> Team Members
                             </h2>
-                            <p className="text-blueGray-400 leading-loose wow animate__animated animate__fadeIn break-words" data-wow-delay=".1s">
-                                技能专业/服务优秀/订单高效，持续为客户交付满意结果。
+                            <p className="text-blueGray-400 leading-loose wow animate__animated animate__fadeIn" data-wow-delay=".1s">
+                                SkilledProfessional/Excellent Service/Efficient Delivery，持续为客户交付满意结果。
                             </p>
                         </div>
 
                         <div className="flex flex-wrap -mx-3">
                             {[
-                                { img: "avatar-1.png", name: "Geraldine Tusoy", role: "EM / 工程经理", delay: ".4s" },
-                                { img: "avatar-2.png", name: "Clara Kolawole", role: "TL / 技术组长", delay: ".3s" },
-                                { img: "avatar-3.png", name: "Chris Fulton", role: "外勤技术员", delay: ".5s" },
-                                { img: "avatar-4.png", name: "Dany Connolly", role: "外勤技术员", delay: ".7s" },
-                                { img: "avatar-5.png", name: "Al-amin Bishash", role: "外勤技术员", delay: ".1s" },
-                                { img: "avatar-6.png", name: "Sanuya Santa", role: "市场营销", delay: ".3s" },
-                                { img: "avatar-7.png", name: "Steven Job", role: "外勤技术员", delay: ".5s" },
-                                { img: "avatar-8.png", name: "Romario", role: "外勤技术员", delay: ".7s" },
+                                { img: "avatar-1.png", name: "Geraldine Tusoy", role: "EM / Engineering Manager", delay: ".4s" },
+                                { img: "avatar-2.png", name: "Clara Kolawole", role: "TL / Tech Lead", delay: ".3s" },
+                                { img: "avatar-3.png", name: "Chris Fulton", role: "Field Technician", delay: ".5s" },
+                                { img: "avatar-4.png", name: "Dany Connolly", role: "Field Technician", delay: ".7s" },
+                                { img: "avatar-5.png", name: "Al-amin Bishash", role: "Field Technician", delay: ".1s" },
+                                { img: "avatar-6.png", name: "Sanuya Santa", role: "Marketing", delay: ".3s" },
+                                { img: "avatar-7.png", name: "Steven Job", role: "Field Technician", delay: ".5s" },
+                                { img: "avatar-8.png", name: "Romario", role: "Field Technician", delay: ".7s" },
                             ].map((p, i) => (
                                 <div key={i} className="w-full md:w-1/2 lg:w-1/4 px-3 mb-12 hover-up-5 wow animate__animated animate__fadeIn" data-wow-delay={p.delay}>
                                     <img className="h-64 w-64 mx-auto rounded object-cover object-top" src={`/assets/imgs/placeholders/${p.img}`} alt={p.name} />
@@ -213,34 +213,34 @@ const Team = () => {
                         <div className="max-w-[90vw] sm:max-w-2xl lg:max-w-3xl mx-auto">
                             <div className="mb-12 text-center">
                                 <h2 className="text-4xl font-bold font-heading wow animate__animated animate__fadeIn break-words" data-wow-delay=".1s">
-                                    加入我们
+                                    Join Us
                                 </h2>
                                 <p className="text-blueGray-400 wow animate__animated animate__fadeIn" data-wow-delay=".5s">
-                                    我们很乐意收到你的消息
+                                    We'd love to hear from you
                                 </p>
                             </div>
 
                             <div>
                                 <form onSubmit={handleSubmit}>
                                     <div className="mb-4 text-sm wow animate__animated animate__fadeIn" data-wow-delay=".1s">
-                                        <span className="mr-4 font-semibold">加入团队：</span>
+                                        <span className="mr-4 font-semibold">Join the Team：</span>
                                         <label className="mr-4">
                                             <input className="mr-1" type="radio" name="department" value="1" />
-                                            <span>前端</span>
+                                            <span>Frontend</span>
                                         </label>
                                         <label>
                                             <input className="mr-1" type="radio" name="department" value="2" />
-                                            <span>后端</span>
+                                            <span>Backend</span>
                                         </label>
                                     </div>
 
                                     <div className="flex flex-wrap mb-4 -mx-3 wow animate__animated animate__fadeIn" data-wow-delay=".3s">
                                         <div className="w-full lg:w-1/2 px-3 mb-4 lg:mb-0">
                                             <div className="mb-4">
-                                                <input className="w-full p-4 text-[16px] sm:text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none" type="text" placeholder="岗位" />
+                                                <input className="w-full p-4 text-[16px] sm:text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none" type="text" placeholder="Role" />
                                             </div>
                                             <div className="mb-4">
-                                                <input className="w-full p-4 text-[16px] sm:text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none" type="text" placeholder="姓名" />
+                                                <input className="w-full p-4 text-[16px] sm:text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none" type="text" placeholder="Name" />
                                             </div>
                                             <div className="mb-4">
                                                 <input className="w-full p-4 text-[16px] sm:text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none" type="email" placeholder="name@example.com" />
@@ -249,24 +249,24 @@ const Team = () => {
                                                 <label className="flex px-2 bg-blueGray-50 rounded">
                                                     <input className="hidden" type="file" name="Choose file" />
                                                     <span className="my-1 ml-auto px-4 py-3 text-xs text-white font-semibold leading-none bg-blueGray-500 hover:bg-blueGray-600 rounded cursor-pointer">
-                                                        浏览
+                                                        Browse
                                                     </span>
                                                 </label>
                                             </div>
                                         </div>
 
                                         <div className="w-full lg:w-1/2 px-3">
-                                            <textarea className="w-full h-full p-4 text-[16px] sm:text-xs font-semibold leading-none resize-none bg-blueGray-50 rounded outline-none" placeholder="留言内容..."></textarea>
+                                            <textarea className="w-full h-full p-4 text-[16px] sm:text-xs font-semibold leading-none resize-none bg-blueGray-50 rounded outline-none" placeholder="Message....."></textarea>
                                         </div>
                                     </div>
 
                                     <div className="flex justify-between items-center">
                                         <label>
                                             <input className="mr-1" type="checkbox" name="terms" value="1" checked={termsAgreed} onChange={(e) => setTermsAgreed(e.target.checked)} />
-                                            <span className="text-sm font-semibold">我同意条款与条件（隐私保护）</span>
+                                            <span className="text-sm font-semibold">I agree to the Terms & Conditions（Privacy）</span>
                                         </label>
                                         <button className="py-4 px-8 text-sm text-white font-semibold leading-none bg-blue-400 hover:bg-blue-500 rounded disabled:opacity-50 disabled:cursor-not-allowed" type="submit" disabled={!termsAgreed}>
-                                            提交
+                                            Submit
                                         </button>
                                     </div>
                                 </form>

@@ -29,18 +29,18 @@ const Login = () => {
                                 >
                                     {/* 标题区 */}
                                     <span className="text-sm text-blueGray-400">
-                                        登录
+                                        Log In
                                     </span>
                                     <h4 className="mb-6 text-3xl">
-                                        加入我们的生态
+                                        Join the Ecosystem
                                     </h4>
 
-                                    {/* 邮箱 */}
+                                    {/* Email */}
                                     <div className="flex mb-4 px-4 bg-blueGray-50 rounded border border-gray-200">
                                         <input
                                             className="w-full py-4 text-xs placeholder-blueGray-400 font-semibold leading-none bg-blueGray-50 outline-none"
                                             type="email"
-                                            placeholder="邮箱地址"
+                                            placeholder="Email Address"
                                         />
                                         <svg
                                             className="h-6 w-6 ml-4 my-auto text-blueGray-300"
@@ -63,7 +63,7 @@ const Login = () => {
                                         <input
                                             className="w-full py-4 text-xs placeholder-blueGray-400 font-semibold leading-none bg-blueGray-50 outline-none"
                                             type="password"
-                                            placeholder="请输入密码"
+                                            placeholder="Enter Password"
                                         />
                                         <button className="ml-4">
                                             <svg
@@ -97,30 +97,30 @@ const Login = () => {
                                         <label className="inline-flex text-xs">
                                             <input type="checkbox" className="form-checkbox" checked />
                                             <span className="ml-2">
-                                                我已阅读并同意{" "}
+                                                I have read and agree to{" "}
                                                 <Link href="/about" legacyBehavior>
                                                     <a className="underline hover:text-blueGray-500">
-                                                        隐私政策
+                                                        Privacy Policy
                                                     </a>
                                                 </Link>{" "}
                                                 与{" "}
                                                 <Link href="/about" legacyBehavior>
                                                     <a className="underline hover:text-blueGray-500">
-                                                        使用条款
+                                                        Terms of Use
                                                     </a>
                                                 </Link>
                                             </span>
                                         </label>
                                     </div>
 
-                                    {/* 登录按钮 */}
+                                    {/* Log In按钮 */}
                                     <button className="transition duration-300 ease-in-out transform hover:-translate-y-1 block w-full p-4 text-center text-xs text-white font-semibold leading-none bg-blue-500 hover:bg-blue-700 rounded">
-                                        登录
+                                        Log In
                                     </button>
 
-                                    {/* 第三方登录 */}
+                                    {/* 第三方Log In */}
                                     <p className="my-6 text-xs text-blueGray-400 text-center font-semibold">
-                                        或使用以下方式登录
+                                        或使用以下方式Log In
                                     </p>
 
                                     <button className="transition duration-300 ease-in-out transform hover:-translate-y-1 flex items-center w-full px-4 py-3 mb-2 text-xs text-blueGray-500 font-semibold leading-none border border-gray-200 hover:bg-blueGray-50 rounded">
@@ -128,7 +128,7 @@ const Login = () => {
                                             className="h-6 pr-10"
                                             src="/assets/imgs/logos/facebook-sign.svg"
                                         />
-                                        <span>使用 Facebook 登录</span>
+                                        <span>使用 Facebook Log In</span>
                                     </button>
 
                                     <button className="transition duration-300 ease-in-out transform hover:-translate-y-1 flex items-center px-4 py-3 w-full text-xs text-blueGray-500 font-semibold leading-none border border-gray-200 hover:bg-blueGray-50 rounded">
@@ -136,20 +136,20 @@ const Login = () => {
                                             className="h-6 pr-10"
                                             src="/assets/imgs/logos/google-sign.svg"
                                         />
-                                        <span>使用 Google 登录</span>
+                                        <span>使用 Google Log In</span>
                                     </button>
                                 </div>
 
                                 {/* 注册入口 */}
                                 <div className="w-full mt-12 mx-auto text-center">
                                     <p>
-                                        还没有账号？{" "}
+                                        Don't have an account?{" "}
                                         <Link href="/signup" legacyBehavior>
                                             <a
                                                 className="inline-block text-xs text-blue-600 hover:text-blue-700 font-semibold leading-none wow animate__animated animate__fadeIn animated"
                                                 data-wow-delay=".1s"
                                             >
-                                                立即注册
+                                                Sign Up Now
                                             </a>
                                         </Link>
                                     </p>

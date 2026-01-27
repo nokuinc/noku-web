@@ -7,15 +7,11 @@ const Header = ({ handleHidden }) => {
   const router = useRouter();
   const [scroll, setScroll] = useState(0);
 
-  const isEn = router.pathname === "/en_index" || router.pathname.startsWith("/en_");
+  const isEn = router.pathname === "/" || router.pathname === "/about" || router.pathname === "/services" || router.pathname === "/team" || router.pathname === "/contact" || router.pathname === "/login" || router.pathname === "/signup" || router.pathname === "/en_index" || router.pathname.startsWith("/en_");
   const isTw = router.pathname === "/tw_index" || router.pathname.startsWith("/tw_");
   const isEs = router.pathname === "/es_index" || router.pathname.startsWith("/es_");
-  const lang = isEn ? "en" : isTw ? "tw" : isEs ? "es" : "zh";
+  const lang = isEn ? "en" : isTw ? "tw" : isEs ? "es" : "en";
   const I18N = {
-    zh: {
-      nav: { index: "生态", services: "服务", about: "我们", team: "团队", contact: "联系" },
-      login: "登录",
-    },
     tw: {
       nav: { index: "生態", services: "服務", about: "我們", team: "團隊", contact: "聯絡" },
       login: "登入",
@@ -31,8 +27,8 @@ const Header = ({ handleHidden }) => {
   };
 
   const href = (key) => {
-    if (key === "index") return isEn ? "/en_index" : isTw ? "/tw_index" : isEs ? "/es_index" : "/";
-    return isEn ? `/en_${key}` : isTw ? `/tw_${key}` : isEs ? `/es_${key}` : `/${key}`;
+    if (key === "index") return isEn ? "/" : isTw ? "/tw_index" : isEs ? "/es_index" : "/";
+    return isEn ? (key === "index" ? "/" : `/${key}`) : isTw ? `/tw_${key}` : isEs ? `/es_${key}` : (key === "index" ? "/" : `/${key}`);
   };
 
   const switchLangRoute = (target) => {
@@ -46,6 +42,8 @@ const Header = ({ handleHidden }) => {
       key = "index";
     } else if (path === "/es_index") {
       key = "index";
+    } else if (path === "/about" || path === "/services" || path === "/team" || path === "/contact" || path === "/login" || path === "/signup") {
+      key = path.replace(/^\//, "");
     } else if (path.startsWith("/en_")) {
       key = path.replace(/^\/en_/, "");
     } else if (path.startsWith("/tw_")) {
@@ -57,10 +55,8 @@ const Header = ({ handleHidden }) => {
     }
 
     let nextPath;
-    if (target === "zh") {
+    if (target === "en") {
       nextPath = key === "index" ? "/" : `/${key}`;
-    } else if (target === "en") {
-      nextPath = key === "index" ? "/en_index" : `/en_${key}`;
     } else if (target === "tw") {
       nextPath = key === "index" ? "/tw_index" : `/tw_${key}`;
     } else if (target === "es") {
@@ -145,11 +141,10 @@ const Header = ({ handleHidden }) => {
               </Link>
 
               <select
-                value={isEn ? "en" : isTw ? "tw" : isEs ? "es" : "zh"}
+                value={isEn ? "en" : isTw ? "tw" : isEs ? "es" : "en"}
                 onChange={(e) => switchLangRoute(e.target.value)}
                 className="btn-primary hover-up-2"
               >
-                <option value="zh">简体</option>
                 <option value="tw">繁體</option>
                 <option value="en">EN</option>
                 <option value="es">ES</option>

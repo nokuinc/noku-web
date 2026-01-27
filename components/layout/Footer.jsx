@@ -4,18 +4,11 @@ import { useRouter } from "next/router"
 
 const Footer = () => {
   const router = useRouter();
-  const isEn = router.pathname === "/en_index" || router.pathname.startsWith("/en_");
+  const isEn = router.pathname === "/" || router.pathname === "/about" || router.pathname === "/services" || router.pathname === "/team" || router.pathname === "/contact" || router.pathname === "/login" || router.pathname === "/signup" || router.pathname === "/en_index" || router.pathname.startsWith("/en_");
   const isTw = router.pathname === "/tw_index" || router.pathname.startsWith("/tw_");
   const isEs = router.pathname === "/es_index" || router.pathname.startsWith("/es_");
-  const lang = isEn ? "en" : isTw ? "tw" : isEs ? "es" : "zh";
+  const lang = isEn ? "en" : isTw ? "tw" : isEs ? "es" : "en";
   const I18N = {
-    zh: {
-      vision: "愿景：让每一份承诺，都成为可信的长期记录。",
-      mailingAddressTitle: "寄信地址",
-      mailingAddressValue: "美国州 Hidden Valley Road 359 号",
-      contactsTitle: "联系方式",
-      copyrightPrefix: "版权所有 · 技术支持 ",
-    },
     tw: {
       vision: "願景：讓每一份承諾，都成為可信的長期記錄。",
       mailingAddressTitle: "寄信地址",
@@ -38,7 +31,7 @@ const Footer = () => {
       copyrightPrefix: "Todos los derechos reservados · Desarrollado por ",
     },
   };
-  const homeHref = isEn ? "/en_index" : isEs ? "/es_index" : "/";
+  const homeHref = isEn ? "/" : isTw ? "/tw_index" : isEs ? "/es_index" : "/";
 
   return (
     <>
