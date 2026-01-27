@@ -37,7 +37,7 @@ function Home() {
                 <h1 className="text-3xl lg:text-5xl lg:leading-normal mb-3 font-bold font-heading wow animate__animated animate__fadeIn">
                   NoKu LLC <br />
                   <span className="text-blue-500">
-                    A Live Ecosystem Powered by WeXun & Yuobo
+                    A Live Ecosystem Powered by WeXun & YuoBo
                   </span>
                 </h1>
 
@@ -56,7 +56,7 @@ function Home() {
                   NoKu is not an abstract concept of trust, but a real operating
                   system in motion.{" "}
                   <strong className="text-blue-600">WeXun</strong> captures real-world labor, jobs, and order
-                  fulfillment. <strong className="text-green-600">Yuobo</strong> captures real transaction
+                  fulfillment. <strong className="text-green-600">YuoBo</strong> captures real transaction
                   and collaboration outcomes. <strong className="text-yellow-700">PledgeDoc</strong> only
                   records facts that have occurred as verifiable credentials (minimal disclosure, authorization).
                 </p>
@@ -98,7 +98,7 @@ function Home() {
                     transition
                   "
                 >
-                  Enter Yuobo
+                  Enter YuoBo
                 </a>
               </div>
 
@@ -110,7 +110,7 @@ function Home() {
                   </div>
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <div className="text-lg font-bold text-blueGray-900">
-                      WeXun · Yuobo · PledgeDoc
+                      WeXun · YuoBo · PledgeDoc
                     </div>
                     <div className="text-sm text-blueGray-500">
                       Facts Generated · Proofs Issued · Minimal Disclosure ·
@@ -193,7 +193,7 @@ function Home() {
                 The Ecosystem
               </h2>
               <p className="text-blueGray-400 mt-2 text-lg leading-relaxed">
-                WeXun & Yuobo generate facts · PledgeDoc records results
+                WeXun & YuoBo generate facts · PledgeDoc records results
               </p>
             </div>
 
@@ -238,10 +238,10 @@ function Home() {
                   <img
                     className="h-20 mx-auto mb-4"
                     src="/assets/imgs/icons/yuobo.png"
-                    alt="Yuobo"
+                    alt="YuoBo"
                   />
                   <h3 className="mb-2 font-bold font-heading text-2xl text-blue-600">
-                    Yuobo
+                    YuoBo
                   </h3>
                   <p className="text-sm font-bold text-brand mb-4 uppercase tracking-widest">
                     Live: Transactions / Collaboration
@@ -318,7 +318,7 @@ function Home() {
                         02
                       </div>
                       <p className="text-blueGray-700 font-semibold ml-2">
-                        <strong>On Yuobo:</strong> Complete transactions and
+                        <strong>On YuoBo:</strong> Complete transactions and
                         collaborations to generate traceable life facts.
                       </p>
                     </div>
@@ -362,7 +362,7 @@ function Home() {
                 className="text-blueGray-500 leading-loose wow animate__animated animate__fadeIn"
                 data-wow-delay=".3s"
               >
-                Through WeXun's fulfillment and Yuobo's completed transactions,
+                Through WeXun's fulfillment and YuoBo's completed transactions,
                 PledgeDoc converts finished facts into verifiable, authorized,
                 and revocable records — a long-term foundation for individuals,
                 merchants, and organizations.

@@ -55,7 +55,7 @@ function Home() {
                                         <strong className="text-blue-600">WeXun（微訊）</strong><span className="text-blueGray-400">：負責用工、找工與訂單履約，產生真實可驗證的訂單結果。</span>
                                     </p>
                                     <p className="text-blueGray-900">
-                                        <strong className="text-green-600">Yuobo（優博）</strong><span className="text-blueGray-400">：負責交易與合作，產生真實完成的交易結果。</span>
+                                        <strong className="text-green-600">YuoBo（優博）</strong><span className="text-blueGray-400">：負責交易與合作，產生真實完成的交易結果。</span>
                                     </p>
                                     <p className="text-blueGray-900">
                                         <strong className="text-yellow-700">PledgeDoc（諾書）</strong><span className="text-blueGray-400">：僅將已發生的事實記錄為可驗證憑證（最小披露、可授權）。</span>
@@ -110,7 +110,7 @@ function Home() {
                                     </div>
                                     <div className="flex flex-wrap items-center justify-between gap-3">
                                         <div className="text-lg font-bold text-blueGray-900">
-                                            WeXun · Yuobo · PledgeDoc
+                                            WeXun · YuoBo · PledgeDoc
                                         </div>
                                         <div className="text-sm text-blueGray-500">
                                             微訊 / 優博產出事實 · 諾書記錄證明 · 最小披露 · 可授權 · 可撤回
@@ -201,8 +201,8 @@ function Home() {
                             <div className="w-full md:w-1/2 lg:w-1/3 px-3 mb-6">
                                 <a href="https://yuobo.com" target="_blank" rel="noopener noreferrer"
                                     className="block p-12 bg-white shadow rounded hover-up-5 transition duration-500 h-full">
-                                    <img className="h-20 mx-auto mb-4" src="/assets/imgs/icons/yuobo.png" alt="Yuobo" />
-                                    <h3 className="mb-2 font-bold font-heading text-2xl text-blue-600">Yuobo（優博）</h3>
+                                    <img className="h-20 mx-auto mb-4" src="/assets/imgs/icons/yuobo.png" alt="YuoBo" />
+                                    <h3 className="mb-2 font-bold font-heading text-2xl text-blue-600">YuoBo（優博）</h3>
                                     <p className="text-sm font-bold text-brand mb-4 uppercase tracking-widest">
                                         正在運行：交易 / 合作 / 對接
                                     </p>
@@ -264,7 +264,7 @@ function Home() {
                                         <div className="flex items-start p-4 bg-blue-50 rounded-xl border-l-4 border-blue-500">
                                             <div className="flex-shrink-0 w-8 text-blue-500 font-bold">02</div>
                                             <p className="text-blueGray-700 font-semibold ml-2">
-                                                <strong>在 Yuobo（優博）：</strong>完成交易/合作結果，沉澱可追溯的生活事實。
+                                                <strong>在 YuoBo（優博）：</strong>完成交易/合作結果，沉澱可追溯的生活事實。
                                             </p>
                                         </div>
                                         <div className="flex items-start p-4 bg-blue-50 rounded-xl border-l-4 border-blue-500">
@@ -300,7 +300,7 @@ function Home() {
                                 我們不做主觀評分，也不製造短期標籤。價值來自真實業務的長期運行，以及結果可被核驗與複用。
                             </p>
                             <p className="text-blueGray-500 leading-loose wow animate__animated animate__fadeIn" data-wow-delay=".3s">
-                                通過 WeXun 的用工/訂單履約與 Yuobo 的交易/合作結果，PledgeDoc 只負責把"已完成的事實"
+                                通過 WeXun 的用工/訂單履約與 YuoBo 的交易/合作結果，PledgeDoc 只負責把"已完成的事實"
                                 沉澱為可驗證、可授權、可撤回的記錄憑證，為個人、商戶與組織提供長期可用的基礎記錄機制。
                             </p>
                         </div>

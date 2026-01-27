@@ -37,7 +37,7 @@ function Home() {
                 <h1 className="text-3xl lg:text-5xl lg:leading-normal mb-3 font-bold font-heading wow animate__animated animate__fadeIn">
                   NoKu LLC <br />
                   <span className="text-blue-500">
-                    Un Ecosistema en Vivo Impulsado por WeXun y Yuobo
+                    Un Ecosistema en Vivo Impulsado por WeXun y YuoBo
                   </span>
                 </h1>
 
@@ -54,7 +54,7 @@ function Home() {
 
                 <p className="mt-4 text-blueGray-400 leading-loose max-w-2xl mx-auto wow animate__animated animate__fadeIn">
                   NoKu no es un concepto abstracto de confianza, sino un sistema operativo real en movimiento.{" "}
-                  <strong className="text-blue-600">WeXun</strong> captura el trabajo, empleos y cumplimiento de pedidos del mundo real. <strong className="text-green-600">Yuobo</strong> captura resultados reales de transacciones y colaboración. <strong className="text-yellow-700">PledgeDoc</strong> solo
+                  <strong className="text-blue-600">WeXun</strong> captura el trabajo, empleos y cumplimiento de pedidos del mundo real. <strong className="text-green-600">YuoBo</strong> captura resultados reales de transacciones y colaboración. <strong className="text-yellow-700">PledgeDoc</strong> solo
                   registra hechos que han ocurrido como credenciales verificables (divulgación mínima, autorización).
                 </p>
               </div>
@@ -95,7 +95,7 @@ function Home() {
                     transition
                   "
                 >
-                  Entrar a Yuobo
+                  Entrar a YuoBo
                 </a>
               </div>
 
@@ -107,7 +107,7 @@ function Home() {
                   </div>
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <div className="text-lg font-bold text-blueGray-900">
-                      WeXun · Yuobo · PledgeDoc
+                      WeXun · YuoBo · PledgeDoc
                     </div>
                     <div className="text-sm text-blueGray-500">
                       Hechos Generados · Pruebas Emitidas · Divulgación Mínima ·
@@ -190,7 +190,7 @@ function Home() {
                 El Ecosistema
               </h2>
               <p className="text-blueGray-400 mt-2 text-lg leading-relaxed">
-                WeXun y Yuobo generan hechos · PledgeDoc registra resultados
+                WeXun y YuoBo generan hechos · PledgeDoc registra resultados
               </p>
             </div>
 
@@ -234,10 +234,10 @@ function Home() {
                   <img
                     className="h-20 mx-auto mb-4"
                     src="/assets/imgs/icons/yuobo.png"
-                    alt="Yuobo"
+                    alt="YuoBo"
                   />
                   <h3 className="mb-2 font-bold font-heading text-2xl text-blue-600">
-                    Yuobo
+                    YuoBo
                   </h3>
                   <p className="text-sm font-bold text-brand mb-4 uppercase tracking-widest">
                     En Vivo: Transacciones / Colaboración
@@ -312,7 +312,7 @@ function Home() {
                         02
                       </div>
                       <p className="text-blueGray-700 font-semibold ml-2">
-                        <strong>En Yuobo:</strong> Completa transacciones y
+                        <strong>En YuoBo:</strong> Completa transacciones y
                         colaboraciones para generar hechos de vida rastreables.
                       </p>
                     </div>
@@ -356,7 +356,7 @@ function Home() {
                 className="text-blueGray-500 leading-loose wow animate__animated animate__fadeIn"
                 data-wow-delay=".3s"
               >
-                A través del cumplimiento de WeXun y las transacciones completadas de Yuobo,
+                A través del cumplimiento de WeXun y las transacciones completadas de YuoBo,
                 PledgeDoc convierte hechos finalizados en registros verificables, autorizados
                 y revocables — una base a largo plazo para individuos,
                 comerciantes y organizaciones.

@@ -82,11 +82,11 @@ const Header = ({ handleHidden }) => {
     "px-4 " + // 每项自身更宽（中文不挤），但不会太占宽
     "text-blueGray-600 " +
     "transition-all duration-200 ease-out " +
-    "hover:text-blue-600 hover:opacity-90 active:opacity-70 " +
-    "hover:-translate-y-[1px] active:translate-y-0 " +
+    "hover:text-blue-600 hover:bg-blue-50/50 hover:shadow-md hover:rounded-lg " +
+    "active:scale-90 active:transition-transform active:duration-150 " +
     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/40 focus-visible:ring-offset-2 " +
     "after:content-[''] after:absolute after:left-0 after:-bottom-1.5 " +
-    "after:h-[2px] after:w-full after:bg-current after:scale-x-0 after:origin-center " +
+    "after:h-[3px] after:w-full after:bg-blue-600 after:scale-x-0 after:origin-center after:rounded-full " +
     "after:transition-transform after:duration-200 after:ease-out " +
     "hover:after:scale-x-100 focus-visible:after:scale-x-100";
 
