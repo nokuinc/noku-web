@@ -58,10 +58,9 @@ const Footer = () => {
                 {isEn ? "Contacts" : "联系方式"}
               </p>
               <p className="lg:text-lg text-blueGray-400">
-                (+1) 858 868 8888
-              </p>
-              <p className="lg:text-lg text-blueGray-400">
-                nokuinc@outlook.com
+                <a href="mailto:nokuinc@outlook.com" className="text-blueGray-400 hover:text-blue-500">
+                  nokuinc@outlook.com
+                </a>
               </p>
             </div>
           </div>
