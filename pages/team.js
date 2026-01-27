@@ -273,13 +273,13 @@ const Team = () => {
                                     <div className="flex flex-wrap mb-4 -mx-3 wow animate__animated animate__fadeIn" data-wow-delay=".3s">
                                         <div className="w-full lg:w-1/2 px-3 mb-4 lg:mb-0">
                                             <div className="mb-4">
-                                                <input className="w-full p-4 text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none" type="text" placeholder="岗位" />
+                                                <input className="w-full p-4 text-[16px] sm:text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none" type="text" placeholder="岗位" />
                                             </div>
                                             <div className="mb-4">
-                                                <input className="w-full p-4 text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none" type="text" placeholder="姓名" />
+                                                <input className="w-full p-4 text-[16px] sm:text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none" type="text" placeholder="姓名" />
                                             </div>
                                             <div className="mb-4">
-                                                <input className="w-full p-4 text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none" type="email" placeholder="name@example.com" />
+                                                <input className="w-full p-4 text-[16px] sm:text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none" type="email" placeholder="name@example.com" />
                                             </div>
                                             <div>
                                                 <label className="flex px-2 bg-blueGray-50 rounded">
@@ -292,7 +292,7 @@ const Team = () => {
                                         </div>
 
                                         <div className="w-full lg:w-1/2 px-3">
-                                            <textarea className="w-full h-full p-4 text-xs font-semibold leading-none resize-none bg-blueGray-50 rounded outline-none" placeholder="留言内容..."></textarea>
+                                            <textarea className="w-full h-full p-4 text-[16px] sm:text-xs font-semibold leading-none resize-none bg-blueGray-50 rounded outline-none" placeholder="留言内容..."></textarea>
                                         </div>
                                     </div>
 
