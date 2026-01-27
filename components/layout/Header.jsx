@@ -8,20 +8,64 @@ const Header = ({ handleHidden }) => {
   const [scroll, setScroll] = useState(0);
 
   const isEn = router.pathname === "/en_index" || router.pathname.startsWith("/en_");
-
-  const href = (key) => {
-    if (key === "index") return isEn ? "/en_index" : "/";
-    return isEn ? `/en_${key}` : `/${key}`;
+  const isTw = router.pathname === "/tw_index" || router.pathname.startsWith("/tw_");
+  const isEs = router.pathname === "/es_index" || router.pathname.startsWith("/es_");
+  const lang = isEn ? "en" : isTw ? "tw" : isEs ? "es" : "zh";
+  const I18N = {
+    zh: {
+      nav: { index: "生态", services: "服务", about: "我们", team: "团队", contact: "联系" },
+      login: "登录",
+    },
+    tw: {
+      nav: { index: "生態", services: "服務", about: "我們", team: "團隊", contact: "聯絡" },
+      login: "登入",
+    },
+    en: {
+      nav: { index: "Home", services: "Services", about: "About", team: "Team", contact: "Contact" },
+      login: "Log In",
+    },
+    es: {
+      nav: { index: "Inicio", services: "Servicios", about: "Nosotros", team: "Equipo", contact: "Contacto" },
+      login: "Iniciar Sesión",
+    },
   };
 
-  const toggleLangRoute = () => {
+  const href = (key) => {
+    if (key === "index") return isEn ? "/en_index" : isTw ? "/tw_index" : isEs ? "/es_index" : "/";
+    return isEn ? `/en_${key}` : isTw ? `/tw_${key}` : isEs ? `/es_${key}` : `/${key}`;
+  };
+
+  const switchLangRoute = (target) => {
     const path = router.pathname;
+    let key;
+    if (path === "/") {
+      key = "index";
+    } else if (path === "/en_index") {
+      key = "index";
+    } else if (path === "/tw_index") {
+      key = "index";
+    } else if (path === "/es_index") {
+      key = "index";
+    } else if (path.startsWith("/en_")) {
+      key = path.replace(/^\/en_/, "");
+    } else if (path.startsWith("/tw_")) {
+      key = path.replace(/^\/tw_/, "");
+    } else if (path.startsWith("/es_")) {
+      key = path.replace(/^\/es_/, "");
+    } else {
+      key = path.replace(/^\//, "");
+    }
 
     let nextPath;
-    if (path === "/") nextPath = "/en_index";
-    else if (path === "/en_index") nextPath = "/";
-    else if (path.startsWith("/en_")) nextPath = path.replace(/^\/en_/, "/");
-    else nextPath = `/en_${path.replace(/^\//, "")}`;
+    if (target === "zh") {
+      nextPath = key === "index" ? "/" : `/${key}`;
+    } else if (target === "en") {
+      nextPath = key === "index" ? "/en_index" : `/en_${key}`;
+    } else if (target === "tw") {
+      nextPath = key === "index" ? "/tw_index" : `/tw_${key}`;
+    } else if (target === "es") {
+      nextPath = key === "index" ? "/es_index" : `/es_${key}`;
+    }
 
     router.push(nextPath);
   };
@@ -65,31 +109,31 @@ const Header = ({ handleHidden }) => {
             <ul className="hidden lg:flex lg:items-center lg:w-auto lg:space-x-14 xl:space-x-20 2xl:space-x-24">
               <li className="pt-4 pb-4">
                 <Link href={href("index")} className={navLinkClass}>
-                  {isEn ? "Home" : "生态"}
+                  {I18N[lang].nav.index}
                 </Link>
               </li>
 
               <li className="pt-4 pb-4">
                 <Link href={href("services")} className={navLinkClass}>
-                  {isEn ? "Services" : "服务"}
+                  {I18N[lang].nav.services}
                 </Link>
               </li>
 
               <li className="pt-4 pb-4">
                 <Link href={href("about")} className={navLinkClass}>
-                  {isEn ? "About" : "我们"}
+                  {I18N[lang].nav.about}
                 </Link>
               </li>
 
               <li className="pt-4 pb-4">
                 <Link href={href("team")} className={navLinkClass}>
-                  {isEn ? "Team" : "团队"}
+                  {I18N[lang].nav.team}
                 </Link>
               </li>
 
               <li className="pt-4 pb-4">
                 <Link href={href("contact")} className={navLinkClass}>
-                  {isEn ? "Contact" : "联系"}
+                  {I18N[lang].nav.contact}
                 </Link>
               </li>
             </ul>
@@ -97,12 +141,19 @@ const Header = ({ handleHidden }) => {
             {/* Right Buttons */}
             <div className="hidden lg:flex items-center space-x-4">
               <Link href={href("login")} className="btn-accent hover-up-2">
-                {isEn ? "Log In" : "登录"}
+                {I18N[lang].login}
               </Link>
 
-              <button type="button" onClick={toggleLangRoute} className="btn-primary hover-up-2">
-                {isEn ? "中" : "EN"}
-              </button>
+              <select
+                value={isEn ? "en" : isTw ? "tw" : isEs ? "es" : "zh"}
+                onChange={(e) => switchLangRoute(e.target.value)}
+                className="btn-primary hover-up-2"
+              >
+                <option value="zh">简体</option>
+                <option value="tw">繁體</option>
+                <option value="en">EN</option>
+                <option value="es">ES</option>
+              </select>
             </div>
 
             {/* Mobile */}

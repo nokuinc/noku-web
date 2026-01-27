@@ -7,20 +7,45 @@ const MobileMenu = ({ hiddenClass, handleRemove }) => {
   const router = useRouter();
 
   const isEn = router.pathname === "/en_index" || router.pathname.startsWith("/en_");
+  const isTw = router.pathname === "/tw_index" || router.pathname.startsWith("/tw_");
+  const isEs = router.pathname === "/es_index" || router.pathname.startsWith("/es_");
 
   const href = (key) => {
-    if (key === "index") return isEn ? "/en_index" : "/";
-    return isEn ? `/en_${key}` : `/${key}`;
+    if (key === "index") return isEn ? "/en_index" : isTw ? "/tw_index" : isEs ? "/es_index" : "/";
+    return isEn ? `/en_${key}` : isTw ? `/tw_${key}` : isEs ? `/es_${key}` : `/${key}`;
   };
 
-  const toggleLangRoute = () => {
+  const switchLangRoute = (target) => {
     const path = router.pathname;
+    let key;
+    if (path === "/") {
+      key = "index";
+    } else if (path === "/en_index") {
+      key = "index";
+    } else if (path === "/tw_index") {
+      key = "index";
+    } else if (path === "/es_index") {
+      key = "index";
+    } else if (path.startsWith("/en_")) {
+      key = path.replace(/^\/en_/, "");
+    } else if (path.startsWith("/tw_")) {
+      key = path.replace(/^\/tw_/, "");
+    } else if (path.startsWith("/es_")) {
+      key = path.replace(/^\/es_/, "");
+    } else {
+      key = path.replace(/^\//, "");
+    }
 
     let nextPath;
-    if (path === "/") nextPath = "/en_index";
-    else if (path === "/en_index") nextPath = "/";
-    else if (path.startsWith("/en_")) nextPath = path.replace(/^\/en_/, "/");
-    else nextPath = `/en_${path.replace(/^\//, "")}`;
+    if (target === "zh") {
+      nextPath = key === "index" ? "/" : `/${key}`;
+    } else if (target === "en") {
+      nextPath = key === "index" ? "/en_index" : `/en_${key}`;
+    } else if (target === "tw") {
+      nextPath = key === "index" ? "/tw_index" : `/tw_${key}`;
+    } else if (target === "es") {
+      nextPath = key === "index" ? "/es_index" : `/es_${key}`;
+    }
 
     router.push(nextPath);
     handleRemove();
@@ -67,11 +92,18 @@ const MobileMenu = ({ hiddenClass, handleRemove }) => {
             </li>
           </ul>
 
-          {/* 语言切换按钮（B：中文显示 EN，英文显示 中） */}
+          {/* 语言切换下拉（B：中文显示 EN，英文显示 中） */}
           <div className="mt-6">
-            <button type="button" onClick={toggleLangRoute} className="btn-primary w-full">
-              {isEn ? "中" : "EN"}
-            </button>
+            <select
+              value={isEn ? "en" : isTw ? "tw" : isEs ? "es" : "zh"}
+              onChange={(e) => switchLangRoute(e.target.value)}
+              className="btn-primary w-full"
+            >
+              <option value="zh">简体</option>
+              <option value="tw">繁體</option>
+              <option value="en">EN</option>
+              <option value="es">ES</option>
+            </select>
           </div>
         </nav>
       </div>

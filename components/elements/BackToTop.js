@@ -17,7 +17,7 @@ export default function BackToTop() {
           rounded-full
           bg-white
           border border-blueGray-200
-          text-blueGray-700
+          text-blueGray-600
           shadow-lg
           hover:bg-blueGray-50
           hover:text-blue-600
