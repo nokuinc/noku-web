@@ -293,7 +293,7 @@ function Home() {
           <div className="container px-4 mx-auto">
             <div className="flex flex-wrap lg:flex-nowrap items-center lg:gap-16">
               <div className="w-full lg:w-1/2">
-                <div className="lg:py-6 wow animate__animated animate__fadeIn">
+                <div className="lg:py-6 wow animate__animated animate__fadeIn" style={{ transform: 'translateY(-35px)' }}>
                   <h2 className="text-3xl font-bold font-heading mb-8">
                     NoKu en Tres Frases
                   </h2>

@@ -10,11 +10,16 @@ const Header = ({ handleHidden }) => {
   const isEn = router.pathname === "/" || router.pathname === "/about" || router.pathname === "/services" || router.pathname === "/team" || router.pathname === "/contact" || router.pathname === "/login" || router.pathname === "/signup" || router.pathname === "/en_index" || router.pathname.startsWith("/en_");
   const isTw = router.pathname === "/tw_index" || router.pathname.startsWith("/tw_");
   const isEs = router.pathname === "/es_index" || router.pathname.startsWith("/es_");
-  const lang = isEn ? "en" : isTw ? "tw" : isEs ? "es" : "en";
+  const isZh = router.pathname === "/zh_index" || router.pathname.startsWith("/zh_");
+  const lang = isEn ? "en" : isTw ? "tw" : isEs ? "es" : isZh ? "zh" : "en";
   const I18N = {
     tw: {
       nav: { index: "生態", services: "服務", about: "我們", team: "團隊", contact: "聯絡" },
       login: "登入",
+    },
+    zh: {
+      nav: { index: "生态", services: "服务", about: "我们", team: "团队", contact: "联系" },
+      login: "登录",
     },
     en: {
       nav: { index: "Home", services: "Services", about: "About", team: "Team", contact: "Contact" },
@@ -27,12 +32,12 @@ const Header = ({ handleHidden }) => {
   };
 
   const href = (key) => {
-    if (key === "index") return isEn ? "/" : isTw ? "/tw_index" : isEs ? "/es_index" : "/";
-    return isEn ? (key === "index" ? "/" : `/${key}`) : isTw ? `/tw_${key}` : isEs ? `/es_${key}` : (key === "index" ? "/" : `/${key}`);
+    if (key === "index") return isEn ? "/" : isTw ? "/tw_index" : isEs ? "/es_index" : isZh ? "/zh_index" : "/";
+    return isEn ? (key === "index" ? "/" : `/${key}`) : isTw ? `/tw_${key}` : isEs ? `/es_${key}` : isZh ? `/zh_${key}` : (key === "index" ? "/" : `/${key}`);
   };
 
   const switchLangRoute = (target) => {
-    const path = router.pathname;
+    const path = router.pathname || router.asPath || "/";
     let key;
     if (path === "/") {
       key = "index";
@@ -42,6 +47,8 @@ const Header = ({ handleHidden }) => {
       key = "index";
     } else if (path === "/es_index") {
       key = "index";
+    } else if (path === "/zh_index") {
+      key = "index";
     } else if (path === "/about" || path === "/services" || path === "/team" || path === "/contact" || path === "/login" || path === "/signup") {
       key = path.replace(/^\//, "");
     } else if (path.startsWith("/en_")) {
@@ -50,6 +57,8 @@ const Header = ({ handleHidden }) => {
       key = path.replace(/^\/tw_/, "");
     } else if (path.startsWith("/es_")) {
       key = path.replace(/^\/es_/, "");
+    } else if (path.startsWith("/zh_")) {
+      key = path.replace(/^\/zh_/, "");
     } else {
       key = path.replace(/^\//, "");
     }
@@ -61,6 +70,21 @@ const Header = ({ handleHidden }) => {
       nextPath = key === "index" ? "/tw_index" : `/tw_${key}`;
     } else if (target === "es") {
       nextPath = key === "index" ? "/es_index" : `/es_${key}`;
+    } else if (target === "zh") {
+      nextPath = key === "index" ? "/zh_index" : `/zh_${key}`;
+    } else {
+      // 如果 target 不匹配任何已知语言，回退到当前路径
+      nextPath = router.asPath || router.pathname || "/";
+    }
+
+    // 空值保护：确保 nextPath 是有效的字符串
+    if (!nextPath || typeof nextPath !== "string") {
+      nextPath = router.asPath || router.pathname || "/";
+    }
+
+    // 最终保护：如果仍然无效，直接返回不执行跳转
+    if (!nextPath || typeof nextPath !== "string") {
+      return;
     }
 
     router.push(nextPath);
@@ -141,11 +165,12 @@ const Header = ({ handleHidden }) => {
               </Link>
 
               <select
-                value={isEn ? "en" : isTw ? "tw" : isEs ? "es" : "en"}
+                value={isEn ? "en" : isTw ? "tw" : isEs ? "es" : isZh ? "zh" : "en"}
                 onChange={(e) => switchLangRoute(e.target.value)}
                 className="btn-primary hover-up-2"
               >
                 <option value="tw">繁體</option>
+                <option value="zh">简体</option>
                 <option value="en">EN</option>
                 <option value="es">ES</option>
               </select>

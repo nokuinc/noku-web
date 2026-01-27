@@ -9,10 +9,11 @@ const MobileMenu = ({ hiddenClass, handleRemove }) => {
   const isEn = router.pathname === "/" || router.pathname === "/about" || router.pathname === "/services" || router.pathname === "/team" || router.pathname === "/contact" || router.pathname === "/login" || router.pathname === "/signup" || router.pathname === "/en_index" || router.pathname.startsWith("/en_");
   const isTw = router.pathname === "/tw_index" || router.pathname.startsWith("/tw_");
   const isEs = router.pathname === "/es_index" || router.pathname.startsWith("/es_");
+  const isZh = router.pathname === "/zh_index" || router.pathname.startsWith("/zh_");
 
   const href = (key) => {
-    if (key === "index") return isEn ? "/" : isTw ? "/tw_index" : isEs ? "/es_index" : "/";
-    return isEn ? (key === "index" ? "/" : `/${key}`) : isTw ? `/tw_${key}` : isEs ? `/es_${key}` : (key === "index" ? "/" : `/${key}`);
+    if (key === "index") return isEn ? "/" : isTw ? "/tw_index" : isEs ? "/es_index" : isZh ? "/zh_index" : "/";
+    return isEn ? (key === "index" ? "/" : `/${key}`) : isTw ? `/tw_${key}` : isEs ? `/es_${key}` : isZh ? `/zh_${key}` : (key === "index" ? "/" : `/${key}`);
   };
 
   const switchLangRoute = (target) => {
@@ -26,6 +27,8 @@ const MobileMenu = ({ hiddenClass, handleRemove }) => {
       key = "index";
     } else if (path === "/es_index") {
       key = "index";
+    } else if (path === "/zh_index") {
+      key = "index";
     } else if (path === "/about" || path === "/services" || path === "/team" || path === "/contact" || path === "/login" || path === "/signup") {
       key = path.replace(/^\//, "");
     } else if (path.startsWith("/en_")) {
@@ -34,6 +37,8 @@ const MobileMenu = ({ hiddenClass, handleRemove }) => {
       key = path.replace(/^\/tw_/, "");
     } else if (path.startsWith("/es_")) {
       key = path.replace(/^\/es_/, "");
+    } else if (path.startsWith("/zh_")) {
+      key = path.replace(/^\/zh_/, "");
     } else {
       key = path.replace(/^\//, "");
     }
@@ -45,6 +50,8 @@ const MobileMenu = ({ hiddenClass, handleRemove }) => {
       nextPath = key === "index" ? "/tw_index" : `/tw_${key}`;
     } else if (target === "es") {
       nextPath = key === "index" ? "/es_index" : `/es_${key}`;
+    } else if (target === "zh") {
+      nextPath = key === "index" ? "/zh_index" : `/zh_${key}`;
     }
 
     router.push(nextPath);
@@ -67,27 +74,27 @@ const MobileMenu = ({ hiddenClass, handleRemove }) => {
           <ul className="mobile-menu">
             <li>
               <Link href={href("index")} className="relative block p-4 text-sm transition-all duration-200 ease-out hover:opacity-90 active:opacity-70 hover:-translate-y-[1px] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/40 focus-visible:ring-offset-2 after:content-[''] after:absolute after:left-0 after:-bottom-1.5 after:h-[2px] after:w-full after:bg-current after:scale-x-0 after:origin-center after:transition-transform after:duration-200 after:ease-out hover:after:scale-x-100 focus-visible:after:scale-x-100">
-                {isEn ? "Home" : isTw ? "首頁" : isEs ? "Inicio" : "Home"}
+                {isEn ? "Home" : isTw ? "首頁" : isZh ? "首页" : isEs ? "Inicio" : "Home"}
               </Link>
             </li>
             <li>
               <Link href={href("services")} className="relative block p-4 text-sm transition-all duration-200 ease-out hover:opacity-90 active:opacity-70 hover:-translate-y-[1px] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/40 focus-visible:ring-offset-2 after:content-[''] after:absolute after:left-0 after:-bottom-1.5 after:h-[2px] after:w-full after:bg-current after:scale-x-0 after:origin-center after:transition-transform after:duration-200 after:ease-out hover:after:scale-x-100 focus-visible:after:scale-x-100">
-                {isEn ? "Services" : isTw ? "服務" : isEs ? "Servicios" : "Services"}
+                {isEn ? "Services" : isTw ? "服務" : isZh ? "服务" : isEs ? "Servicios" : "Services"}
               </Link>
             </li>
             <li>
               <Link href={href("about")} className="relative block p-4 text-sm transition-all duration-200 ease-out hover:opacity-90 active:opacity-70 hover:-translate-y-[1px] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/40 focus-visible:ring-offset-2 after:content-[''] after:absolute after:left-0 after:-bottom-1.5 after:h-[2px] after:w-full after:bg-current after:scale-x-0 after:origin-center after:transition-transform after:duration-200 after:ease-out hover:after:scale-x-100 focus-visible:after:scale-x-100">
-                {isEn ? "About" : isTw ? "我們" : isEs ? "Nosotros" : "About"}
+                {isEn ? "About" : isTw ? "我們" : isZh ? "我们" : isEs ? "Nosotros" : "About"}
               </Link>
             </li>
             <li>
               <Link href={href("team")} className="relative block p-4 text-sm transition-all duration-200 ease-out hover:opacity-90 active:opacity-70 hover:-translate-y-[1px] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/40 focus-visible:ring-offset-2 after:content-[''] after:absolute after:left-0 after:-bottom-1.5 after:h-[2px] after:w-full after:bg-current after:scale-x-0 after:origin-center after:transition-transform after:duration-200 after:ease-out hover:after:scale-x-100 focus-visible:after:scale-x-100">
-                {isEn ? "Team" : isTw ? "團隊" : isEs ? "Equipo" : "Team"}
+                {isEn ? "Team" : isTw ? "團隊" : isZh ? "团队" : isEs ? "Equipo" : "Team"}
               </Link>
             </li>
             <li>
               <Link href={href("contact")} className="relative block p-4 text-sm transition-all duration-200 ease-out hover:opacity-90 active:opacity-70 hover:-translate-y-[1px] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/40 focus-visible:ring-offset-2 after:content-[''] after:absolute after:left-0 after:-bottom-1.5 after:h-[2px] after:w-full after:bg-current after:scale-x-0 after:origin-center after:transition-transform after:duration-200 after:ease-out hover:after:scale-x-100 focus-visible:after:scale-x-100">
-                {isEn ? "Contact" : isTw ? "聯絡" : isEs ? "Contacto" : "Contact"}
+                {isEn ? "Contact" : isTw ? "聯絡" : isZh ? "联系" : isEs ? "Contacto" : "Contact"}
               </Link>
             </li>
           </ul>
@@ -95,11 +102,12 @@ const MobileMenu = ({ hiddenClass, handleRemove }) => {
           {/* 语言切换下拉（B：中文显示 EN，英文显示 中） */}
           <div className="mt-6">
             <select
-              value={isEn ? "en" : isTw ? "tw" : isEs ? "es" : "en"}
+              value={isEn ? "en" : isTw ? "tw" : isEs ? "es" : isZh ? "zh" : "en"}
               onChange={(e) => switchLangRoute(e.target.value)}
               className="btn-primary w-full"
             >
               <option value="tw">繁體</option>
+              <option value="zh">简体</option>
               <option value="en">EN</option>
               <option value="es">ES</option>
             </select>

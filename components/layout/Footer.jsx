@@ -7,7 +7,8 @@ const Footer = () => {
   const isEn = router.pathname === "/" || router.pathname === "/about" || router.pathname === "/services" || router.pathname === "/team" || router.pathname === "/contact" || router.pathname === "/login" || router.pathname === "/signup" || router.pathname === "/en_index" || router.pathname.startsWith("/en_");
   const isTw = router.pathname === "/tw_index" || router.pathname.startsWith("/tw_");
   const isEs = router.pathname === "/es_index" || router.pathname.startsWith("/es_");
-  const lang = isEn ? "en" : isTw ? "tw" : isEs ? "es" : "en";
+  const isZh = router.pathname === "/zh_index" || router.pathname.startsWith("/zh_");
+  const lang = isEn ? "en" : isTw ? "tw" : isEs ? "es" : isZh ? "zh" : "en";
   const I18N = {
     tw: {
       vision: "願景：讓每一份承諾，都成為可信的長期記錄。",
@@ -15,6 +16,13 @@ const Footer = () => {
       mailingAddressValue: "美國州 Hidden Valley Road 359 號",
       contactsTitle: "聯絡方式",
       copyrightPrefix: "版權所有 · 技術支援 ",
+    },
+    zh: {
+      vision: "愿景：让每一份承诺，都成为可信的长期记录。",
+      mailingAddressTitle: "寄信地址",
+      mailingAddressValue: "美国州 Hidden Valley Road 359 号",
+      contactsTitle: "联系方式",
+      copyrightPrefix: "版权所有 · 技术支持 ",
     },
     en: {
       vision: "Vision: Make every commitment a trusted long-term record.",
@@ -31,7 +39,7 @@ const Footer = () => {
       copyrightPrefix: "Todos los derechos reservados · Desarrollado por ",
     },
   };
-  const homeHref = isEn ? "/" : isTw ? "/tw_index" : isEs ? "/es_index" : "/";
+  const homeHref = isEn ? "/" : isTw ? "/tw_index" : isEs ? "/es_index" : isZh ? "/zh_index" : "/";
 
   return (
     <>
