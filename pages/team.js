@@ -45,7 +45,7 @@ const Team = () => {
                 {/* [1] 顶部首屏｜✅ 与 index/about/services 完全同坐标：-mt-24 pt-20 + container px-4 + pt-8 */}
                 <section className="bg-white -mt-12 pt-16 sm:-mt-24 sm:pt-20">
                     <div className="container px-4 mx-auto text-center">
-                        <div className="pt-8 max-w-4xl mx-auto mb-2 max-w-[90vw] sm:max-w-4xl">
+                        <div className="pt-8 max-w-[90vw] sm:max-w-4xl mx-auto mb-2">
                             <h1 className="text-3xl lg:text-5xl lg:leading-normal mb-3 font-bold font-heading text-blueGray-900 wow animate__animated animate__fadeIn break-words">
                                 NoKu LLC <br />
                                 <span className="text-blue-500">我们的团队</span>
