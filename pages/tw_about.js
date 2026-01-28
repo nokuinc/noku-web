@@ -7,10 +7,10 @@ const About = () => {
     <>
       <Layout>
         {/* [1] 頂部首屏｜✅ 純白背景 + 位置對齊 */}
-        <section className="bg-white -mt-24 pt-20">
+        <section id="about" className="bg-white -mt-24 pt-20">
           <div className="container px-4 mx-auto text-center">
             {/* pt-8 確保文字與首頁 index.js 的座標完全對齊 */}
-            <div className="pt-8 max-w-4xl mx-auto mb-2">
+            <div className="pt-8 max-w-4xl mx-auto mb-8">
               
               <h1 className="text-3xl lg:text-5xl lg:leading-normal mb-3 font-bold font-heading text-blueGray-900 wow animate__animated animate__fadeIn">
                 NoKu LLC <br />
@@ -24,8 +24,8 @@ const About = () => {
           </div>
         </section>
 
-        {/* [2] 問題定義卡片 */}
-        <section className="pt-2 pb-20 bg-white">
+        {/* [2] 問題定義卡片｜lg+ 略減上方留白使與首屏更連貫 */}
+        <section className="pt-8 lg:pt-4 lg:-mt-4 pb-20 bg-white">
           <div className="container px-4 mx-auto">
             <div className="flex flex-wrap -mx-3 -mb-6">
               {[
@@ -70,7 +70,7 @@ const About = () => {
               <div className="w-full lg:w-1/2 px-5 lg:pt-0">
                 <h2 className="text-3xl lg:text-4xl font-bold font-heading mb-6 text-blueGray-900">我們不做什麼？</h2>
                 <p className="text-blueGray-600 leading-relaxed mb-8 text-lg min-h-[80px]">
-                  我們堅持中立與客觀，通過設定清晰的業務邊界來保護信譽的真實性。我們不干預交易，只提供證據。
+                  我們堅持中立與客觀，通過設定清晰的業務邊界來保護信譽的真實性。我們不干預交易，只提供證據。我們不處理或託管用戶資金，不提供投資、理財或收益承諾，不介入平台交易或用戶決策。
                 </p>
                 <div className="space-y-4">
                   {[
@@ -79,9 +79,9 @@ const About = () => {
                     { t: "不當仲裁者", d: "我們不代替用戶判斷，也不替任何一方站隊；只提供證據。" },
                     { t: "不佔有你的信用", d: "信用屬於行為發生者；你擁有完全的授權權利與使用邊界。" },
                   ].map((x, i) => (
-                    <div key={i} className="bg-white rounded-2xl p-4 border border-blueGray-100 shadow-sm hover:shadow-md transition-all flex items-start h-[92px]">
-                      <span className="text-blue-500 mr-4 mt-1 text-xl">●</span>
-                      <div>
+                    <div key={i} className="bg-white rounded-2xl py-5 px-5 border border-blueGray-100 shadow-sm hover:shadow-md transition-all flex items-start gap-x-4">
+                      <span className="w-6 h-6 rounded-full bg-blue-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                      <div className="min-w-0 flex-1">
                         <div className="font-bold text-lg text-blueGray-900 leading-tight">{x.t}</div>
                         <div className="text-blueGray-600 text-sm mt-1">{x.d}</div>
                       </div>
@@ -101,7 +101,7 @@ const About = () => {
                 我們不創造信用，只保存事實
               </h2>
               <p className="text-lg mb-8 leading-loose text-blueGray-600">
-                NoKu 是一家專注於事實記錄與驗證基礎設施的技術團隊，長期保持中立、克制與邊界清晰。
+                NoKu 是一家專注於事實記錄與驗證基礎設施的技術團隊，長期保持中立、克制與邊界清晰。<br />nokuinc.com 為 Noku LLC 全球唯一官方官網。
               </p>
             </div>
           </div>

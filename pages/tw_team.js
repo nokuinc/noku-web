@@ -133,45 +133,28 @@ const Team = () => {
             <Layout>
 
                 {/* [1] 頂部首屏｜✅ 與 index/about/services 完全同座標：-mt-24 pt-20 + container px-4 + pt-8 */}
-                <section className="bg-white -mt-24 pt-20">
+                <section id="team" className="bg-white -mt-24 pt-20">
                     <div className="container px-4 mx-auto text-center">
                         <div className="pt-8 max-w-4xl mx-auto mb-2">
                             <h1 className="text-3xl lg:text-5xl lg:leading-normal mb-3 font-bold font-heading text-blueGray-900 wow animate__animated animate__fadeIn break-words">
                                 NoKu LLC <br />
                                 <span className="text-blue-500">我們的團隊</span>
                             </h1>
-
-                            <ul className="flex justify-center mx-auto text-gray-500 text-sm lg:text-sm pb-6 wow animate__animated animate__fadeIn">
-                                <li className="inline-flex items-center">
-                                    <a href="#" className="hover:text-blue-500 text-gray-800">首頁</a>
-                                    <svg fill="currentColor" viewBox="0 0 20 20" className="h-5 w-auto text-gray-300">
-                                        <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"></path>
-                                    </svg>
-                                </li>
-                                <li className="inline-flex items-center text-gray-400">
-                                    團隊
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </section>
 
-                <section className="pt-10 pb-12 bg-blueGray-50">
+                <section className="pt-4 pb-12 bg-blueGray-50">
                     <div className="container px-4 mx-auto">
-                        <div className="max-w-4xl mx-auto mb-12 text-center">
+                        <div className="max-w-4xl mx-auto mb-6 text-center">
                             <span className="inline-block py-1 px-3 text-xs font-semibold bg-blue-100 text-blue-600 rounded-xl wow animate__animated animate__fadeIn" data-wow-delay=".1s">
-                                值得信任的那群人
+                                核心團隊
                             </span>
                             <h2 className="text-3xl md:text-4xl mt-2 mb-4 font-bold font-heading wow animate__animated animate__fadeIn break-words" data-wow-delay=".1s">
-                                不只是合作夥伴 <br />
-                                更像一起把事做成的自己人
+                                長期協作、邊界清晰
                             </h2>
                             <p className="text-blueGray-400 leading-loose wow animate__animated animate__fadeIn break-words" data-wow-delay=".1s">
-                                我們相信，真正的合作不是一次交易，<br />
-                                而是彼此理解、長期信任和共同承擔。<br />
-                                <br />
-                                你看到的不是臨時拼湊的執行者，<br />
-                                而是一群願意為長期合作承擔責任的人。
+                                NoKu 核心團隊負責平台基礎設施與相關建設。長期協作，邊界清晰，持續交付。
                             </p>
                         </div>
 
@@ -220,13 +203,12 @@ const Team = () => {
                 {/* 下面模組保持你原本結構與中文 */}
                 <section className="pt-12">
                     <div className="container text-center">
-                        <div className="max-w-[90vw] sm:max-w-lg mx-auto mb-12">
+                        <div className="max-w-[90vw] sm:max-w-lg mx-auto mb-6">
                             <span className="inline-block py-1 px-3 text-xs font-semibold bg-blue-100 text-blue-600 rounded-xl wow animate__animated animate__fadeIn" data-wow-delay=".1s">
                                 我們的團隊
                             </span>
                             <h2 className="text-3xl md:text-4xl mt-2 mb-4 font-bold font-heading wow animate__animated animate__fadeIn break-words" data-wow-delay=".3s">
-                                核心 <br />
-                                <span className="text-blue-500">建設</span> 團隊
+                                核心<span className="text-blue-500">建設</span>團隊
                             </h2>
                             <p className="text-blueGray-400 leading-loose wow animate__animated animate__fadeIn break-words" data-wow-delay=".1s">
                                 參與 NoKu 平台基礎設施與相關項目建設的核心成員。

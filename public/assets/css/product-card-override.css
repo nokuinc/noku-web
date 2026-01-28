@@ -1,0 +1,28 @@
+/* 产品卡顶部无留白：强制 padding-top 为 0 */
+.product-card {
+  padding-top: 0 !important;
+}
+
+/* WeXun 品牌蓝：LOGO 主蓝色，优先级高于通用标题/继承色 */
+.brand-wexun {
+  color: #3b82f6 !important;
+}
+
+/* YuoBo 品牌绿：LOGO 叶片色，优先级高于通用标题/继承色 */
+.brand-yuobo {
+  color: #66CC33 !important;
+}
+
+/* PledgeDoc 品牌金：加深金/琥珀金，证据感，与 LOGO 同源 */
+.brand-pledgedoc-gold {
+  color: #A88412 !important;
+}
+.border-pledgedoc-gold {
+  border-color: #A88412 !important;
+}
+
+/* 企业价值区块「平台在运行…」不被顶栏遮挡 */
+#values {
+  scroll-margin-top: 120px !important;
+  padding-top: 112px !important;
+}

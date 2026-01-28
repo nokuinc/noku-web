@@ -11,19 +11,21 @@ const Contact = () => {
     const name = form.name?.value?.trim() || "";
     const email = form.email?.value?.trim() || "";
     const dept = form.dept?.value || "一般咨询";
+    const region = form.region?.value || "";
     const message = form.message?.value?.trim() || "";
 
-    const subject = `NOKU Contact | ${dept}${name ? " | " + name : ""}`;
+    const subject = `NOKU Contact | ${dept}${region ? " | " + region : ""}${name ? " | " + name : ""}`;
     const body = [
       `Name: ${name || "-"}`,
       `Email: ${email || "-"}`,
-      `Topic: ${dept}`,
+      `Inquiry Type: ${dept}`,
+      `Region: ${region || "-"}`,
       "",
       "Message:",
       message || "-",
       "",
       "----",
-      "Sent from nokuinc.com contact form",
+      "Sent from nokuinc.com (Noku LLC official website) contact form",
     ].join("\n");
 
     const mailto = `mailto:${toEmail}?subject=${encodeURIComponent(
@@ -37,18 +39,21 @@ const Contact = () => {
     <>
       <Layout>
         {/* ✅ Header 已经 fixed 了，这里不要再用 -mt-24 / pt-40 */}
-        <section className="py-16 pt-20 sm:pt-24 lg:pt-24">
+        <section id="contact" className="py-16 pt-20 sm:pt-24 lg:pt-24">
           <div className="container px-4 mx-auto">
             <div className="flex flex-wrap -mx-3">
               {/* 左侧：联系信息 */}
               <div className="w-full lg:w-1/2 px-3 mb-10 lg:mb-0">
                 <div className="max-w-md">
                   <h2 className="text-3xl lg:text-5xl font-bold font-heading mb-6">
-                    联系 <span className="text-blue-600 text-3xl lg:text-5xl font-bold font-heading">NoKu</span>
+                    联系 <span className="text-blue-600 text-3xl lg:text-5xl font-bold font-heading">Noku LLC</span>
                   </h2>
 
-                  <p className="text-blueGray-400 leading-relaxed mb-8">
-                    如需了解接口集成、技术协作或专业沟通，欢迎与我们联系。
+                  <p className="text-blueGray-400 leading-relaxed mb-4">
+                    nokuinc.com 为 Noku LLC 全球唯一官方官网。Noku LLC 为技术与基础设施提供方，不处理或托管用户资金，不提供投资、理财或收益承诺，不介入平台交易或用户决策。
+                  </p>
+                  <p className="text-blueGray-500 text-sm leading-relaxed mb-8">
+                    合作、尽调、合规及技术咨询的正式沟通入口。
                   </p>
 
                   <div className="flex items-start mb-6">
@@ -101,9 +106,9 @@ const Contact = () => {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-1">数字化运营</h4>
+                      <h4 className="font-bold text-gray-900 mb-1">运营方式</h4>
                       <p className="text-blueGray-400">
-                        Digitally Operated, Remote-first
+                        数字化运营，远程办公
                       </p>
                     </div>
                   </div>
@@ -115,12 +120,11 @@ const Contact = () => {
                 <div className="p-6 sm:p-8 bg-white rounded-2xl shadow-2xl border border-blueGray-100">
                   <form onSubmit={handleSubmit}>
                     <div className="mb-4">
-                      {/* ✅ iOS 防放大：text-base */}
                       <input
                         name="name"
                         className="w-full p-4 text-base font-semibold leading-none bg-blueGray-50 rounded outline-none"
                         type="text"
-                        placeholder="您的姓名"
+                        placeholder="姓名"
                         autoComplete="name"
                       />
                     </div>
@@ -130,39 +134,42 @@ const Contact = () => {
                         name="email"
                         className="w-full p-4 text-base font-semibold leading-none bg-blueGray-50 rounded outline-none"
                         type="email"
-                        placeholder="邮箱地址"
+                        placeholder="邮箱"
                         autoComplete="email"
                       />
                     </div>
 
-                    {/* ✅ 小屏更稳：wrap + gap */}
                     <div className="mb-4 text-sm flex flex-wrap gap-6">
+                      <span className="font-semibold text-blueGray-700">咨询类型：</span>
                       <label className="flex items-center">
-                        <input
-                          className="mr-2"
-                          type="radio"
-                          name="dept"
-                          value="一般咨询"
-                          defaultChecked
-                        />{" "}
-                        一般咨询
+                        <input className="mr-2" type="radio" name="dept" value="一般咨询" defaultChecked /> 一般咨询
                       </label>
                       <label className="flex items-center">
-                        <input
-                          className="mr-2"
-                          type="radio"
-                          name="dept"
-                          value="商务合作"
-                        />{" "}
-                        商务合作
+                        <input className="mr-2" type="radio" name="dept" value="技术咨询" /> 技术咨询
                       </label>
+                      <label className="flex items-center">
+                        <input className="mr-2" type="radio" name="dept" value="商务合作" /> 商务合作
+                      </label>
+                    </div>
+
+                    <div className="mb-4">
+                      <select
+                        name="region"
+                        className="w-full p-4 text-base font-semibold leading-none bg-blueGray-50 rounded outline-none"
+                      >
+                        <option value="">地区（可选）</option>
+                        <option value="亚太">亚太</option>
+                        <option value="美洲">美洲</option>
+                        <option value="欧洲">欧洲</option>
+                        <option value="其他">其他</option>
+                      </select>
                     </div>
 
                     <div className="mb-6">
                       <textarea
                         name="message"
                         className="w-full h-32 p-4 text-base font-semibold leading-relaxed resize-none bg-blueGray-50 rounded outline-none"
-                        placeholder="您的留言..."
+                        placeholder="留言内容"
                       />
                     </div>
 

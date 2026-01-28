@@ -11,19 +11,21 @@ const Contact = () => {
     const name = form.name?.value?.trim() || "";
     const email = form.email?.value?.trim() || "";
     const dept = form.dept?.value || "Consulta General";
+    const region = form.region?.value || "";
     const message = form.message?.value?.trim() || "";
 
-    const subject = `NOKU Contact | ${dept}${name ? " | " + name : ""}`;
+    const subject = `NOKU Contact | ${dept}${region ? " | " + region : ""}${name ? " | " + name : ""}`;
     const body = [
       `Name: ${name || "-"}`,
       `Email: ${email || "-"}`,
-      `Topic: ${dept}`,
+      `Inquiry Type: ${dept}`,
+      `Region: ${region || "-"}`,
       "",
       "Message:",
       message || "-",
       "",
       "----",
-      "Sent from nokuinc.com contact form",
+      "Sent from nokuinc.com (Noku LLC official website) contact form",
     ].join("\n");
 
     const mailto = `mailto:${toEmail}?subject=${encodeURIComponent(
@@ -37,18 +39,21 @@ const Contact = () => {
     <>
       <Layout>
         {/* ✅ Header 已经 fixed 了，这里不要再用 -mt-24 / pt-40 */}
-        <section className="py-16 pt-20 sm:pt-24 lg:pt-24">
+        <section id="contact" className="py-16 pt-20 sm:pt-24 lg:pt-24">
           <div className="container px-4 mx-auto">
             <div className="flex flex-wrap -mx-3">
               {/* 左侧：联系信息 */}
               <div className="w-full lg:w-1/2 px-3 mb-10 lg:mb-0">
                 <div className="max-w-md">
                   <h2 className="text-3xl lg:text-5xl font-bold font-heading mb-6">
-                    Contacta <span className="text-blue-600 text-3xl lg:text-5xl font-bold font-heading">NoKu</span>
+                    Contactar <span className="text-blue-600 text-3xl lg:text-5xl font-bold font-heading">Noku LLC</span>
                   </h2>
 
-                  <p className="text-blueGray-400 leading-relaxed mb-8">
-                    Para consultas sobre integración de API, colaboración técnica o comunicación profesional, contáctenos.
+                  <p className="text-blueGray-400 leading-relaxed mb-4">
+                    nokuinc.com es el único sitio web oficial global de Noku LLC. Noku LLC es un proveedor de tecnología e infraestructura. No maneja ni custodia fondos de usuarios, no ofrece inversión, gestión patrimonial ni promesas de rentabilidad, y no interviene en transacciones de plataformas ni en decisiones de usuarios.
+                  </p>
+                  <p className="text-blueGray-500 text-sm leading-relaxed mb-8">
+                    Canal oficial para alianzas, due diligence, cumplimiento normativo y consultas técnicas.
                   </p>
 
                   <div className="flex items-start mb-6">
@@ -101,9 +106,9 @@ const Contact = () => {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-1">Operaciones Globales</h4>
+                      <h4 className="font-bold text-gray-900 mb-1">Operaciones</h4>
                       <p className="text-blueGray-400">
-                        Presencia Global, Nativamente Digital
+                        Operación digital, trabajo remoto
                       </p>
                     </div>
                   </div>
@@ -115,12 +120,11 @@ const Contact = () => {
                 <div className="p-6 sm:p-8 bg-white rounded-2xl shadow-2xl border border-blueGray-100">
                   <form onSubmit={handleSubmit}>
                     <div className="mb-4">
-                      {/* ✅ iOS 防放大：text-base */}
                       <input
                         name="name"
                         className="w-full p-4 text-base font-semibold leading-none bg-blueGray-50 rounded outline-none"
                         type="text"
-                        placeholder="Tu Nombre"
+                        placeholder="Nombre"
                         autoComplete="name"
                       />
                     </div>
@@ -130,39 +134,42 @@ const Contact = () => {
                         name="email"
                         className="w-full p-4 text-base font-semibold leading-none bg-blueGray-50 rounded outline-none"
                         type="email"
-                        placeholder="Dirección de Correo"
+                        placeholder="Correo"
                         autoComplete="email"
                       />
                     </div>
 
-                    {/* ✅ 小屏更稳：wrap + gap */}
                     <div className="mb-4 text-sm flex flex-wrap gap-6">
+                      <span className="font-semibold text-blueGray-700">Tipo de consulta:</span>
                       <label className="flex items-center">
-                        <input
-                          className="mr-2"
-                          type="radio"
-                          name="dept"
-                          value="Consulta General"
-                          defaultChecked
-                        />{" "}
-                        Consulta General
+                        <input className="mr-2" type="radio" name="dept" value="Consulta General" defaultChecked /> Consulta General
                       </label>
                       <label className="flex items-center">
-                        <input
-                          className="mr-2"
-                          type="radio"
-                          name="dept"
-                          value="Asociación Comercial"
-                        />{" "}
-                        Asociación Comercial
+                        <input className="mr-2" type="radio" name="dept" value="Consulta Técnica" /> Consulta Técnica
                       </label>
+                      <label className="flex items-center">
+                        <input className="mr-2" type="radio" name="dept" value="Asociación Comercial" /> Asociación Comercial
+                      </label>
+                    </div>
+
+                    <div className="mb-4">
+                      <select
+                        name="region"
+                        className="w-full p-4 text-base font-semibold leading-none bg-blueGray-50 rounded outline-none"
+                      >
+                        <option value="">Región (opcional)</option>
+                        <option value="Asia-Pacífico">Asia-Pacífico</option>
+                        <option value="Américas">Américas</option>
+                        <option value="Europa">Europa</option>
+                        <option value="Otro">Otro</option>
+                      </select>
                     </div>
 
                     <div className="mb-6">
                       <textarea
                         name="message"
                         className="w-full h-32 p-4 text-base font-semibold leading-relaxed resize-none bg-blueGray-50 rounded outline-none"
-                        placeholder="Tu Mensaje..."
+                        placeholder="Mensaje"
                       />
                     </div>
 

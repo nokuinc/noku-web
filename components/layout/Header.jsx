@@ -1,11 +1,35 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import { useRouter } from "next/router";
+
+const NAV_KEYS = ["index", "services", "about", "team", "contact"];
+
+const getPageKeyFromPath = (pathname) => {
+  if (!pathname) return "index";
+  if (pathname === "/" || /^\/(en|zh|tw|es)_index$/.test(pathname)) return "index";
+  if (pathname === "/services" || /^\/(en|zh|tw|es)_services$/.test(pathname)) return "services";
+  if (pathname === "/about" || /^\/(en|zh|tw|es)_about$/.test(pathname)) return "about";
+  if (pathname === "/team" || /^\/(en|zh|tw|es)_team$/.test(pathname)) return "team";
+  if (pathname === "/contact" || /^\/(en|zh|tw|es)_contact$/.test(pathname)) return "contact";
+  return "index";
+};
+
+const getSectionIdsForPage = (pageKey) => {
+  if (pageKey === "index") return ["hero", "ecosystem", "values"];
+  return [pageKey];
+};
 
 const Header = ({ handleHidden }) => {
   const router = useRouter();
   const [scroll, setScroll] = useState(0);
+  const [activeNav, setActiveNav] = useState("index");
+  const [underlineStyle, setUnderlineStyle] = useState({ left: 0, width: 0, ready: false });
+  const navContainerRef = useRef(null);
+  const linkRefs = useRef([]);
+  NAV_KEYS.forEach((_, i) => {
+    if (!linkRefs.current[i]) linkRefs.current[i] = { current: null };
+  });
 
   const isEn = router.pathname === "/" || router.pathname === "/about" || router.pathname === "/services" || router.pathname === "/team" || router.pathname === "/contact" || router.pathname === "/login" || router.pathname === "/signup" || router.pathname === "/en_index" || router.pathname.startsWith("/en_");
   const isTw = router.pathname === "/tw_index" || router.pathname.startsWith("/tw_");
@@ -13,78 +37,49 @@ const Header = ({ handleHidden }) => {
   const isZh = router.pathname === "/zh_index" || router.pathname.startsWith("/zh_");
   const lang = isEn ? "en" : isTw ? "tw" : isEs ? "es" : isZh ? "zh" : "en";
   const I18N = {
-    tw: {
-      nav: { index: "生態", services: "服務", about: "我們", team: "團隊", contact: "聯絡" },
-    },
-    zh: {
-      nav: { index: "生态", services: "服务", about: "我们", team: "团队", contact: "联系" },
-    },
-    en: {
-      nav: { index: "Home", services: "Services", about: "About", team: "Team", contact: "Contact" },
-    },
-    es: {
-      nav: { index: "Inicio", services: "Servicios", about: "Nosotros", team: "Equipo", contact: "Contacto" },
-    },
+    tw: { nav: { index: "生態", services: "服務", about: "我們", team: "團隊", contact: "聯絡" } },
+    zh: { nav: { index: "生态", services: "服务", about: "我们", team: "团队", contact: "联系" } },
+    en: { nav: { index: "Home", services: "Services", about: "About", team: "Team", contact: "Contact" } },
+    es: { nav: { index: "Inicio", services: "Servicios", about: "Nosotros", team: "Equipo", contact: "Contacto" } },
   };
 
   const href = (key) => {
     if (key === "index") return isEn ? "/" : isTw ? "/tw_index" : isEs ? "/es_index" : isZh ? "/zh_index" : "/";
-    return isEn ? (key === "index" ? "/" : `/${key}`) : isTw ? `/tw_${key}` : isEs ? `/es_${key}` : isZh ? `/zh_${key}` : (key === "index" ? "/" : `/${key}`);
+    return isEn ? `/${key}` : isTw ? `/tw_${key}` : isEs ? `/es_${key}` : isZh ? `/zh_${key}` : `/${key}`;
   };
 
   const switchLangRoute = (target) => {
     const path = router.pathname || router.asPath || "/";
     let key;
-    if (path === "/") {
-      key = "index";
-    } else if (path === "/en_index") {
-      key = "index";
-    } else if (path === "/tw_index") {
-      key = "index";
-    } else if (path === "/es_index") {
-      key = "index";
-    } else if (path === "/zh_index") {
-      key = "index";
-    } else if (path === "/about" || path === "/services" || path === "/team" || path === "/contact" || path === "/login" || path === "/signup") {
-      key = path.replace(/^\//, "");
-    } else if (path.startsWith("/en_")) {
-      key = path.replace(/^\/en_/, "");
-    } else if (path.startsWith("/tw_")) {
-      key = path.replace(/^\/tw_/, "");
-    } else if (path.startsWith("/es_")) {
-      key = path.replace(/^\/es_/, "");
-    } else if (path.startsWith("/zh_")) {
-      key = path.replace(/^\/zh_/, "");
-    } else {
-      key = path.replace(/^\//, "");
-    }
+    if (path === "/" || /^\/(en|zh|tw|es)_index$/.test(path)) key = "index";
+    else if (/^\/(en|zh|tw|es)_(\w+)$/.test(path)) key = path.replace(/^\/(en|zh|tw|es)_/, "");
+    else if (/^\/(about|services|team|contact|login|signup)$/.test(path)) key = path.replace(/^\//, "");
+    else key = path.replace(/^\//, "") || "index";
 
     let nextPath;
-    if (target === "en") {
-      nextPath = key === "index" ? "/" : `/${key}`;
-    } else if (target === "tw") {
-      nextPath = key === "index" ? "/tw_index" : `/tw_${key}`;
-    } else if (target === "es") {
-      nextPath = key === "index" ? "/es_index" : `/es_${key}`;
-    } else if (target === "zh") {
-      nextPath = key === "index" ? "/zh_index" : `/zh_${key}`;
-    } else {
-      // 如果 target 不匹配任何已知语言，回退到当前路径
-      nextPath = router.asPath || router.pathname || "/";
-    }
+    if (target === "en") nextPath = key === "index" ? "/" : `/${key}`;
+    else if (target === "tw") nextPath = key === "index" ? "/tw_index" : `/tw_${key}`;
+    else if (target === "es") nextPath = key === "index" ? "/es_index" : `/es_${key}`;
+    else if (target === "zh") nextPath = key === "index" ? "/zh_index" : `/zh_${key}`;
+    else nextPath = router.asPath || "/";
 
-    // 空值保护：确保 nextPath 是有效的字符串
-    if (!nextPath || typeof nextPath !== "string") {
-      nextPath = router.asPath || router.pathname || "/";
-    }
-
-    // 最终保护：如果仍然无效，直接返回不执行跳转
-    if (!nextPath || typeof nextPath !== "string") {
-      return;
-    }
-
-    router.push(nextPath);
+    if (nextPath && typeof nextPath === "string") router.push(nextPath);
   };
+
+  const updateUnderline = useCallback(() => {
+    const idx = NAV_KEYS.indexOf(activeNav);
+    if (idx < 0) return;
+    const el = linkRefs.current[idx]?.current;
+    const container = navContainerRef.current;
+    if (!el || !container) return;
+    const cr = container.getBoundingClientRect();
+    const er = el.getBoundingClientRect();
+    setUnderlineStyle({
+      left: er.left - cr.left + container.scrollLeft,
+      width: er.width,
+      ready: true,
+    });
+  }, [activeNav]);
 
   useEffect(() => {
     const onScroll = () => {
@@ -95,66 +90,103 @@ const Header = ({ handleHidden }) => {
     return () => document.removeEventListener("scroll", onScroll);
   }, [scroll]);
 
-  // ✅ 兼容中英文长度：字号更大，但间距做响应式，避免英文挤掉右侧按钮
-  const navLinkClass =
+  useEffect(() => {
+    const pageKey = getPageKeyFromPath(router.pathname);
+    setActiveNav(pageKey);
+  }, [router.pathname]);
+
+  useEffect(() => {
+    const pageKey = getPageKeyFromPath(router.pathname);
+    const ids = getSectionIdsForPage(pageKey);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const intersecting = entries.filter((e) => e.isIntersecting);
+        if (intersecting.length === 0) return;
+        setActiveNav(pageKey);
+      },
+      { root: null, rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+    );
+
+    const nodes = [];
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) {
+        observer.observe(el);
+        nodes.push(el);
+      }
+    });
+
+    return () => nodes.forEach((el) => observer.unobserve(el));
+  }, [router.pathname]);
+
+  useEffect(() => {
+    updateUnderline();
+    const onResize = () => updateUnderline();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [updateUnderline]);
+
+  useEffect(() => {
+    const t = setTimeout(updateUnderline, 100);
+    return () => clearTimeout(t);
+  }, [activeNav, updateUnderline, router.pathname]);
+
+  const handleNavClick = (e, key) => {
+    const pageKey = getPageKeyFromPath(router.pathname);
+    if (pageKey === key) {
+      e.preventDefault();
+      const id = key === "index" ? "hero" : key;
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const navLinkBase =
     "relative inline-flex items-center " +
-    "text-lg lg:text-xl font-semibold tracking-wide " + // 英文更友好
-    "px-4 " + // 每项自身更宽（中文不挤），但不会太占宽
-    "text-blueGray-600 " +
+    "text-lg lg:text-xl font-semibold tracking-wide px-4 " +
     "transition-all duration-200 ease-out " +
     "hover:text-blue-600 hover:bg-blue-50/50 hover:shadow-md hover:rounded-lg " +
     "active:scale-90 active:transition-transform active:duration-150 " +
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/40 focus-visible:ring-offset-2 " +
-    "after:content-[''] after:absolute after:left-0 after:-bottom-1.5 " +
-    "after:h-[3px] after:w-full after:bg-blue-600 after:scale-x-0 after:origin-center after:rounded-full " +
-    "after:transition-transform after:duration-200 after:ease-out " +
-    "hover:after:scale-x-100 focus-visible:after:scale-x-100";
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/40 focus-visible:ring-offset-2 ";
 
   return (
     <>
-      {/* ✅ 去掉 mt-4：消除顶部白边 */}
       <header className={scroll ? "bg-transparent sticky-bar stick" : "bg-transparent sticky-bar"}>
         <div className="container bg-transparent">
           <nav className="bg-transparent flex justify-between items-center py-3">
-            {/* Logo */}
             <Link href="https://nokuinc.com" className="text-3xl font-semibold leading-none">
               <Image className="h-10" src="/assets/imgs/logos/noku-noku.png" alt="NoKu" width={125} height={40} />
             </Link>
 
-            {/* Desktop Menu */}
-            <ul className="hidden lg:flex lg:items-center lg:w-auto lg:space-x-14 xl:space-x-20 2xl:space-x-24">
-              <li className="pt-4 pb-4">
-                <Link href={href("index")} className={navLinkClass}>
-                  {I18N[lang].nav.index}
-                </Link>
-              </li>
-
-              <li className="pt-4 pb-4">
-                <Link href={href("services")} className={navLinkClass}>
-                  {I18N[lang].nav.services}
-                </Link>
-              </li>
-
-              <li className="pt-4 pb-4">
-                <Link href={href("about")} className={navLinkClass}>
-                  {I18N[lang].nav.about}
-                </Link>
-              </li>
-
-              <li className="pt-4 pb-4">
-                <Link href={href("team")} className={navLinkClass}>
-                  {I18N[lang].nav.team}
-                </Link>
-              </li>
-
-              <li className="pt-4 pb-4">
-                <Link href={href("contact")} className={navLinkClass}>
-                  {I18N[lang].nav.contact}
-                </Link>
-              </li>
+            <ul
+              ref={navContainerRef}
+              className="hidden lg:flex lg:items-center lg:w-auto lg:space-x-14 xl:space-x-20 2xl:space-x-24 relative"
+            >
+              {NAV_KEYS.map((key, i) => (
+                <li key={key} ref={linkRefs.current[i]} className="pt-4 pb-4">
+                  <Link
+                    href={href(key)}
+                    onClick={(e) => handleNavClick(e, key)}
+                    className={
+                      navLinkBase +
+                      (activeNav === key ? " text-blue-600 " : " text-blueGray-600 ")
+                    }
+                  >
+                    {I18N[lang].nav[key]}
+                  </Link>
+                </li>
+              ))}
+              {underlineStyle.ready && (
+                <div
+                  className="absolute bottom-0 h-0.5 bg-blue-600 rounded-full pointer-events-none transition-all duration-200 ease-out"
+                  style={{
+                    left: underlineStyle.left,
+                    width: underlineStyle.width,
+                  }}
+                />
+              )}
             </ul>
 
-            {/* Right Buttons */}
             <div className="hidden lg:flex items-center space-x-4">
               <select
                 value={isEn ? "en" : isTw ? "tw" : isEs ? "es" : isZh ? "zh" : "en"}
@@ -168,7 +200,6 @@ const Header = ({ handleHidden }) => {
               </select>
             </div>
 
-            {/* Mobile */}
             <div className="lg:hidden">
               <button
                 className="navbar-burger flex items-center py-2 px-3 text-blue-500 hover:text-blue-700 rounded border border-blue-200 hover:border-blue-300"

@@ -28,6 +28,7 @@ function Home() {
             <Layout>
                 {/* [1] 首页首屏｜定位（Hero） */}
                 <section
+                    id="hero"
                     className="xl:bg-contain bg-top bg-no-repeat -mt-24 pt-20"
                     style={{ backgroundImage: "url('assets/imgs/backgrounds/intersect.svg')" }}
                 >
@@ -91,7 +92,7 @@ function Home() {
                                     </div>
                                     <div className="flex flex-wrap items-center justify-between gap-3">
                                         <div className="text-lg font-bold text-blueGray-900">
-                                            WeXun · YuoBo · PledgeDoc
+                                            <span className="brand-wexun">WeXun</span> · <span className="brand-yuobo">YuoBo</span> · <span className="brand-pledgedoc-gold">PledgeDoc</span>
                                         </div>
                                         <div className="text-sm text-blueGray-500">
                                             微讯 / 优博产出事实 · 诺书记录证明 · 最小披露 · 可授权 · 可撤回
@@ -154,7 +155,7 @@ function Home() {
                 {/* [3] 生态矩阵｜The Ecosystem */}
                 <section className="py-20 bg-blueGray-50" id="ecosystem">
                     <div className="container px-4 mx-auto">
-                        <div className="text-center mt-6 mb-16">
+                        <div className="text-center mt-6 mb-6">
                             <h2 className="text-4xl font-bold font-heading wow animate__animated animate__fadeInDown">
                                 生态矩阵 | The Ecosystem
                             </h2>
@@ -163,43 +164,46 @@ function Home() {
                             </p>
                         </div>
 
-                        <div className="flex flex-wrap -mx-3 text-center">
-                            <div className="w-full md:w-1/2 lg:w-1/3 px-3 mb-6">
+                        <div className="flex flex-wrap items-stretch -mx-3 text-center">
+                            <div className="w-full md:w-1/2 lg:w-1/3 px-3 mb-6 flex flex-col items-stretch">
                                 <a href="https://wexun.com" target="_blank" rel="noopener noreferrer"
-                                    className="block p-12 bg-white shadow rounded hover-up-5 transition duration-500 h-full">
+                                    className="product-card flex flex-col flex-1 min-h-0 h-full bg-white shadow rounded hover-up-5 transition duration-500"
+                                    style={{ paddingTop: 0, paddingLeft: 48, paddingRight: 48, paddingBottom: 48 }}>
                                     <img className="mx-auto mb-4" src="/assets/imgs/icons/wexun.png" alt="WeXun" style={{ width: '216px', height: '216px', objectFit: 'contain', display: 'block' }} />
-                                    <h3 className="mb-2 font-bold font-heading text-2xl text-blue-600">WeXun（微讯）</h3>
+                                    <h3 className="mb-2 font-bold font-heading text-2xl brand-wexun">WeXun（微讯）</h3>
                                     <p className="text-sm font-bold text-brand mb-4 uppercase tracking-widest">
                                         正在运行：用工 / 找工 / 订单
                                     </p>
-                                    <div className="text-sm text-blueGray-400 leading-relaxed text-left">
+                                    <div className="text-sm text-blueGray-400 leading-relaxed text-left min-h-[6rem] flex-1">
                                         <p className="mb-2"><strong>业务领域：</strong>找工 ｜ 用工 ｜ 订单</p>
                                         <p>记录真实用工场景中已完成的任务与履约结果。</p>
                                     </div>
                                 </a>
                             </div>
 
-                            <div className="w-full md:w-1/2 lg:w-1/3 px-3 mb-6">
+                            <div className="w-full md:w-1/2 lg:w-1/3 px-3 mb-6 flex flex-col items-stretch">
                                 <a href="https://yuobo.com" target="_blank" rel="noopener noreferrer"
-                                    className="block p-12 bg-white shadow rounded hover-up-5 transition duration-500 h-full">
+                                    className="product-card flex flex-col flex-1 min-h-0 h-full bg-white shadow rounded hover-up-5 transition duration-500"
+                                    style={{ paddingTop: 0, paddingLeft: 48, paddingRight: 48, paddingBottom: 48 }}>
                                     <img className="mx-auto mb-4" src="/assets/imgs/icons/yuobo.png" alt="YuoBo" style={{ width: '216px', height: '216px', objectFit: 'contain', display: 'block' }} />
-                                    <h3 className="mb-2 font-bold font-heading text-2xl text-blue-600">YuoBo（优博）</h3>
+                                    <h3 className="mb-2 font-bold font-heading text-2xl brand-yuobo">YuoBo（优博）</h3>
                                     <p className="text-sm font-bold text-brand mb-4 uppercase tracking-widest">
                                         正在运行：交易 / 合作 / 对接
                                     </p>
-                                    <div className="text-sm text-blueGray-400 leading-relaxed text-left">
+                                    <div className="text-sm text-blueGray-400 leading-relaxed text-left min-h-[6rem] flex-1">
                                         <p className="mb-2"><strong>业务领域：</strong>二手 ｜ 合作 ｜ 本地服务</p>
                                         <p>记录交易与合作场景中已完成的结果。</p>
                                     </div>
                                 </a>
                             </div>
 
-                            <div className="w-full lg:w-1/3 px-3 mb-6">
+                            <div className="w-full md:w-1/2 lg:w-1/3 px-3 mb-6 flex flex-col items-stretch">
                                 <a
                                     href="https://www.PledgeDoc.com"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="block p-12 bg-white shadow rounded hover-up-5 border-2 border-brand transition duration-500 h-full text-center"
+                                    className="product-card flex flex-col flex-1 min-h-0 h-full bg-white shadow rounded hover-up-5 border-2 border-pledgedoc-gold transition duration-500 text-center"
+                                    style={{ paddingTop: 0, paddingLeft: 48, paddingRight: 48, paddingBottom: 48 }}
                                 >
                                     <img
                                         className="mx-auto mb-4"
@@ -207,13 +211,13 @@ function Home() {
                                         alt="PledgeDoc"
                                         style={{ width: '216px', height: '216px', objectFit: 'contain', display: 'block' }}
                                     />
-                                    <h3 className="mb-2 font-bold font-heading text-2xl text-blue-600">
+                                    <h3 className="mb-2 font-bold font-heading text-2xl brand-pledgedoc-gold">
                                         PledgeDoc（诺书）
                                     </h3>
-                                    <p className="text-sm font-bold text-brand mb-4 uppercase tracking-widest">
+                                    <p className="text-sm font-bold brand-pledgedoc-gold mb-4 uppercase tracking-widest">
                                         底层机制：记录 / 验证 / 出具证明
                                     </p>
-                                    <div className="text-sm text-blueGray-400 leading-relaxed text-left">
+                                    <div className="text-sm text-blueGray-400 leading-relaxed text-left min-h-[6rem] flex-1">
                                         <p className="mb-2">
                                             <strong>核心定位：</strong>事实完成后的长期记录系统
                                         </p>
@@ -233,25 +237,25 @@ function Home() {
                     <div className="container px-4 mx-auto">
                         <div className="flex flex-wrap lg:flex-nowrap items-center lg:gap-16">
                             <div className="w-full lg:w-1/2">
-                                <div className="lg:py-6 wow animate__animated animate__fadeIn" style={{ transform: 'translateY(-35px)' }}>
+                                <div className="lg:py-6 wow animate__animated animate__fadeIn">
                                     <h2 className="text-3xl font-bold font-heading mb-8">三句话秒懂 NoKu 生态</h2>
                                     <div className="space-y-6">
                                         <div className="flex items-start p-4 bg-blue-50 rounded-xl border-l-4 border-blue-500">
                                             <div className="flex-shrink-0 w-8 text-blue-500 font-bold">01</div>
                                             <p className="text-blueGray-700 font-semibold ml-2">
-                                                <strong>在 WeXun（微讯）：</strong>完成用工/订单履约，沉淀可核验的职业事实。
+                                                <strong>在 <span className="brand-wexun">WeXun（微讯）</span>：</strong>完成用工/订单履约，沉淀可核验的职业事实。
                                             </p>
                                         </div>
                                         <div className="flex items-start p-4 bg-blue-50 rounded-xl border-l-4 border-blue-500">
                                             <div className="flex-shrink-0 w-8 text-blue-500 font-bold">02</div>
                                             <p className="text-blueGray-700 font-semibold ml-2">
-                                                <strong>在 YuoBo（优博）：</strong>完成交易/合作结果，沉淀可追溯的生活事实。
+                                                <strong>在 <span className="brand-yuobo">YuoBo（优博）</span>：</strong>完成交易/合作结果，沉淀可追溯的生活事实。
                                             </p>
                                         </div>
                                         <div className="flex items-start p-4 bg-blue-50 rounded-xl border-l-4 border-blue-500">
                                             <div className="flex-shrink-0 w-8 text-blue-500 font-bold">03</div>
                                             <p className="text-blueGray-700 font-semibold ml-2">
-                                                <strong>在 PledgeDoc（诺书）：</strong>只在结果完成后记录与出具证明，让事实可被长期复用。
+                                                <strong>在 <span className="brand-pledgedoc-gold">PledgeDoc（诺书）</span>：</strong>只在结果完成后记录与出具证明，让事实可被长期复用。
                                             </p>
                                         </div>
                                     </div>
@@ -271,17 +275,17 @@ function Home() {
                 </section>
 
                 {/* [5] 企业价值 */}
-                <section className="py-20 bg-blueGray-50" id="values">
+                <section className="pt-28 pb-10 bg-blueGray-50" id="values" style={{ scrollMarginTop: '120px' }}>
                     <div className="container px-4 mx-auto text-center">
                         <h2 className="text-4xl mb-6 font-bold font-heading text-blueGray-900 wow animate__animated animate__fadeInDown">
                             平台在运行 · 事实在发生 · 记录才有意义
                         </h2>
                         <div className="max-w-3xl mx-auto">
-                            <p className="text-lg mb-8 leading-loose text-blueGray-600 wow animate__animated animate__fadeIn">
-                                NoKu 是一家专注于构建事实记录与验证基础设施的技术公司。
+                            <p className="text-lg mb-6 leading-loose text-blueGray-600 wow animate__animated animate__fadeIn">
+                                NoKu 是一家专注于构建事实记录与验证基础设施的技术公司。<br />nokuinc.com 为 Noku LLC 全球唯一官方官网。
                             </p>
                         </div>
-                        <div className="mt-10 w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>
+                        <div className="mt-6 w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>
                     </div>
                 </section>
             </Layout>

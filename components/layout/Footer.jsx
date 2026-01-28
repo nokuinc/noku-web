@@ -40,32 +40,32 @@ const Footer = () => {
   // 标语映射表
   const taglineMap = {
     zh: {
-      ecosystem: "WeXun / YouBo / PledgeDoc：同一事实链路",
-      services: "记录 · 验证 · 证明：平台级基础能力",
-      about: "我们不创造信用，只保存事实",
-      team: "长期协作，边界清晰，持续交付",
-      contact: "技术与合作沟通",
+      ecosystem: "面向多系统环境运行的基础能力层",
+      services: "不介入业务流程，不参与结果判断",
+      about: "仅处理在系统边界之外已完成的行为结果",
+      team: "作为中立能力被集成、调用或替换",
+      contact: "用于技术对接、合规评估与正式合作沟通",
     },
     tw: {
-      ecosystem: "WeXun / YouBo / PledgeDoc：同一事實鏈路",
-      services: "記錄 · 驗證 · 證明：平台級基礎能力",
-      about: "我們不創造信用，只保存事實",
-      team: "長期協作，邊界清晰，持續交付",
-      contact: "技術與合作溝通",
+      ecosystem: "面向多系統環境運行的基礎能力層",
+      services: "不介入業務流程，不參與結果判斷",
+      about: "僅處理在系統邊界之外已完成的行為結果",
+      team: "作為中立能力被集成、調用或替換",
+      contact: "用於技術對接、合規評估與正式合作溝通",
     },
     en: {
-      ecosystem: "WeXun / YouBo / PledgeDoc: one factual chain",
-      services: "Record · Verify · Attest: platform-level capability",
-      about: "We don't create credit, we only preserve facts",
-      team: "Long-term collaboration, clear boundaries, continuous delivery",
-      contact: "Technical and partnership inquiries",
+      ecosystem: "Foundational capability layer for multi-system environments",
+      services: "No involvement in business processes or outcome judgment",
+      about: "Only processes completed behavioral outcomes outside system boundaries",
+      team: "Integrated, invoked, or replaced as neutral capability",
+      contact: "For technical integration, compliance assessment, and formal partnership communication",
     },
     es: {
-      ecosystem: "WeXun / YouBo / PledgeDoc: una misma cadena de hechos",
-      services: "Registrar · Verificar · Atestiguar: capacidad a nivel de plataforma",
-      about: "No creamos crédito; preservamos hechos",
-      team: "Colaboración a largo plazo, límites claros, entrega continua",
-      contact: "Consultas técnicas y de colaboración",
+      ecosystem: "Capa de capacidad fundamental para entornos multi-sistema",
+      services: "Sin involucramiento en procesos de negocio ni en juicios de resultados",
+      about: "Solo procesa resultados de comportamiento completados fuera de los límites del sistema",
+      team: "Integrada, invocada o reemplazada como capacidad neutra",
+      contact: "Para integración técnica, evaluación de cumplimiento y comunicación formal de colaboración",
     },
   };
 
@@ -78,40 +78,40 @@ const Footer = () => {
       companyName: "NoKu LLC",
       companyDesc: "註冊並營運於美國",
       contactsTitle: "聯絡方式",
-      copyrightPrefix: "版權所有 · 技術支援 ",
+      copyrightText: "NoKu 版權所有/法律主體：NoKu LLC",
     },
     zh: {
       companyInfoTitle: "公司信息",
       companyName: "NoKu LLC",
       companyDesc: "注册并运营于美国",
       contactsTitle: "联系方式",
-      copyrightPrefix: "版权所有 · 技术支持 ",
+      copyrightText: "NoKu 版权所有/法律主体：NoKu LLC",
     },
     en: {
       companyInfoTitle: "Company Information",
       companyName: "NoKu LLC",
       companyDesc: "Registered and operating in the United States",
       contactsTitle: "Contact",
-      copyrightPrefix: "All rights reserved · Powered by ",
+      copyrightText: "NoKu All rights reserved/Legal Entity: NoKu LLC",
     },
     es: {
       companyInfoTitle: "Información de la Empresa",
       companyName: "NoKu LLC",
       companyDesc: "Registrada y operando en Estados Unidos",
       contactsTitle: "Contacto",
-      copyrightPrefix: "Todos los derechos reservados · Desarrollado por ",
+      copyrightText: "NoKu Todos los derechos reservados/Entidad legal: NoKu LLC",
     },
   };
   const homeHref = isEn ? "/" : isTw ? "/tw_index" : isEs ? "/es_index" : isZh ? "/zh_index" : "/";
 
   return (
     <>
-      <section className="py-20">
+      <section className="pt-12 pb-8">
         <div
           className="container px-4 mx-auto wow animate__animated animate__fadeIn"
           data-wow-delay=".3s"
         >
-          <div className="flex flex-wrap mb-12 lg:mb-20 -mx-3 text-center lg:text-left">
+          <div className="flex flex-wrap mb-8 lg:mb-10 -mx-3 text-center lg:text-left">
             {/* Logo */}
             <div className="w-full lg:w-1/5 px-3 mb-6 lg:mb-0">
               <Link
@@ -119,9 +119,9 @@ const Footer = () => {
                 className="flex items-center flex-shrink-0 mx-auto lg:mx-0 text-3xl font-semibold leading-none"
               >
                 <Image
-                  width={120}
-                  height={36}
-                  className="h-9 w-auto"
+                  width={267}
+                  height={80}
+                  className="h-20 w-auto"
                   src="/assets/imgs/logos/monst-logo.svg"
                   alt="NoKu"
                 />
@@ -168,14 +168,7 @@ const Footer = () => {
           {/* 底部版权 & 社交 */}
           <div className="flex flex-col lg:flex-row items-center lg:justify-between">
             <p className="text-sm text-blueGray-400">
-              © {new Date().getFullYear()} {I18N[lang].copyrightPrefix}
-              <Link
-                className="text-blue-400"
-                href="https://nokuinc.com"
-                target="_blank"
-              >
-                nokuinc.com
-              </Link>
+              © {new Date().getFullYear()} {I18N[lang].copyrightText}
             </p>
 
             <div className="order-first lg:order-last -mx-2 mb-4 lg:mb-0">

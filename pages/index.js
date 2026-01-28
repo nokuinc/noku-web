@@ -28,6 +28,7 @@ function Home() {
       <Layout>
         {/* [1] Hero */}
         <section
+          id="hero"
           className="xl:bg-contain bg-top bg-no-repeat -mt-24 pt-20"
           style={{ backgroundImage: "url('assets/imgs/backgrounds/intersect.svg')" }}
         >
@@ -94,7 +95,7 @@ function Home() {
                   </div>
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <div className="text-lg font-bold text-blueGray-900">
-                      WeXun · YuoBo · PledgeDoc
+                      <span className="brand-wexun">WeXun</span> · <span className="brand-yuobo">YuoBo</span> · <span className="brand-pledgedoc-gold">PledgeDoc</span>
                     </div>
                     <div className="text-sm text-blueGray-500">
                       Facts Generated · Proofs Issued · Minimal Disclosure ·
@@ -172,7 +173,7 @@ function Home() {
         {/* [3] Ecosystem */}
         <section className="py-20 bg-blueGray-50" id="ecosystem">
           <div className="container px-4 mx-auto">
-            <div className="text-center mt-6 mb-16">
+            <div className="text-center mt-6 mb-6">
               <h2 className="text-4xl font-bold font-heading wow animate__animated animate__fadeInDown">
                 The Ecosystem
               </h2>
@@ -181,75 +182,46 @@ function Home() {
               </p>
             </div>
 
-            <div className="flex flex-wrap -mx-3 text-center">
-              <div className="w-full md:w-1/2 lg:w-1/3 px-3 mb-6">
-                <a
-                  href="https://wexun.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block p-12 bg-white shadow rounded hover-up-5 transition duration-500 h-full"
-                >
-                  <img
-                    className="mx-auto mb-4"
-                    src="/assets/imgs/icons/wexun.png"
-                    alt="WeXun"
-                    style={{ width: '216px', height: '216px', objectFit: 'contain', display: 'block' }}
-                  />
-                  <h3 className="mb-2 font-bold font-heading text-2xl text-blue-600">
-                    WeXun
-                  </h3>
+            <div className="flex flex-wrap items-stretch -mx-3 text-center">
+              <div className="w-full md:w-1/2 lg:w-1/3 px-3 mb-6 flex flex-col items-stretch">
+                <a href="https://wexun.com" target="_blank" rel="noopener noreferrer"
+                  className="product-card flex flex-col flex-1 min-h-0 h-full bg-white shadow rounded hover-up-5 transition duration-500"
+                  style={{ paddingTop: 0, paddingLeft: 48, paddingRight: 48, paddingBottom: 48 }}>
+                  <img className="mx-auto mb-4" src="/assets/imgs/icons/wexun.png" alt="WeXun" style={{ width: '216px', height: '216px', objectFit: 'contain', display: 'block' }} />
+                  <h3 className="mb-2 font-bold font-heading text-2xl brand-wexun">WeXun</h3>
                   <p className="text-sm font-bold text-brand mb-4 uppercase tracking-widest">
                     Live: Labor / Jobs / Orders
                   </p>
-                  <div className="text-sm text-blueGray-400 leading-relaxed text-left">
-                    <p className="mb-2">
-                      <strong>Domain:</strong> Hiring · Work · Orders
-                    </p>
-                    <p>
-                      Capturing real fulfillment and delivery as long-term
-                      verifiable professional facts.
-                    </p>
+                  <div className="text-sm text-blueGray-400 leading-relaxed text-left min-h-[6rem] flex-1">
+                    <p className="mb-2"><strong>Domain:</strong> Hiring · Work · Orders</p>
+                    <p>Capturing real fulfillment and delivery as long-term verifiable professional facts.</p>
                   </div>
                 </a>
               </div>
 
-              <div className="w-full md:w-1/2 lg:w-1/3 px-3 mb-6">
-                <a
-                  href="https://yuobo.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block p-12 bg-white shadow rounded hover-up-5 transition duration-500 h-full"
-                >
-                  <img
-                    className="mx-auto mb-4"
-                    src="/assets/imgs/icons/yuobo.png"
-                    alt="YuoBo"
-                    style={{ width: '216px', height: '216px', objectFit: 'contain', display: 'block' }}
-                  />
-                  <h3 className="mb-2 font-bold font-heading text-2xl text-blue-600">
-                    YuoBo
-                  </h3>
+              <div className="w-full md:w-1/2 lg:w-1/3 px-3 mb-6 flex flex-col items-stretch">
+                <a href="https://yuobo.com" target="_blank" rel="noopener noreferrer"
+                  className="product-card flex flex-col flex-1 min-h-0 h-full bg-white shadow rounded hover-up-5 transition duration-500"
+                  style={{ paddingTop: 0, paddingLeft: 48, paddingRight: 48, paddingBottom: 48 }}>
+                  <img className="mx-auto mb-4" src="/assets/imgs/icons/yuobo.png" alt="YuoBo" style={{ width: '216px', height: '216px', objectFit: 'contain', display: 'block' }} />
+                  <h3 className="mb-2 font-bold font-heading text-2xl brand-yuobo">YuoBo</h3>
                   <p className="text-sm font-bold text-brand mb-4 uppercase tracking-widest">
                     Live: Transactions / Collaboration
                   </p>
-                  <div className="text-sm text-blueGray-400 leading-relaxed text-left">
-                    <p className="mb-2">
-                      <strong>Domain:</strong> Marketplace · Collaboration ·
-                      Local Services
-                    </p>
-                    <p>
-                      Records transaction and collaboration outcomes in marketplace activities.
-                    </p>
+                  <div className="text-sm text-blueGray-400 leading-relaxed text-left min-h-[6rem] flex-1">
+                    <p className="mb-2"><strong>Domain:</strong> Marketplace · Collaboration · Local Services</p>
+                    <p>Records transaction and collaboration outcomes in marketplace activities.</p>
                   </div>
                 </a>
               </div>
 
-              <div className="w-full lg:w-1/3 px-3 mb-6">
+              <div className="w-full md:w-1/2 lg:w-1/3 px-3 mb-6 flex flex-col items-stretch">
                 <a
-                  href="https://pledgedoc.com"
+                  href="https://www.PledgeDoc.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block p-12 bg-white shadow rounded hover-up-5 border-2 border-brand transition duration-500 h-full text-center"
+                  className="product-card flex flex-col flex-1 min-h-0 h-full bg-white shadow rounded hover-up-5 border-2 border-pledgedoc-gold transition duration-500 text-center"
+                  style={{ paddingTop: 0, paddingLeft: 48, paddingRight: 48, paddingBottom: 48 }}
                 >
                   <img
                     className="mx-auto mb-4"
@@ -257,21 +229,18 @@ function Home() {
                     alt="PledgeDoc"
                     style={{ width: '216px', height: '216px', objectFit: 'contain', display: 'block' }}
                   />
-                  <h3 className="mb-2 font-bold font-heading text-2xl text-blue-600">
+                  <h3 className="mb-2 font-bold font-heading text-2xl brand-pledgedoc-gold">
                     PledgeDoc
                   </h3>
-                  <p className="text-sm font-bold text-brand mb-4 uppercase tracking-widest">
+                  <p className="text-sm font-bold brand-pledgedoc-gold mb-4 uppercase tracking-widest">
                     Infrastructure: Record · Verify · Attest
                   </p>
-                  <div className="text-sm text-blueGray-400 leading-relaxed text-left">
+                  <div className="text-sm text-blueGray-400 leading-relaxed text-left min-h-[6rem] flex-1">
                     <p className="mb-2">
-                      <strong>Core Role:</strong> Long-term recording after
-                      completion
+                      <strong>Core Role:</strong> Long-term recording after completion
                     </p>
                     <p>
-                      No scoring, no judgment — only transforming completed
-                      outcomes into verifiable, authorized, and revocable
-                      proofs.
+                      No scoring, no judgment — only transforming completed outcomes into verifiable, authorized, and revocable proofs.
                     </p>
                   </div>
                 </a>
@@ -285,7 +254,7 @@ function Home() {
           <div className="container px-4 mx-auto">
             <div className="flex flex-wrap lg:flex-nowrap items-center lg:gap-16">
               <div className="w-full lg:w-1/2">
-                <div className="lg:py-6 wow animate__animated animate__fadeIn" style={{ transform: 'translateY(-35px)' }}>
+                <div className="lg:py-6 wow animate__animated animate__fadeIn">
                   <h2 className="text-3xl font-bold font-heading mb-8">
                     NoKu in Three Sentences
                   </h2>
@@ -295,7 +264,7 @@ function Home() {
                         01
                       </div>
                       <p className="text-blueGray-700 font-semibold ml-2">
-                        <strong>On WeXun:</strong> Complete jobs and orders to
+                        <strong>On <span className="brand-wexun">WeXun</span>:</strong> Complete jobs and orders to
                         generate verifiable professional facts.
                       </p>
                     </div>
@@ -304,7 +273,7 @@ function Home() {
                         02
                       </div>
                       <p className="text-blueGray-700 font-semibold ml-2">
-                        <strong>On YuoBo:</strong> Complete transactions and
+                        <strong>On <span className="brand-yuobo">YuoBo</span>:</strong> Complete transactions and
                         collaborations to generate traceable life facts.
                       </p>
                     </div>
@@ -313,7 +282,7 @@ function Home() {
                         03
                       </div>
                       <p className="text-blueGray-700 font-semibold ml-2">
-                        <strong>On PledgeDoc:</strong> Record and attest only
+                        <strong>On <span className="brand-pledgedoc-gold">PledgeDoc</span>:</strong> Record and attest only
                         after completion, making facts reusable over time.
                       </p>
                     </div>
@@ -334,17 +303,17 @@ function Home() {
         </section>
 
         {/* [5] Values */}
-        <section className="py-20 bg-blueGray-50" id="values">
+        <section className="pt-28 pb-10 bg-blueGray-50" id="values" style={{ scrollMarginTop: '120px' }}>
           <div className="container px-4 mx-auto text-center">
             <h2 className="text-4xl mb-6 font-bold font-heading text-blueGray-900 wow animate__animated animate__fadeInDown">
               Platforms Run · Facts Happen · Records Matter
             </h2>
             <div className="max-w-3xl mx-auto">
-              <p className="text-lg mb-8 leading-loose text-blueGray-600 wow animate__animated animate__fadeIn">
-                NoKu is a technology company focused on building infrastructure that helps platforms document and verify what has actually happened.
+              <p className="text-lg mb-6 leading-loose text-blueGray-600 wow animate__animated animate__fadeIn">
+                NoKu is a technology company focused on building infrastructure for factual recording and verification.<br />nokuinc.com is the sole global official website of Noku LLC.
               </p>
             </div>
-            <div className="mt-10 w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>
+            <div className="mt-6 w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>
           </div>
         </section>
       </Layout>

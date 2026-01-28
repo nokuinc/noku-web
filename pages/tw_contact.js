@@ -11,19 +11,21 @@ const Contact = () => {
     const name = form.name?.value?.trim() || "";
     const email = form.email?.value?.trim() || "";
     const dept = form.dept?.value || "一般諮詢";
+    const region = form.region?.value || "";
     const message = form.message?.value?.trim() || "";
 
-    const subject = `NOKU Contact | ${dept}${name ? " | " + name : ""}`;
+    const subject = `NOKU Contact | ${dept}${region ? " | " + region : ""}${name ? " | " + name : ""}`;
     const body = [
       `Name: ${name || "-"}`,
       `Email: ${email || "-"}`,
-      `Topic: ${dept}`,
+      `Inquiry Type: ${dept}`,
+      `Region: ${region || "-"}`,
       "",
       "Message:",
       message || "-",
       "",
       "----",
-      "Sent from nokuinc.com contact form",
+      "Sent from nokuinc.com (Noku LLC official website) contact form",
     ].join("\n");
 
     const mailto = `mailto:${toEmail}?subject=${encodeURIComponent(
@@ -37,18 +39,21 @@ const Contact = () => {
     <>
       <Layout>
         {/* ✅ Header 已經 fixed 了，這裡不要再用 -mt-24 / pt-40 */}
-        <section className="py-16 pt-20 sm:pt-24 lg:pt-24">
+        <section id="contact" className="py-16 pt-20 sm:pt-24 lg:pt-24">
           <div className="container px-4 mx-auto">
             <div className="flex flex-wrap -mx-3">
               {/* 左側：聯繫信息 */}
               <div className="w-full lg:w-1/2 px-3 mb-10 lg:mb-0">
                 <div className="max-w-md">
                   <h2 className="text-3xl lg:text-5xl font-bold font-heading mb-6">
-                    聯繫 <span className="text-blue-600 text-3xl lg:text-5xl font-bold font-heading">NoKu</span>
+                    聯繫 <span className="text-blue-600 text-3xl lg:text-5xl font-bold font-heading">Noku LLC</span>
                   </h2>
 
-                  <p className="text-blueGray-400 leading-relaxed mb-8">
-                    如需了解接口集成、技術協作或專業溝通，歡迎與我們聯繫。
+                  <p className="text-blueGray-400 leading-relaxed mb-4">
+                    nokuinc.com 為 Noku LLC 全球唯一官方官網。Noku LLC 為技術與基礎設施提供方，不處理或託管用戶資金，不提供投資、理財或收益承諾，不介入平台交易或用戶決策。
+                  </p>
+                  <p className="text-blueGray-500 text-sm leading-relaxed mb-8">
+                    合作、盡調、合規及技術諮詢的正式溝通入口。
                   </p>
 
                   <div className="flex items-start mb-6">
@@ -187,7 +192,7 @@ const Contact = () => {
                       "
                       style={{ backgroundColor: "#2563EB", color: "#FFFFFF" }}
                     >
-                      提交申請
+                      提交信息
                     </button>
 
                     <p className="mt-4 text-xs text-blueGray-400">

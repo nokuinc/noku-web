@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Head from 'next/head'
 
 import '../public/assets/css/tailwind-built.css'
+import '../public/assets/css/product-card-override.css'
 import Preloader from '../components/elements/Preloader';
 import "swiper/css";
 

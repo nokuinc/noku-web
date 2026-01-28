@@ -24,6 +24,9 @@ module.exports = {
               nokuGold: {
                   DEFAULT: "#EAB308",
               },
+              yuoboGreen: {
+                  DEFAULT: "#66CC33",
+              },
           },
           fontFamily: {
               sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
