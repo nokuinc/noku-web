@@ -14,12 +14,11 @@ const About = () => {
               
               <h1 className="text-3xl lg:text-5xl lg:leading-normal mb-3 font-bold font-heading text-blueGray-900 wow animate__animated animate__fadeIn">
                 NoKu LLC <br />
-                <span className="text-blue-500">我们在解决什么问题？</span>
+                <span className="text-blue-500">用于记录与验证现实行为的技术基础设施。</span>
               </h1>
               
               <p className="mt-6 text-blueGray-400 leading-loose max-w-3xl mx-auto text-xl lg:text-2xl font-medium px-4 wow animate__animated animate__fadeIn">
-                在跨城市、跨国家、跨平台的生活里，信任经常被迫\"从零开始\"。不是因为你不可靠，
-                而是因为缺少一个能长期工作、可验证、可复用的事实记录体系。
+                我们构建事实记录系统，帮助平台记录真实发生的行为。
               </p>
             </div>
           </div>
@@ -50,10 +49,10 @@ const About = () => {
         <section className="py-20 bg-blueGray-50">
           <div className="container px-4 mx-auto">
             <div className="flex flex-wrap -mx-5">
-              <div className="w-full lg:w-1/2 px-5 mb-12 lg:mb-0">
+              <div className="w-full lg:w-1/2 px-5 mb-12 lg:mb-0 lg:pt-0">
                 <h2 className="text-3xl lg:text-4xl font-bold font-heading mb-6 text-blueGray-900">NoKu 是什么？</h2>
                 <p className="text-blueGray-600 leading-relaxed mb-8 text-lg min-h-[80px]">
-                  NoKu（诺库）是一套\"信任数据机制\"，用来把真实行为转化为可验证的信用凭证。它强调长期有效、可迁移、可授权。
+                  NoKu 是一个技术平台，专注构建将真实发生的操作行为转化为可核验和可复用存证的基础设施。我们的服务为不同领域中已完成的行为提供标准化的记录与验证。
                 </p>
                 <div className="space-y-4">
                   {[
@@ -61,14 +60,14 @@ const About = () => {
                     { t: "Verify (验证)", d: "校验记录的完整性与一致性，确保可追溯、可核验。" },
                     { t: "Attest (证明)", d: "以最小披露方式出具\"可信结论\"，不公开不必要的细节。" },
                   ].map((x, i) => (
-                    <div key={i} className="bg-white rounded-2xl p-6 border border-blueGray-100 shadow-sm hover:shadow-md transition-all h-32 flex flex-col justify-center">
-                      <div className="font-bold mb-1 text-xl text-blueGray-900">{x.t}</div>
-                      <div className="text-blueGray-600 text-base">{x.d}</div>
+                    <div key={i} className="bg-white rounded-2xl py-5 px-5 border border-blueGray-100 shadow-sm hover:shadow-md transition-all flex flex-col justify-center">
+                      <div className="font-bold mb-1 text-xl text-blueGray-900 leading-snug">{x.t}</div>
+                      <div className="text-blueGray-600 text-base leading-relaxed">{x.d}</div>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="w-full lg:w-1/2 px-5">
+              <div className="w-full lg:w-1/2 px-5 lg:pt-0">
                 <h2 className="text-3xl lg:text-4xl font-bold font-heading mb-6 text-blueGray-900">我们不做什么？</h2>
                 <p className="text-blueGray-600 leading-relaxed mb-8 text-lg min-h-[80px]">
                   我们坚持中立与客观，通过设定清晰的业务边界来保护信誉的真实性。我们不干预交易，只提供证据。
@@ -81,15 +80,29 @@ const About = () => {
                     { t: "不占有你的信用", d: "信用属于行为发生者；你拥有完全的授权权利与使用边界。" },
                   ].map((x, i) => (
                     <div key={i} className="bg-white rounded-2xl p-4 border border-blueGray-100 shadow-sm hover:shadow-md transition-all flex items-start h-[92px]">
-                      <span className="text-blue-500 mr-4 mt-1">●</span>
+                      <span className="text-blue-500 mr-4 mt-1 text-xl">●</span>
                       <div>
                         <div className="font-bold text-lg text-blueGray-900 leading-tight">{x.t}</div>
-                        <div className="text-blueGray-600 text-sm mt-1">{x.d}</div>
+                        {x.d && <div className="text-blueGray-600 text-sm mt-1">{x.d}</div>}
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* [4] Vision Statement */}
+        <section className="py-20 bg-white">
+          <div className="container px-4 mx-auto">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-4xl mb-6 font-bold font-heading text-blueGray-900">
+                我们不创造信用，只保存事实
+              </h2>
+              <p className="text-lg mb-8 leading-loose text-blueGray-600">
+                NoKu 是一家专注于事实记录与验证基础设施的技术团队，长期保持中立、克制与边界清晰。
+              </p>
             </div>
           </div>
         </section>

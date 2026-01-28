@@ -15,19 +15,15 @@ const Header = ({ handleHidden }) => {
   const I18N = {
     tw: {
       nav: { index: "生態", services: "服務", about: "我們", team: "團隊", contact: "聯絡" },
-      login: "登入",
     },
     zh: {
       nav: { index: "生态", services: "服务", about: "我们", team: "团队", contact: "联系" },
-      login: "登录",
     },
     en: {
       nav: { index: "Home", services: "Services", about: "About", team: "Team", contact: "Contact" },
-      login: "Log In",
     },
     es: {
       nav: { index: "Inicio", services: "Servicios", about: "Nosotros", team: "Equipo", contact: "Contacto" },
-      login: "Iniciar Sesión",
     },
   };
 
@@ -160,19 +156,15 @@ const Header = ({ handleHidden }) => {
 
             {/* Right Buttons */}
             <div className="hidden lg:flex items-center space-x-4">
-              <Link href={href("login")} className="btn-accent hover-up-2">
-                {I18N[lang].login}
-              </Link>
-
               <select
                 value={isEn ? "en" : isTw ? "tw" : isEs ? "es" : isZh ? "zh" : "en"}
                 onChange={(e) => switchLangRoute(e.target.value)}
                 className="btn-primary hover-up-2"
               >
-                <option value="tw">繁體</option>
-                <option value="zh">简体</option>
-                <option value="en">EN</option>
-                <option value="es">ES</option>
+                <option value="tw">繁體中文</option>
+                <option value="zh">简体中文</option>
+                <option value="en">English</option>
+                <option value="es">Español</option>
               </select>
             </div>
 

@@ -9,33 +9,96 @@ const Footer = () => {
   const isEs = router.pathname === "/es_index" || router.pathname.startsWith("/es_");
   const isZh = router.pathname === "/zh_index" || router.pathname.startsWith("/zh_");
   const lang = isEn ? "en" : isTw ? "tw" : isEs ? "es" : isZh ? "zh" : "en";
+  
+  // 根据路由判断页面类型
+  const getPageType = () => {
+    const path = router.pathname;
+    // 生态/首页
+    if (path === "/" || path === "/zh_index" || path === "/tw_index" || path === "/es_index" || path === "/en_index") {
+      return "ecosystem";
+    }
+    // 服务
+    if (path === "/services" || path === "/zh_services" || path === "/tw_services" || path === "/es_services" || path === "/en_services") {
+      return "services";
+    }
+    // 我们
+    if (path === "/about" || path === "/zh_about" || path === "/tw_about" || path === "/es_about" || path === "/en_about") {
+      return "about";
+    }
+    // 团队
+    if (path === "/team" || path === "/zh_team" || path === "/tw_team" || path === "/es_team" || path === "/en_team") {
+      return "team";
+    }
+    // 联系
+    if (path === "/contact" || path === "/zh_contact" || path === "/tw_contact" || path === "/es_contact" || path === "/en_contact") {
+      return "contact";
+    }
+    // 默认返回生态
+    return "ecosystem";
+  };
+
+  // 标语映射表
+  const taglineMap = {
+    zh: {
+      ecosystem: "WeXun / YouBo / PledgeDoc：同一事实链路",
+      services: "记录 · 验证 · 证明：平台级基础能力",
+      about: "我们不创造信用，只保存事实",
+      team: "长期协作，边界清晰，持续交付",
+      contact: "技术与合作沟通",
+    },
+    tw: {
+      ecosystem: "WeXun / YouBo / PledgeDoc：同一事實鏈路",
+      services: "記錄 · 驗證 · 證明：平台級基礎能力",
+      about: "我們不創造信用，只保存事實",
+      team: "長期協作，邊界清晰，持續交付",
+      contact: "技術與合作溝通",
+    },
+    en: {
+      ecosystem: "WeXun / YouBo / PledgeDoc: one factual chain",
+      services: "Record · Verify · Attest: platform-level capability",
+      about: "We don't create credit, we only preserve facts",
+      team: "Long-term collaboration, clear boundaries, continuous delivery",
+      contact: "Technical and partnership inquiries",
+    },
+    es: {
+      ecosystem: "WeXun / YouBo / PledgeDoc: una misma cadena de hechos",
+      services: "Registrar · Verificar · Atestiguar: capacidad a nivel de plataforma",
+      about: "No creamos crédito; preservamos hechos",
+      team: "Colaboración a largo plazo, límites claros, entrega continua",
+      contact: "Consultas técnicas y de colaboración",
+    },
+  };
+
+  const pageType = getPageType();
+  const tagline = taglineMap[lang]?.[pageType] || taglineMap[lang]?.ecosystem || "";
+
   const I18N = {
     tw: {
-      vision: "願景：讓每一份承諾，都成為可信的長期記錄。",
-      mailingAddressTitle: "寄信地址",
-      mailingAddressValue: "美國州 Hidden Valley Road 359 號",
+      companyInfoTitle: "公司資訊",
+      companyName: "NoKu LLC",
+      companyDesc: "註冊並營運於美國",
       contactsTitle: "聯絡方式",
       copyrightPrefix: "版權所有 · 技術支援 ",
     },
     zh: {
-      vision: "愿景：让每一份承诺，都成为可信的长期记录。",
-      mailingAddressTitle: "寄信地址",
-      mailingAddressValue: "美国州 Hidden Valley Road 359 号",
+      companyInfoTitle: "公司信息",
+      companyName: "NoKu LLC",
+      companyDesc: "注册并运营于美国",
       contactsTitle: "联系方式",
       copyrightPrefix: "版权所有 · 技术支持 ",
     },
     en: {
-      vision: "Vision: Make every commitment a trusted long-term record.",
-      mailingAddressTitle: "Mailing Address",
-      mailingAddressValue: "359 Hidden Valley Road, USA",
-      contactsTitle: "Contacts",
+      companyInfoTitle: "Company Information",
+      companyName: "NoKu LLC",
+      companyDesc: "Registered and operating in the United States",
+      contactsTitle: "Contact",
       copyrightPrefix: "All rights reserved · Powered by ",
     },
     es: {
-      vision: "Visión: Hacer de cada compromiso un registro confiable a largo plazo.",
-      mailingAddressTitle: "Dirección Postal",
-      mailingAddressValue: "359 Hidden Valley Road, USA",
-      contactsTitle: "Contactos",
+      companyInfoTitle: "Información de la Empresa",
+      companyName: "NoKu LLC",
+      companyDesc: "Registrada y operando en Estados Unidos",
+      contactsTitle: "Contacto",
       copyrightPrefix: "Todos los derechos reservados · Desarrollado por ",
     },
   };
@@ -69,20 +132,23 @@ const Footer = () => {
             <div className="w-full lg:w-2/5 px-3 mb-8 lg:mb-0">
               <p className="max-w-md mx-auto lg:max-w-full lg:mx-0 lg:pr-32 lg:text-lg text-blueGray-400 leading-relaxed">
                 {isEn || isEs ? (
-                  <>{I18N[lang].vision}</>
+                  <>{tagline}</>
                 ) : (
-                  <><strong>{I18N[lang].vision}</strong></>
+                  <><strong>{tagline}</strong></>
                 )}
               </p>
             </div>
 
-            {/* 地址 */}
+            {/* 公司信息 */}
             <div className="w-full lg:w-1/5 px-3 mb-8 lg:mb-0">
               <p className="mb-2 lg:mb-4 lg:text-lg font-bold font-heading text-blueGray-800">
-                {I18N[lang].mailingAddressTitle}
+                {I18N[lang].companyInfoTitle}
               </p>
               <p className="lg:text-lg text-blueGray-400">
-                {I18N[lang].mailingAddressValue}
+                {I18N[lang].companyName}
+              </p>
+              <p className="lg:text-lg text-blueGray-400">
+                {I18N[lang].companyDesc}
               </p>
             </div>
 
@@ -92,8 +158,8 @@ const Footer = () => {
                 {I18N[lang].contactsTitle}
               </p>
               <p className="lg:text-lg text-blueGray-400">
-                <a href="mailto:nokuinc@outlook.com" className="text-blueGray-400 hover:text-blue-500">
-                  nokuinc@outlook.com
+                <a href="mailto:contact@nokuinc.com" className="text-blueGray-400 hover:text-blue-500">
+                  contact@nokuinc.com
                 </a>
               </p>
             </div>

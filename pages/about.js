@@ -14,12 +14,11 @@ const About = () => {
               
               <h1 className="text-3xl lg:text-5xl lg:leading-normal mb-3 font-bold font-heading text-blueGray-900 wow animate__animated animate__fadeIn">
                 NoKu LLC <br />
-                <span className="text-blue-500">What Problem Are We Solving?</span>
+                <span className="text-blue-500">Technology infrastructure for recording and verifying real-world actions.</span>
               </h1>
               
               <p className="mt-6 text-blueGray-400 leading-loose max-w-3xl mx-auto text-xl lg:text-2xl font-medium px-4 wow animate__animated animate__fadeIn">
-                Across cities, countries, and platforms, trust often has to start from zero—not because you're unreliable,
-                but because we lack a long-running, verifiable, reusable system for recording facts.
+                We build factual recording systems that help platforms document what has actually happened.
               </p>
             </div>
           </div>
@@ -50,10 +49,10 @@ const About = () => {
         <section className="py-20 bg-blueGray-50">
           <div className="container px-4 mx-auto">
             <div className="flex flex-wrap -mx-5">
-              <div className="w-full lg:w-1/2 px-5 mb-12 lg:mb-0">
+              <div className="w-full lg:w-1/2 px-5 mb-12 lg:mb-0 lg:pt-0">
                 <h2 className="text-3xl lg:text-4xl font-bold font-heading mb-6 text-blueGray-900">What is NoKu?</h2>
                 <p className="text-blueGray-600 leading-relaxed mb-8 text-lg min-h-[80px]">
-                  NoKu is a trust-data mechanism that turns real behavior into verifiable trust credentials. It is designed to be durable, portable, and permissioned.
+                  NoKu is a technology platform focused on building infrastructure that transforms real-world operational behavior into verifiable and reusable attestations. Our services provide standardized documentation and verification for completed actions across different domains.
                 </p>
                 <div className="space-y-4">
                   {[
@@ -61,35 +60,46 @@ const About = () => {
                     { t: "Verify", d: "Validate integrity and consistency so records are traceable and auditable." },
                     { t: "Attest", d: "Issue trustworthy conclusions with minimal disclosure—without exposing unnecessary details." },
                   ].map((x, i) => (
-                    <div key={i} className="bg-white rounded-2xl p-6 border border-blueGray-100 shadow-sm hover:shadow-md transition-all h-32 flex flex-col justify-center">
-                      <div className="font-bold mb-1 text-xl text-blueGray-900">{x.t}</div>
-                      <div className="text-blueGray-600 text-base">{x.d}</div>
+                    <div key={i} className="bg-white rounded-2xl py-5 px-5 border border-blueGray-100 shadow-sm hover:shadow-md transition-all flex flex-col justify-center">
+                      <div className="font-bold mb-1 text-xl text-blueGray-900 leading-snug">{x.t}</div>
+                      <div className="text-blueGray-600 text-base leading-relaxed">{x.d}</div>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="w-full lg:w-1/2 px-5">
+              <div className="w-full lg:w-1/2 px-5 lg:pt-0">
                 <h2 className="text-3xl lg:text-4xl font-bold font-heading mb-6 text-blueGray-900">What We Don't Do</h2>
                 <p className="text-blueGray-600 leading-relaxed mb-8 text-lg min-h-[80px]">
-                  We stay neutral and objective, with clear boundaries that protect credibility. We don't intervene in transactions—we provide evidence.
+                  We remain neutral and objective, offering only factual attestation and verification technology:
                 </p>
                 <div className="space-y-4">
                   {[
-                    { t: "No Subjective Scoring", d: "We don't compress complex reality into a single score; we prioritize verifiable factual records." },
-                    { t: "No Matchmaking", d: "We don't become a party to the deal; neutrality is required for long-term credibility." },
-                    { t: "No Arbitration", d: "We don't judge for users or take sides; we provide evidence only." },
-                    { t: "You Own Your Trust", d: "Trust belongs to the actor. You control permissions and usage boundaries." },
+                    { t: "No credit scoring", d: "" },
+                    { t: "No transaction facilitation", d: "" },
+                    { t: "No arbitration functions", d: "" },
+                    { t: "No financial services", d: "" },
                   ].map((x, i) => (
                     <div key={i} className="bg-white rounded-2xl p-4 border border-blueGray-100 shadow-sm hover:shadow-md transition-all flex items-start h-[92px]">
-                      <span className="text-blue-500 mr-4 mt-1">●</span>
+                      <span className="text-blue-500 mr-4 mt-1 text-xl">•</span>
                       <div>
                         <div className="font-bold text-lg text-blueGray-900 leading-tight">{x.t}</div>
-                        <div className="text-blueGray-600 text-sm mt-1">{x.d}</div>
+                        {x.d && <div className="text-blueGray-600 text-sm mt-1">{x.d}</div>}
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* [4] Vision Statement */}
+        <section className="py-20 bg-white">
+          <div className="container px-4 mx-auto">
+            <div className="max-w-4xl mx-auto text-center">
+              <p className="text-blueGray-800 text-lg leading-loose">
+                Vision: To provide standardized factual attestation foundations for digital interactions across organizations.
+              </p>
             </div>
           </div>
         </section>

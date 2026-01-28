@@ -36,31 +36,12 @@ function Home() {
                             <div className="max-w-3xl mx-auto mb-6">
                                 <h1 className="text-3xl lg:text-5xl lg:leading-normal mb-3 font-bold font-heading wow animate__animated animate__fadeIn">
                                     NoKu LLC <br />
-                                    <span className="text-blue-500">微讯 / 优博正在运行中的平台体系</span>
+                                    <span className="text-blue-500">面向用工、交易与验证的平台基础设施。</span>
                                 </h1>
 
-                                <div className="text-blueGray-400 leading-relaxed wow animate__animated animate__fadeIn d-inline text-lg">
-                                    运行逻辑：{" "}
-                                    <div className="typewrite d-inline text-brand font-bold">
-                                        <TextEffect text1="事实先发生" text2="记录再沉淀" />
-                                    </div>
-                                    {" "}· 诺书只在结果完成后出具可核验证明
-                                </div>
-
-                                <div className="mt-4 leading-loose max-w-2xl mx-auto wow animate__animated animate__fadeIn space-y-2">
-                                    <p className="text-blueGray-900">
-                                        <strong>NoKu（诺库）</strong><span className="text-blueGray-400">：不是空中楼阁的"信任概念"，而是一套正在运行的业务平台体系。</span>
-                                    </p>
-                                    <p className="text-blueGray-900">
-                                        <strong className="text-blue-600">WeXun（微讯）</strong><span className="text-blueGray-400">：负责用工、找工与订单履约，产生真实可验证的订单结果。</span>
-                                    </p>
-                                    <p className="text-blueGray-900">
-                                        <strong className="text-green-600">YuoBo（优博）</strong><span className="text-blueGray-400">：负责交易与合作，产生真实完成的交易结果。</span>
-                                    </p>
-                                    <p className="text-blueGray-900">
-                                        <strong className="text-yellow-700">PledgeDoc（诺书）</strong><span className="text-blueGray-400">：仅将已发生的事实记录为可验证凭证（最小披露、可授权）。</span>
-                                    </p>
-                                </div>
+                                <p className="mt-4 text-blueGray-400 leading-loose max-w-2xl mx-auto wow animate__animated animate__fadeIn">
+                                    我们构建底层系统，帮助平台记录真实发生的行为并验证结果。
+                                </p>
 
                             {/* CTA（仅更换文案与链接，不改变结构与样式） */}
                             <div className="mb-8 flex flex-wrap justify-center gap-[14px]">
@@ -79,7 +60,7 @@ function Home() {
                                       transition
                                     "
                                 >
-                                    进入微讯
+                                    了解微讯
                                 </a>
 
                                 <a
@@ -98,7 +79,7 @@ function Home() {
                                       transition
                                     "
                                 >
-                                    进入优博
+                                    了解优博
                                 </a>
                             </div>
 
@@ -186,14 +167,14 @@ function Home() {
                             <div className="w-full md:w-1/2 lg:w-1/3 px-3 mb-6">
                                 <a href="https://wexun.com" target="_blank" rel="noopener noreferrer"
                                     className="block p-12 bg-white shadow rounded hover-up-5 transition duration-500 h-full">
-                                    <img className="h-20 mx-auto mb-4" src="/assets/imgs/icons/wexun.png" alt="WeXun" />
+                                    <img className="mx-auto mb-4" src="/assets/imgs/icons/wexun.png" alt="WeXun" style={{ width: '216px', height: '216px', objectFit: 'contain', display: 'block' }} />
                                     <h3 className="mb-2 font-bold font-heading text-2xl text-blue-600">WeXun（微讯）</h3>
                                     <p className="text-sm font-bold text-brand mb-4 uppercase tracking-widest">
                                         正在运行：用工 / 找工 / 订单
                                     </p>
                                     <div className="text-sm text-blueGray-400 leading-relaxed text-left">
                                         <p className="mb-2"><strong>业务领域：</strong>找工 ｜ 用工 ｜ 订单</p>
-                                        <p>以真实接单、协作与交付为核心，让履约结果可被长期验证与复用。</p>
+                                        <p>记录真实用工场景中已完成的任务与履约结果。</p>
                                     </div>
                                 </a>
                             </div>
@@ -201,14 +182,14 @@ function Home() {
                             <div className="w-full md:w-1/2 lg:w-1/3 px-3 mb-6">
                                 <a href="https://yuobo.com" target="_blank" rel="noopener noreferrer"
                                     className="block p-12 bg-white shadow rounded hover-up-5 transition duration-500 h-full">
-                                    <img className="h-20 mx-auto mb-4" src="/assets/imgs/icons/yuobo.png" alt="YuoBo" />
+                                    <img className="mx-auto mb-4" src="/assets/imgs/icons/yuobo.png" alt="YuoBo" style={{ width: '216px', height: '216px', objectFit: 'contain', display: 'block' }} />
                                     <h3 className="mb-2 font-bold font-heading text-2xl text-blue-600">YuoBo（优博）</h3>
                                     <p className="text-sm font-bold text-brand mb-4 uppercase tracking-widest">
                                         正在运行：交易 / 合作 / 对接
                                     </p>
                                     <div className="text-sm text-blueGray-400 leading-relaxed text-left">
                                         <p className="mb-2"><strong>业务领域：</strong>二手 ｜ 合作 ｜ 本地服务</p>
-                                        <p>以真实成交与协作为核心，把结果沉淀为可追溯事实，建立可持续口碑。</p>
+                                        <p>记录交易与合作场景中已完成的结果。</p>
                                     </div>
                                 </a>
                             </div>
@@ -221,9 +202,10 @@ function Home() {
                                     className="block p-12 bg-white shadow rounded hover-up-5 border-2 border-brand transition duration-500 h-full text-center"
                                 >
                                     <img
-                                        className="h-20 mx-auto mb-4"
+                                        className="mx-auto mb-4"
                                         src="/assets/imgs/icons/pledgedoc.png"
                                         alt="PledgeDoc"
+                                        style={{ width: '216px', height: '216px', objectFit: 'contain', display: 'block' }}
                                     />
                                     <h3 className="mb-2 font-bold font-heading text-2xl text-blue-600">
                                         PledgeDoc（诺书）
@@ -236,8 +218,7 @@ function Home() {
                                             <strong>核心定位：</strong>事实完成后的长期记录系统
                                         </p>
                                         <p>
-                                            不做评分、不制造信用，只把微讯/优博等真实平台的已完成结果，
-                                            转化为可核验、可授权、可撤回的证明凭证（最小披露）。
+                                            为已完成的行为提供标准化验证，不进行评分或担保。
                                         </p>
                                     </div>
                                 </a>
@@ -297,11 +278,7 @@ function Home() {
                         </h2>
                         <div className="max-w-3xl mx-auto">
                             <p className="text-lg mb-8 leading-loose text-blueGray-600 wow animate__animated animate__fadeIn">
-                                我们不做主观评分，也不制造短期标签。价值来自真实业务的长期运行，以及结果可被核验与复用。
-                            </p>
-                            <p className="text-blueGray-500 leading-loose wow animate__animated animate__fadeIn" data-wow-delay=".3s">
-                                通过 WeXun 的用工/订单履约与 YuoBo 的交易/合作结果，PledgeDoc 只负责把"已完成的事实"
-                                沉淀为可验证、可授权、可撤回的记录凭证，为个人、商户与组织提供长期可用的基础记录机制。
+                                NoKu 是一家专注于构建事实记录与验证基础设施的技术公司。
                             </p>
                         </div>
                         <div className="mt-10 w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>

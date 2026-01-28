@@ -46,7 +46,7 @@ const ServiceCard = ({ title, icon, name, description, features, accentColor, bg
         <div className="mb-8 flex justify-center">
           <a href={href} target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 hover:scale-105">
             <div style={{ width: "144px", height: "144px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <img src={`/assets/imgs/icons/${iconFileName}.png`} alt={icon} style={{ maxWidth: "100%", maxHeight: "100%", width: "auto", height: "auto", objectFit: "contain" }} />
+              <img src={`/assets/imgs/icons/${iconFileName}.png`} alt={icon} style={{ width: "216px", height: "216px", objectFit: "contain", display: "block" }} />
             </div>
           </a>
         </div>
@@ -72,48 +72,17 @@ const Services = () => {
       {/* [1] Hero */}
       <section className="bg-white -mt-24 pt-20">
         <div className="container px-4 mx-auto pt-8 text-center">
-          <div className="max-w-6xl mx-auto mb-6">
+          <div className="max-w-6xl mx-auto mb-16">
             <h1 className="text-3xl lg:text-5xl lg:leading-normal mb-8 font-bold font-heading text-blueGray-900">
-              NoKu LLC <br />
-              <span className="text-blue-500">Building Verifiable Trust Across Real-World Scenarios</span>
+              NoKu LLC <br /> <span className="text-blue-500">Building cross-scenario verifiable trust infrastructure</span>
             </h1>
 
-            {/* Short, premium hero statement */}
-            <div className="mt-10 max-w-5xl mx-auto px-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blueGray-200 bg-white text-xs font-semibold tracking-widest text-blueGray-500">
-                CLOSED-LOOP TRUST ECOSYSTEM
-              </div>
-
-              <div className="mt-6 text-blueGray-700 text-xl lg:text-3xl font-medium leading-relaxed">
-                <div className="flex flex-col gap-4">
-                  <div>
-                    <span className="text-blueGray-900 font-extrabold">WeXun</span> and{" "}
-                    <span className="text-blueGray-900 font-extrabold">YuoBo</span>
-                    <span className="mx-2 text-blueGray-400">·</span>
-                    capture real professional fulfillment and everyday transactions
-                  </div>
-
-                  <div className="h-px w-16 bg-blueGray-200 mx-auto lg:mx-0" />
-
-                  <div>
-                    <span className="text-blueGray-900 font-extrabold">PledgeDoc</span>
-                    <span className="mx-2 text-blueGray-400">·</span>
-                    turns facts into <span className="text-blueGray-900 font-extrabold mx-1">verifiable / authorized / reusable</span> proofs
-                  </div>
-
-                  <div className="h-px w-16 bg-blueGray-200 mx-auto lg:mx-0" />
-
-                  <div>
-                    making <span className="text-blueGray-900 font-extrabold mx-1">"keeping promises"</span>
-                    a portable credential across platforms and domains
-                  </div>
-                </div>
-              </div>
-
-              <p className="mt-5 text-blueGray-500 text-sm lg:text-base leading-relaxed">
-                No subjective scoring — only facts and proofs, built for long-term portability.
-              </p>
-            </div>
+            <p className="text-blueGray-400 mt-2 mb-10 text-lg leading-relaxed">
+              Platform services for recording and verifying real-world actions.
+            </p>
+            <p className="text-blueGray-600 mt-4 text-base leading-relaxed">
+              We support technology platforms that record real actions and verify outcomes, covering employment, transactions, and verification infrastructure.
+            </p>
           </div>
 
           <div style={styles.pillRow}>
@@ -133,62 +102,40 @@ const Services = () => {
             <ServiceCard
               title="Professional Fulfillment & Efficiency Hub"
               icon="WeXun"
-              name="WeXun"
+              name="WeXun（微讯）"
               accentColor="#3b82f6"
               bgGradient="linear-gradient(180deg, rgba(59,130,246,0.04) 0%, #ffffff 50%)"
-              description={{ bold: "Deliver work. Record your professional value.", normal: "Every handoff and collaboration becomes a verifiable fulfillment record." }}
+              description={{ bold: "Fulfilled work, recorded outcomes.", normal: "A platform for job and task fulfillment, recording completed work outcomes and supporting factual recording and verification." }}
               features={["Traceable collaboration, verifiable results", "Precise matching of skills and needs", "Long-term professional credibility"]}
             />
             <ServiceCard
               title="Everyday Transactions & Reputation Community"
               icon="YuoBo"
-              name="YuoBo"
+              name="YuoBo（优博）"
               accentColor="#FF9500"
               bgGradient="linear-gradient(180deg, rgba(255,149,0,0.05) 0%, #ffffff 50%)"
-              description={{ bold: "Honest deals. Build real-life reputation.", normal: "Reputation should be grounded in what actually happened — not impressions." }}
+              description={{ bold: "Honest transactions, accumulating life reputation.", normal: "Let reputation be built on \"what actually happened\" rather than \"subjective impressions\", while supporting factual recording and verification." }}
               features={["Real identity and transaction trails", "Disputes are traceable, responsibilities clearer", "Reusable reputation built on facts"]}
             />
             <ServiceCard
               title="Proof Infrastructure & Trust Ledger"
               icon="PledgeDoc"
-              name="PledgeDoc"
+              name="PledgeDoc（诺书）"
               accentColor="#B8860B"
               bgGradient="linear-gradient(180deg, rgba(184,134,11,0.06) 0%, #ffffff 50%)"
-              description={{ bold: "Behavior becomes assets. Keeping promises creates value.", normal: "No judging, no endorsement — only standardized recording, issuance, and verification." }}
+              description={{ bold: "Verification only after completion.", normal: "Standardized verification for completed actions, providing attestation APIs without scoring or guarantees." }}
               features={["Verifiable behavior records", "Cross-platform trust mapping", "Institution-grade authorization APIs"]}
             />
           </div>
 
           <div className="max-w-6xl mx-auto text-center mt-20 px-6 py-12 rounded-3xl border border-blueGray-100 bg-blueGray-50/50">
             <div className="text-blueGray-800 leading-loose font-medium text-lg md:text-xl">
-              <span className="block">
-                NoKu is not just a stack of technologies — it is a redesign of how people coordinate and collaborate.
-              </span>
-
-              <span className="block mt-2">
-                By turning real fulfillment into accumulative digital assets,
-                we build an ecosystem where "keeping promises" compounds over time.
-              </span>
-
-              <span className="block mt-2">
-                Here, integrity is no longer a slogan — it becomes practical value that works across scenarios.
-              </span>
-
-              <span className="block mt-4 font-bold text-blueGray-900">
-                <span className="block">
-                  We are building more than a tool — a compounding trust system:
-                </span>
-
-                <span className="block mt-2 font-normal text-blueGray-800">
-                  rewarding promise-keepers in every interaction,
-                  building long-term social reputation;
-                </span>
-
-                <span className="block mt-2 font-normal text-blueGray-800">
-                  and making deception hard to hide under transparent factual trails — trust becomes the strongest pass in the digital era.
-                </span>
-              </span>
-
+              <h1 className="text-4xl mb-6 font-bold font-heading text-blueGray-900">
+                Record what has happened, making services verifiable
+              </h1>
+              <p>
+                NoKu provides platform-level infrastructure that enables different systems and services to record, verify, and reuse real behavioral outcomes.
+              </p>
             </div>
           </div>
         </div>

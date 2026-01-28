@@ -37,28 +37,12 @@ function Home() {
                 <h1 className="text-3xl lg:text-5xl lg:leading-normal mb-3 font-bold font-heading wow animate__animated animate__fadeIn">
                   NoKu LLC <br />
                   <span className="text-blue-500">
-                    A Live Ecosystem Powered by WeXun & Yuobo
+                    Platform infrastructure for jobs, marketplace, and verification.
                   </span>
                 </h1>
 
-                <div className="text-blueGray-400 leading-relaxed wow animate__animated animate__fadeIn d-inline text-lg">
-                  Operating Logic:{" "}
-                  <div className="typewrite d-inline text-brand font-bold">
-                    <TextEffect
-                      text1="Facts Happen First"
-                      text2="Records Come After"
-                    />
-                  </div>{" "}
-                  · PledgeDoc issues verifiable proofs only after completion
-                </div>
-
                 <p className="mt-4 text-blueGray-400 leading-loose max-w-2xl mx-auto wow animate__animated animate__fadeIn">
-                  NoKu is not an abstract concept of trust, but a real operating
-                  system in motion.{" "}
-                  <strong className="text-blue-600">WeXun</strong> captures real-world labor, jobs, and order
-                  fulfillment. <strong className="text-green-600">Yuobo</strong> captures real transaction
-                  and collaboration outcomes. <strong className="text-yellow-700">PledgeDoc</strong> only
-                  records facts that have occurred as verifiable credentials (minimal disclosure, authorization).
+                  We build underlying systems that help platforms record real actions and verify results.
                 </p>
               </div>
 
@@ -79,7 +63,7 @@ function Home() {
                     transition
                   "
                 >
-                  Enter WeXun
+                  Learn about WeXun
                 </a>
 
                 <a
@@ -98,7 +82,7 @@ function Home() {
                     transition
                   "
                 >
-                  Enter Yuobo
+                  Learn about Yuobo
                 </a>
               </div>
 
@@ -110,11 +94,11 @@ function Home() {
                   </div>
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <div className="text-lg font-bold text-blueGray-900">
-                      WeXun · Yuobo · PledgeDoc
+                      WeXun · YuoBo · PledgeDoc
                     </div>
                     <div className="text-sm text-blueGray-500">
-                      Facts Generated · Proofs Issued · Minimal Disclosure ·
-                      Authorized · Revocable
+                      WeXun / YuoBo produce facts · PledgeDoc records and attests
+                      · Minimal disclosure · Authorizable · Revocable
                     </div>
                   </div>
                 </div>
@@ -190,10 +174,11 @@ function Home() {
           <div className="container px-4 mx-auto">
             <div className="text-center mt-6 mb-16">
               <h2 className="text-4xl font-bold font-heading wow animate__animated animate__fadeInDown">
-                The Ecosystem
+                Ecosystem Matrix | The Ecosystem
               </h2>
               <p className="text-blueGray-400 mt-2 text-lg leading-relaxed">
-                WeXun & Yuobo generate facts · PledgeDoc records results
+                WeXun and YuoBo produce facts · PledgeDoc only does long-term
+                recording after completion
               </p>
             </div>
 
@@ -206,23 +191,23 @@ function Home() {
                   className="block p-12 bg-white shadow rounded hover-up-5 transition duration-500 h-full"
                 >
                   <img
-                    className="h-20 mx-auto mb-4"
+                    className="mx-auto mb-4"
                     src="/assets/imgs/icons/wexun.png"
                     alt="WeXun"
+                    style={{ width: '216px', height: '216px', objectFit: 'contain', display: 'block' }}
                   />
                   <h3 className="mb-2 font-bold font-heading text-2xl text-blue-600">
-                    WeXun
+                    WeXun（微讯）
                   </h3>
                   <p className="text-sm font-bold text-brand mb-4 uppercase tracking-widest">
                     Live: Labor / Jobs / Orders
                   </p>
                   <div className="text-sm text-blueGray-400 leading-relaxed text-left">
                     <p className="mb-2">
-                      <strong>Domain:</strong> Hiring · Work · Orders
+                      <strong>Domain:</strong> Job seeking · Labor · Orders
                     </p>
                     <p>
-                      Capturing real fulfillment and delivery as long-term
-                      verifiable professional facts.
+                      Records completed jobs and task outcomes in real-world work scenarios.
                     </p>
                   </div>
                 </a>
@@ -236,24 +221,25 @@ function Home() {
                   className="block p-12 bg-white shadow rounded hover-up-5 transition duration-500 h-full"
                 >
                   <img
-                    className="h-20 mx-auto mb-4"
+                    className="mx-auto mb-4"
                     src="/assets/imgs/icons/yuobo.png"
-                    alt="Yuobo"
+                    alt="YuoBo"
+                    style={{ width: '216px', height: '216px', objectFit: 'contain', display: 'block' }}
                   />
                   <h3 className="mb-2 font-bold font-heading text-2xl text-blue-600">
-                    Yuobo
+                    YuoBo（优博）
                   </h3>
                   <p className="text-sm font-bold text-brand mb-4 uppercase tracking-widest">
                     Live: Transactions / Collaboration
                   </p>
                   <div className="text-sm text-blueGray-400 leading-relaxed text-left">
                     <p className="mb-2">
-                      <strong>Domain:</strong> Marketplace · Collaboration ·
-                      Local Services
+                      <strong>Domain:</strong> Second-hand · Collaboration ·
+                      Local services
                     </p>
                     <p>
-                      Turning completed deals and cooperation into traceable,
-                      reusable facts.
+                      Records completed outcomes in transaction and
+                      collaboration scenarios.
                     </p>
                   </div>
                 </a>
@@ -267,25 +253,24 @@ function Home() {
                   className="block p-12 bg-white shadow rounded hover-up-5 border-2 border-brand transition duration-500 h-full text-center"
                 >
                   <img
-                    className="h-20 mx-auto mb-4"
+                    className="mx-auto mb-4"
                     src="/assets/imgs/icons/pledgedoc.png"
                     alt="PledgeDoc"
+                    style={{ width: '216px', height: '216px', objectFit: 'contain', display: 'block' }}
                   />
                   <h3 className="mb-2 font-bold font-heading text-2xl text-blue-600">
-                    PledgeDoc
+                    PledgeDoc（诺书）
                   </h3>
                   <p className="text-sm font-bold text-brand mb-4 uppercase tracking-widest">
                     Infrastructure: Record · Verify · Attest
                   </p>
                   <div className="text-sm text-blueGray-400 leading-relaxed text-left">
                     <p className="mb-2">
-                      <strong>Core Role:</strong> Long-term recording after
-                      completion
+                      <strong>Core role:</strong> Long-term recording system after
+                      facts are completed
                     </p>
                     <p>
-                      No scoring, no judgment — only transforming completed
-                      outcomes into verifiable, authorized, and revocable
-                      proofs.
+                      Provides standardized verification for completed actions, without scoring or guarantees.
                     </p>
                   </div>
                 </a>
@@ -301,7 +286,7 @@ function Home() {
               <div className="w-full lg:w-1/2">
                 <div className="lg:py-6 wow animate__animated animate__fadeIn" style={{ transform: 'translateY(-35px)' }}>
                   <h2 className="text-3xl font-bold font-heading mb-8">
-                    NoKu in Three Sentences
+                    NoKu ecosystem in three sentences
                   </h2>
                   <div className="space-y-6">
                     <div className="flex items-start p-4 bg-blue-50 rounded-xl border-l-4 border-blue-500">
@@ -309,8 +294,8 @@ function Home() {
                         01
                       </div>
                       <p className="text-blueGray-700 font-semibold ml-2">
-                        <strong>On WeXun:</strong> Complete jobs and orders to
-                        generate verifiable professional facts.
+                        <strong>On WeXun（微讯）:</strong> Fulfill jobs and orders
+                        to accumulate verifiable professional facts.
                       </p>
                     </div>
                     <div className="flex items-start p-4 bg-blue-50 rounded-xl border-l-4 border-blue-500">
@@ -318,8 +303,8 @@ function Home() {
                         02
                       </div>
                       <p className="text-blueGray-700 font-semibold ml-2">
-                        <strong>On Yuobo:</strong> Complete transactions and
-                        collaborations to generate traceable life facts.
+                        <strong>On YuoBo（优博）:</strong> Complete transactions
+                        and collaborations to accumulate traceable life facts.
                       </p>
                     </div>
                     <div className="flex items-start p-4 bg-blue-50 rounded-xl border-l-4 border-blue-500">
@@ -327,13 +312,13 @@ function Home() {
                         03
                       </div>
                       <p className="text-blueGray-700 font-semibold ml-2">
-                        <strong>On PledgeDoc:</strong> Record and attest only
-                        after completion, making facts reusable over time.
+                        <strong>On PledgeDoc（诺书）:</strong> Record and attest
+                        only after completion, making facts reusable over time.
                       </p>
                     </div>
                   </div>
                   <p className="mt-8 text-blueGray-400 italic">
-                    Logic: Facts First → Records Second → Authorized Proofs
+                    Logic: Facts first → Records then → Proofs authorizable
                   </p>
                 </div>
               </div>
@@ -355,18 +340,10 @@ function Home() {
             </h2>
             <div className="max-w-3xl mx-auto">
               <p className="text-lg mb-8 leading-loose text-blueGray-600 wow animate__animated animate__fadeIn">
-                We do not score subjectively or create short-term labels. Value
-                comes from long-term real operations and verifiable outcomes.
+                NoKu is a technology company focused on building infrastructure
+                for factual recording and verification.
               </p>
-              <p
-                className="text-blueGray-500 leading-loose wow animate__animated animate__fadeIn"
-                data-wow-delay=".3s"
-              >
-                Through WeXun’s fulfillment and Yuobo’s completed transactions,
-                PledgeDoc converts finished facts into verifiable, authorized,
-                and revocable records — a long-term foundation for individuals,
-                merchants, and organizations.
-              </p>
+
             </div>
             <div className="mt-10 w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>
           </div>

@@ -14,12 +14,11 @@ const About = () => {
               
               <h1 className="text-3xl lg:text-5xl lg:leading-normal mb-3 font-bold font-heading text-blueGray-900 wow animate__animated animate__fadeIn">
                 NoKu LLC <br />
-                <span className="text-blue-500">¿Qué Problema Estamos Resolviendo?</span>
+                <span className="text-blue-500">Infraestructura tecnológica para registrar y verificar acciones del mundo real.</span>
               </h1>
               
               <p className="mt-6 text-blueGray-400 leading-loose max-w-3xl mx-auto text-xl lg:text-2xl font-medium px-4 wow animate__animated animate__fadeIn">
-                A través de ciudades, países y plataformas, la confianza a menudo tiene que empezar desde cero—no porque no seas confiable,
-                sino porque carecemos de un sistema de larga duración, verificable y reutilizable para registrar hechos.
+                Construimos sistemas de registro factual que ayudan a las plataformas a registrar acciones reales que han ocurrido.
               </p>
             </div>
           </div>
@@ -30,9 +29,9 @@ const About = () => {
           <div className="container px-4 mx-auto">
             <div className="flex flex-wrap -mx-3 -mb-6">
               {[
-                { title: "La Confianza Es Demasiado Costosa", desc: "En trabajo, transacciones o comunidades desconocidas, debes demostrarte repetidamente para ganar confianza." },
-                { title: "La Reputación No Puede Viajar", desc: "Los registros construidos en la Plataforma A no pueden usarse en el Escenario B. La reputación se fragmenta, obligando a las personas a empezar de nuevo." },
-                { title: "Las Calificaciones No Son Hechos", desc: "Las puntuaciones se distorsionan fácilmente—emoción, manipulación, represalia, sesgo. A largo plazo, solo los hechos verificables son confiables." },
+                { title: "La Confianza Es Demasiado Costosa", desc: "En colaboración desconocida, transacciones desconocidas y comunidades desconocidas, cada vez que se construye confianza requiere demostrarse a sí mismo nuevamente." },
+                { title: "El Crédito No Puede Cruzar Escenarios", desc: "Los registros acumulados en la Plataforma A no pueden usarse en el Escenario B. La reputación está fragmentada por las plataformas, obligando a los individuos a invertir repetidamente." },
+                { title: "Los Sistemas de Calificación No Son Hechos", desc: "Las calificaciones se distorsionan fácilmente: emocionales, reseñas falsas, represalias, sesgos. A largo plazo, solo los \"hechos verificables\" son más confiables." },
               ].map((item, idx) => (
                 <div key={idx} className="w-full md:w-1/3 px-3 mb-6">
                   <div className="h-full bg-white rounded-2xl p-8 border-2 border-blueGray-100 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
@@ -53,35 +52,35 @@ const About = () => {
               <div className="w-full lg:w-1/2 px-5 mb-12 lg:mb-0">
                 <h2 className="text-3xl lg:text-4xl font-bold font-heading mb-6 text-blueGray-900">¿Qué es NoKu?</h2>
                 <p className="text-blueGray-600 leading-relaxed mb-8 text-lg min-h-[80px]">
-                  NoKu es un mecanismo de datos de confianza que convierte el comportamiento real en credenciales de confianza verificables. Está diseñado para ser duradero, portable y con permisos.
+                  NoKu es una plataforma tecnológica enfocada en construir infraestructura que transforma comportamientos operativos reales en attestaciones verificables y reutilizables. Nuestros servicios proporcionan registro y verificación estandarizados para acciones completadas en diferentes dominios.
                 </p>
                 <div className="space-y-4">
                   {[
-                    { t: "Registrar", d: "Registrar el cumplimiento y los resultados de transacciones reales para formar un rastro estructurado." },
-                    { t: "Verificar", d: "Validar la integridad y consistencia para que los registros sean rastreables y auditables." },
-                    { t: "Atestiguar", d: "Emitir conclusiones confiables con divulgación mínima—sin exponer detalles innecesarios." },
+                    { t: "Record (记录)", d: "Registrar resultados reales de cumplimiento y transacciones que han ocurrido, formando rastros estructurados." },
+                    { t: "Verify (验证)", d: "Verificar la integridad y consistencia de los registros, asegurando trazabilidad y verificabilidad." },
+                    { t: "Attest (证明)", d: "Emitir \"conclusiones confiables\" con divulgación mínima, sin revelar detalles innecesarios." },
                   ].map((x, i) => (
-                    <div key={i} className="bg-white rounded-2xl p-6 border border-blueGray-100 shadow-sm hover:shadow-md transition-all h-32 flex flex-col justify-center">
-                      <div className="font-bold mb-1 text-xl text-blueGray-900">{x.t}</div>
-                      <div className="text-blueGray-600 text-base">{x.d}</div>
+                    <div key={i} className="bg-white rounded-2xl py-5 px-5 border border-blueGray-100 shadow-sm hover:shadow-md transition-all flex flex-col justify-center">
+                      <div className="font-bold mb-1 text-xl text-blueGray-900 leading-snug">{x.t}</div>
+                      <div className="text-blueGray-600 text-base leading-relaxed">{x.d}</div>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="w-full lg:w-1/2 px-5">
+              <div className="w-full lg:w-1/2 px-5 lg:pt-0">
                 <h2 className="text-3xl lg:text-4xl font-bold font-heading mb-6 text-blueGray-900">Lo Que No Hacemos</h2>
                 <p className="text-blueGray-600 leading-relaxed mb-8 text-lg min-h-[80px]">
-                  Nos mantenemos neutrales y objetivos, con límites claros que protegen la credibilidad. No intervenimos en transacciones—proporcionamos evidencia.
+                  Adherimos a la neutralidad y objetividad, protegiendo la autenticidad de la reputación estableciendo límites comerciales claros. No intervenimos en transacciones, solo proporcionamos evidencia.
                 </p>
                 <div className="space-y-4">
                   {[
-                    { t: "Sin Puntuación Subjetiva", d: "No comprimimos la realidad compleja en una sola puntuación; priorizamos registros fácticos verificables." },
-                    { t: "Sin Emparejamiento", d: "No nos convertimos en parte del acuerdo; la neutralidad es necesaria para la credibilidad a largo plazo." },
-                    { t: "Sin Arbitraje", d: "No juzgamos por los usuarios ni tomamos partido; solo proporcionamos evidencia." },
-                    { t: "Tú Posees Tu Confianza", d: "La confianza pertenece al actor. Tú controlas los permisos y límites de uso." },
+                    { t: "No Hacemos Calificación Subjetiva", d: "No comprimimos la realidad compleja en una sola puntuación; valoramos más los registros fácticos verificables." },
+                    { t: "No Hacemos Emparejamiento de Transacciones", d: "No nos convertimos en partes interesadas; mantener la neutralidad asegura credibilidad a largo plazo." },
+                    { t: "No Somos Arbitradores", d: "No juzgamos por los usuarios, ni tomamos partido por ninguna parte; solo proporcionamos evidencia." },
+                    { t: "No Poseemos Tu Crédito", d: "El crédito pertenece al actor; tienes derechos de autorización completos y límites de uso." },
                   ].map((x, i) => (
                     <div key={i} className="bg-white rounded-2xl p-4 border border-blueGray-100 shadow-sm hover:shadow-md transition-all flex items-start h-[92px]">
-                      <span className="text-blue-500 mr-4 mt-1">●</span>
+                      <span className="text-blue-500 mr-4 mt-1 text-xl">●</span>
                       <div>
                         <div className="font-bold text-lg text-blueGray-900 leading-tight">{x.t}</div>
                         <div className="text-blueGray-600 text-sm mt-1">{x.d}</div>
@@ -90,6 +89,20 @@ const About = () => {
                   ))}
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* [4] Vision Statement */}
+        <section className="py-20 bg-white">
+          <div className="container px-4 mx-auto">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-4xl mb-6 font-bold font-heading text-blueGray-900">
+                No creamos crédito, solo preservamos hechos
+              </h2>
+              <p className="text-lg mb-8 leading-loose text-blueGray-600">
+                NoKu es un equipo técnico enfocado en infraestructura de registro y verificación de hechos, manteniendo neutralidad, moderación y límites claros a largo plazo.
+              </p>
             </div>
           </div>
         </section>

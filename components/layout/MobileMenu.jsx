@@ -106,10 +106,10 @@ const MobileMenu = ({ hiddenClass, handleRemove }) => {
               onChange={(e) => switchLangRoute(e.target.value)}
               className="btn-primary w-full"
             >
-              <option value="tw">繁體</option>
-              <option value="zh">简体</option>
-              <option value="en">EN</option>
-              <option value="es">ES</option>
+              <option value="tw">繁體中文</option>
+              <option value="zh">简体中文</option>
+              <option value="en">English</option>
+              <option value="es">Español</option>
             </select>
           </div>
         </nav>

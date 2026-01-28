@@ -46,7 +46,7 @@ const ServiceCard = ({ title, icon, name, description, features, accentColor, bg
         <div className="mb-8 flex justify-center">
           <a href={href} target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 hover:scale-105">
             <div style={{ width: "144px", height: "144px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <img src={`/assets/imgs/icons/${iconFileName}.png`} alt={icon} style={{ maxWidth: "100%", maxHeight: "100%", width: "auto", height: "auto", objectFit: "contain" }} />
+              <img src={`/assets/imgs/icons/${iconFileName}.png`} alt={icon} style={{ width: "216px", height: "216px", objectFit: "contain", display: "block" }} />
             </div>
           </a>
         </div>
@@ -70,52 +70,19 @@ const Services = () => {
   return (
     <Layout>
       {/* [1] 頂部首屏｜✅ 純白背景 + 位置對齊 */}
-      <section className="bg-white -mt-24 pt-20">
-        <div className="container px-4 mx-auto pt-8 text-center">
-          <div className="max-w-6xl mx-auto mb-6">
-            <h1 className="text-3xl lg:text-5xl lg:leading-normal mb-8 font-bold font-heading text-blueGray-900">
-              NoKu LLC <br />
-              <span className="text-blue-500">構建跨場景的可驗證信任基礎設施</span>
+      <section className="bg-white -mt-24 pt-20" style={{ overflow: 'visible' }}>
+        <div className="container px-4 mx-auto pt-8 text-center" style={{ overflow: 'visible', height: 'auto' }}>
+          <div className="max-w-6xl mx-auto mb-16" style={{ overflow: 'visible', height: 'auto' }}>
+            <h1 className="text-3xl lg:text-5xl lg:leading-[1.3] mb-8 font-bold font-heading text-blueGray-900">
+              NoKu LLC <br /> <span className="text-blue-500">構建跨場景的可驗證信任基礎設施</span>
             </h1>
 
-            {/* ✅ NEW: 更短、更有格調的首屏闡述（排版重做） */}
-            <div className="mt-10 max-w-5xl mx-auto px-4">
-              {/* 小標籤：更克制、更高級 */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blueGray-200 bg-white text-xs font-semibold tracking-widest text-blueGray-500">
-                CLOSED-LOOP TRUST ECOSYSTEM
-              </div>
-
-              {/* 主句：三段式，節奏更強 */}
-              <div className="mt-6 text-blueGray-700 text-xl lg:text-3xl font-medium leading-relaxed">
-                <div className="flex flex-col gap-4">
-                  <div>
-                    <span className="text-blueGray-900 font-extrabold">WeXun</span> 與 <span className="text-blueGray-900 font-extrabold">YuoBo</span>
-                    <span className="mx-2 text-blueGray-400">·</span>
-                    記錄真實發生的職業履約與生活交易
-                  </div>
-
-                  <div className="h-px w-16 bg-blueGray-200 mx-auto lg:mx-0" />
-
-                  <div>
-                    <span className="text-blueGray-900 font-extrabold">PledgeDoc</span>
-                    <span className="mx-2 text-blueGray-400">·</span>
-                    將事實沉澱為<span className="text-blueGray-900 font-extrabold mx-1">可驗證 / 授權 / 複用</span>的數字證明
-                  </div>
-
-                  <div className="h-px w-16 bg-blueGray-200 mx-auto lg:mx-0" />
-
-                  <div>
-                    讓<span className="text-blueGray-900 font-extrabold mx-1">"守諾"</span>
-                    成為可跨平台、跨領域流動的信用憑證
-                  </div>
-                </div>
-              </div>
-
-              {/* 補一句很輕的"宣言感"，可有可無但更高級 */}
-              <p className="mt-5 text-blueGray-500 text-sm lg:text-base leading-relaxed">
-                不做主觀評分，只做事實與證明；讓信任具備長期性與可遷移性。
-              </p>
-            </div>
+            <p className="text-blueGray-400 mt-2 mb-10 text-lg leading-[1.5]">
+              用於記錄與驗證現實行為的平台服務。
+            </p>
+            <p className="text-blueGray-600 mt-4 text-base leading-[1.5]">
+              我們支持記錄真實行為和驗證結果的技術平台，涵蓋用工、交易與驗證基礎設施。
+            </p>
           </div>
 
           <div style={styles.pillRow}>
@@ -132,41 +99,19 @@ const Services = () => {
       <section className="py-24 bg-white relative z-10">
         <div className="container px-4 mx-auto">
           <div className="flex flex-wrap -mx-4">
-            <ServiceCard title="職業履約與效率中樞" icon="WeXun" name="WeXun（微訊）" accentColor="#3b82f6" bgGradient="linear-gradient(180deg, rgba(59,130,246,0.04) 0%, #ffffff 50%)" description={{ bold: "履行職責，記錄職業身價。", normal: "每一次交付與協作，都是一次可核驗的履約存證。" }} features={["協作過程留痕，可驗證", "技能與需求精準匹配", "沉澱長期職業信用"]} />
-            <ServiceCard title="生活交易與聲譽社區" icon="YuoBo" name="YuoBo（優博）" accentColor="#FF9500" bgGradient="linear-gradient(180deg, rgba(255,149,0,0.05) 0%, #ffffff 50%)" description={{ bold: "誠實交易，積累生活聲譽。", normal: "讓口碑建立在\"真實發生\"之上，而非\"主觀印象\"之上。" }} features={["真實身份與交易鏈路", "糾紛可追溯，責任更清晰", "沉澱可複用的生活信用"]} />
-            <ServiceCard title="信用賬本與證明基礎設施" icon="PledgeDoc" name="PledgeDoc（諾書）" accentColor="#B8860B" bgGradient="linear-gradient(180deg, rgba(184,134,11,0.06) 0%, #ffffff 50%)" description={{ bold: "行為變資產，守諾即價值。", normal: "不裁判、不背書，只做標準化存證、出具與核驗。" }} features={["可核驗的行為存證", "跨平台信用映射", "機構級授權接口"]} />
+            <ServiceCard title="職業履約與效率中樞" icon="WeXun" name="WeXun（微訊）" accentColor="#3b82f6" bgGradient="linear-gradient(180deg, rgba(59,130,246,0.04) 0%, #ffffff 50%)" description={{ bold: "完成履約，記錄結果。", normal: "用工與任務履約平台，記錄已完成工作的結果，並支持事實記錄與驗證。" }} features={["協作過程留痕，可驗證", "技能與需求精準匹配", "沉澱長期職業信用"]} />
+            <ServiceCard title="生活交易與聲譽社區" icon="YuoBo" name="YuoBo（優博）" accentColor="#FF9500" bgGradient="linear-gradient(180deg, rgba(255,149,0,0.05) 0%, #ffffff 50%)" description={{ bold: "誠實交易，積累生活聲譽。", normal: "讓口碑建立在\"真實發生\"之上，而非\"主觀印象\"之上，同時支持事實記錄與驗證。" }} features={["真實身份與交易鏈路", "糾紛可追溯，責任更清晰", "沉澱可複用的生活信用"]} />
+            <ServiceCard title="信用賬本與證明基礎設施" icon="PledgeDoc" name="PledgeDoc（諾書）" accentColor="#B8860B" bgGradient="linear-gradient(180deg, rgba(184,134,11,0.06) 0%, #ffffff 50%)" description={{ bold: "完成之後，才做驗證。", normal: "為已完成行為提供標準化驗證和認證接口，不進行評分或擔保。" }} features={["可核驗的行為存證", "跨平台信用映射", "機構級授權接口"]} />
           </div>
 
-          <div className="max-w-6xl mx-auto text-center mt-20 px-6 py-12 rounded-3xl border border-blueGray-100 bg-blueGray-50/50">
-            <div className="text-blueGray-800 leading-loose font-medium text-lg md:text-xl">
-              <span className="block">
-                NoKu 不僅僅是技術的堆棧，更是社會協作關係的重塑。
-              </span>
-
-              <span className="block mt-2">
-                我們通過將每一次真實的履約轉化為可積累的數字資產，
-                構建一個讓"守諾"產生複利效應的生態系統。
-              </span>
-
-              <span className="block mt-2">
-                在這裡，誠信不再是一個抽象的口號，而是實實在在、跨場景通行的價值。
-              </span>
-
-              <span className="block mt-4 font-bold text-blueGray-900">
-                <span className="block">
-                  我們在做的不僅是一個工具，而是信任的複利系統：
-                </span>
-
-                <span className="block mt-2 font-normal text-blueGray-800">
-                  讓守諾者在每一次互動中獲利，
-                  積累長期的社會聲譽；
-                </span>
-
-                <span className="block mt-2 font-normal text-blueGray-800">
-                  讓虛假者在透明的事實軌跡下無處藏身，讓信任成為數字時代最堅實的通行證。
-                </span>
-              </span>
-
+          <div className="max-w-6xl mx-auto text-center mt-20 px-6 py-12 rounded-3xl border border-blueGray-100 bg-blueGray-50/50" style={{ overflow: 'visible', height: 'auto' }}>
+            <div className="text-blueGray-800 font-medium text-lg md:text-xl" style={{ overflow: 'visible', height: 'auto' }}>
+              <h1 className="text-4xl mb-6 font-bold font-heading text-blueGray-900" style={{ lineHeight: '1.3' }}>
+                記錄已發生的事實，讓服務具備可驗證性
+              </h1>
+              <p style={{ lineHeight: '1.5' }}>
+                NoKu 提供平台級基礎設施，使不同系統與服務能夠記錄、驗證並複用真實發生的行為結果。
+              </p>
             </div>
           </div>
         </div>

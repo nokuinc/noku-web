@@ -78,16 +78,6 @@ const Signup = () => {
                                     <span>Continue with Google</span>
                                 </button>
 
-                                <div className="w-full mt-12 mx-auto text-center">
-                                    <p className="text-sm">
-                                        Already have an account?{" "}
-                                        <Link href="/login" legacyBehavior>
-                                            <a className="inline-block text-xs text-blue-600 hover:text-blue-700 font-semibold leading-none wow animate__animated animate__fadeIn animated" data-wow-delay=".1s">
-                                                Log In
-                                            </a>
-                                        </Link>
-                                    </p>
-                                </div>
                             </div>
 
                             <div>

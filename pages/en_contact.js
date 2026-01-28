@@ -10,7 +10,7 @@ const Contact = () => {
     const form = e.currentTarget;
     const name = form.name?.value?.trim() || "";
     const email = form.email?.value?.trim() || "";
-    const dept = form.dept?.value || "Business Partnership";
+    const dept = form.dept?.value || "General Inquiry";
     const message = form.message?.value?.trim() || "";
 
     const subject = `NOKU Contact | ${dept}${name ? " | " + name : ""}`;
@@ -44,7 +44,7 @@ const Contact = () => {
               <div className="w-full lg:w-1/2 px-3 mb-10 lg:mb-0">
                 <div className="max-w-md">
                   <h2 className="text-3xl lg:text-5xl font-bold font-heading mb-6">
-                    Connect with NoKu <span className="text-blue-600">Get in Touch</span>
+                    Contact <span className="text-blue-600 text-3xl lg:text-5xl font-bold font-heading">NoKu</span>
                   </h2>
 
                   <p className="text-blueGray-400 leading-relaxed mb-8">
@@ -102,9 +102,9 @@ const Contact = () => {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-1">Global Operations</h4>
+                      <h4 className="font-bold text-gray-900 mb-1">Digital Operations</h4>
                       <p className="text-blueGray-400">
-                        Global Presence, Digitally Native
+                        Digitally Operated, Remote-first
                       </p>
                     </div>
                   </div>
@@ -143,19 +143,19 @@ const Contact = () => {
                           className="mr-2"
                           type="radio"
                           name="dept"
-                          value="Business Partnership"
+                          value="General Inquiry"
                           defaultChecked
                         />{" "}
-                        Business Partnership
+                        General Inquiry
                       </label>
                       <label className="flex items-center">
                         <input
                           className="mr-2"
                           type="radio"
                           name="dept"
-                          value="General Inquiry"
+                          value="Business Partnership"
                         />{" "}
-                        General Inquiry
+                        Business Partnership
                       </label>
                     </div>
 

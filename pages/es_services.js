@@ -29,7 +29,7 @@ const styles = {
   listIndent: { paddingLeft: "1.25rem" },
 };
 
-const ServiceCard = ({ title, icon, name, description, features, accentColor, bgGradient }) => {
+const ServiceCard = ({ title, icon, name, description, features, accentColor, bgGradient, blankAfterTitle }) => {
   const href = icon === "WeXun" ? "https://wexun.com" : icon === "YuoBo" ? "https://yuobo.com" : "https://pledgedoc.com";
   const iconMap = {
     "WeXun": "wexun",
@@ -42,11 +42,14 @@ const ServiceCard = ({ title, icon, name, description, features, accentColor, bg
       <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-6 text-center px-4 leading-tight" style={{ color: accentColor }}>
         {title}
       </h3>
+      {blankAfterTitle && Array.from({ length: typeof blankAfterTitle === "number" ? blankAfterTitle : 1 }).map((_, i) => (
+        <div key={i} className="text-lg sm:text-xl md:text-2xl block" style={{ height: "1.5em" }} aria-hidden="true" />
+      ))}
       <div className="p-8 bg-white rounded-3xl border-2 h-full text-center transition-all duration-300 hover:-translate-y-2 shadow-sm" style={{ borderColor: `${accentColor}40`, background: bgGradient }}>
-        <div className="mb-8 flex justify-center">
+        <div className="service-card-logo-wrap mb-8 flex justify-center items-center" style={{ height: "216px", minHeight: "216px" }}>
           <a href={href} target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 hover:scale-105">
             <div style={{ width: "144px", height: "144px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <img src={`/assets/imgs/icons/${iconFileName}.png`} alt={icon} style={{ maxWidth: "100%", maxHeight: "100%", width: "auto", height: "auto", objectFit: "contain" }} />
+              <img src={`/assets/imgs/icons/${iconFileName}.png`} alt={icon} style={{ width: "216px", height: "216px", objectFit: "contain", display: "block" }} />
             </div>
           </a>
         </div>
@@ -55,6 +58,7 @@ const ServiceCard = ({ title, icon, name, description, features, accentColor, bg
           <strong className="text-blueGray-800">{description.bold}</strong>
           <br />
           {description.normal}
+          {description.normal2 && <><br />{description.normal2}</>}
         </p>
         <ul className="text-sm text-blueGray-600 space-y-3 text-left border-t border-blueGray-100 pt-6 px-5">
           {features.map((item, idx) => (
@@ -72,48 +76,17 @@ const Services = () => {
       {/* [1] Hero */}
       <section className="bg-white -mt-24 pt-20">
         <div className="container px-4 mx-auto pt-8 text-center">
-          <div className="max-w-6xl mx-auto mb-6">
+          <div className="max-w-6xl mx-auto mb-16">
             <h1 className="text-3xl lg:text-5xl lg:leading-normal mb-8 font-bold font-heading text-blueGray-900">
-              NoKu LLC <br />
-              <span className="text-blue-500">Construyendo Confianza Verificable en Escenarios del Mundo Real</span>
+              NoKu LLC <br /> <span className="text-blue-500">Construyendo infraestructura de confianza verificable entre escenarios</span>
             </h1>
 
-            {/* Short, premium hero statement */}
-            <div className="mt-10 max-w-5xl mx-auto px-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blueGray-200 bg-white text-xs font-semibold tracking-widest text-blueGray-500">
-                ECOSISTEMA DE CONFIANZA DE CICLO CERRADO
-              </div>
-
-              <div className="mt-6 text-blueGray-700 text-xl lg:text-3xl font-medium leading-relaxed">
-                <div className="flex flex-col gap-4">
-                  <div>
-                    <span className="text-blueGray-900 font-extrabold">WeXun</span> y{" "}
-                    <span className="text-blueGray-900 font-extrabold">YuoBo</span>
-                    <span className="mx-2 text-blueGray-400">·</span>
-                    capturan el cumplimiento profesional real y las transacciones cotidianas
-                  </div>
-
-                  <div className="h-px w-16 bg-blueGray-200 mx-auto lg:mx-0" />
-
-                  <div>
-                    <span className="text-blueGray-900 font-extrabold">PledgeDoc</span>
-                    <span className="mx-2 text-blueGray-400">·</span>
-                    convierte hechos en pruebas <span className="text-blueGray-900 font-extrabold mx-1">verificables / autorizadas / reutilizables</span>
-                  </div>
-
-                  <div className="h-px w-16 bg-blueGray-200 mx-auto lg:mx-0" />
-
-                  <div>
-                    haciendo que <span className="text-blueGray-900 font-extrabold mx-1">\"cumplir promesas\"</span>
-                    sea una credencial portátil a través de plataformas y dominios
-                  </div>
-                </div>
-              </div>
-
-              <p className="mt-5 text-blueGray-500 text-sm lg:text-base leading-relaxed">
-                Sin puntuación subjetiva — solo hechos y pruebas, construidos para portabilidad a largo plazo.
-              </p>
-            </div>
+            <p className="text-blueGray-400 mt-2 text-lg leading-relaxed">
+              Servicios de plataforma para registrar y verificar acciones del mundo real.
+            </p>
+            <p className="text-blueGray-600 mt-4 text-base leading-relaxed">
+              Apoyamos plataformas tecnológicas que registran acciones reales y verifican resultados, cubriendo empleo, transacciones e infraestructura de verificación.
+            </p>
           </div>
 
           <div style={styles.pillRow}>
@@ -133,62 +106,41 @@ const Services = () => {
             <ServiceCard
               title="Centro de Cumplimiento Profesional y Eficiencia"
               icon="WeXun"
-              name="WeXun"
+              name="WeXun（微讯）"
               accentColor="#3b82f6"
               bgGradient="linear-gradient(180deg, rgba(59,130,246,0.04) 0%, #ffffff 50%)"
-              description={{ bold: "Entrega trabajo. Registra tu valor profesional.", normal: "Cada entrega y colaboración se convierte en un registro de cumplimiento verificable." }}
-              features={["Colaboración rastreable, resultados verificables", "Coincidencia precisa de habilidades y necesidades", "Credibilidad profesional a largo plazo"]}
+              description={{ bold: "Cumplimiento completado, resultados registrados.", normal: "Plataforma de cumplimiento de empleo y tareas,", normal2: "registrando resultados de trabajo completado y apoyando el registro y verificación de hechos." }}
+              features={["Proceso de colaboración con rastro, verificable", "Coincidencia precisa de habilidades y necesidades", "Crédito profesional a largo plazo acumulado"]}
+              blankAfterTitle={1}
             />
             <ServiceCard
               title="Transacciones Cotidianas y Comunidad de Reputación"
               icon="YuoBo"
-              name="YuoBo"
+              name="YuoBo（优博）"
               accentColor="#FF9500"
               bgGradient="linear-gradient(180deg, rgba(255,149,0,0.05) 0%, #ffffff 50%)"
-              description={{ bold: "Acuerdos honestos. Construye reputación en la vida real.", normal: "La reputación debe basarse en lo que realmente sucedió — no en impresiones." }}
-              features={["Identidad real y rastros de transacciones", "Las disputas son rastreables, las responsabilidades más claras", "Reputación reutilizable construida sobre hechos"]}
+              description={{ bold: "Transacciones honestas, acumulando reputación de vida.", normal: "Dejar que la reputación se construya sobre \"lo que realmente ocurrió\" en lugar de \"impresiones subjetivas\", mientras se apoya el registro y verificación de hechos." }}
+              features={["Identidad real y cadena de transacciones", "Disputas rastreables, responsabilidades más claras", "Crédito de vida reutilizable acumulado"]}
             />
             <ServiceCard
-              title="Infraestructura de Pruebas y Libro Mayor de Confianza"
+              title="Libro Mayor de Crédito e Infraestructura de Pruebas"
               icon="PledgeDoc"
-              name="PledgeDoc"
+              name="PledgeDoc（诺书）"
               accentColor="#B8860B"
               bgGradient="linear-gradient(180deg, rgba(184,134,11,0.06) 0%, #ffffff 50%)"
-              description={{ bold: "El comportamiento se convierte en activos. Cumplir promesas crea valor.", normal: "Sin juzgar, sin respaldo — solo registro estandarizado, emisión y verificación." }}
-              features={["Registros de comportamiento verificables", "Mapeo de confianza multiplataforma", "APIs de autorización de nivel institucional"]}
+              description={{ bold: "Verificación solo después de la finalización.", normal: "Proporcionar interfaces de verificación y certificación estandarizadas para acciones completadas, sin calificación ni garantía." }}
+              features={["Prueba de comportamiento verificable", "Mapeo de crédito multiplataforma", "Interfaz de autorización a nivel institucional"]}
             />
           </div>
 
           <div className="max-w-6xl mx-auto text-center mt-20 px-6 py-12 rounded-3xl border border-blueGray-100 bg-blueGray-50/50">
             <div className="text-blueGray-800 leading-loose font-medium text-lg md:text-xl">
-              <span className="block">
-                NoKu no es solo una pila de tecnologías — es un rediseño de cómo las personas se coordinan y colaboran.
-              </span>
-
-              <span className="block mt-2">
-                Al convertir el cumplimiento real en activos digitales acumulativos,
-                construimos un ecosistema donde \"cumplir promesas\" se compone con el tiempo.
-              </span>
-
-              <span className="block mt-2">
-                Aquí, la integridad ya no es un eslogan — se convierte en valor práctico que funciona en todos los escenarios.
-              </span>
-
-              <span className="block mt-4 font-bold text-blueGray-900">
-                <span className="block">
-                  Estamos construyendo más que una herramienta — un sistema de confianza compuesto:
-                </span>
-
-                <span className="block mt-2 font-normal text-blueGray-800">
-                  recompensando a quienes cumplen promesas en cada interacción,
-                  construyendo reputación social a largo plazo;
-                </span>
-
-                <span className="block mt-2 font-normal text-blueGray-800">
-                  y haciendo que el engaño sea difícil de ocultar bajo rastros fácticos transparentes — la confianza se convierte en el pase más fuerte en la era digital.
-                </span>
-              </span>
-
+              <h1 className="text-4xl mb-6 font-bold font-heading text-blueGray-900">
+                Registrar lo que ha ocurrido, haciendo los servicios verificables
+              </h1>
+              <p>
+                NoKu proporciona infraestructura a nivel de plataforma que permite a diferentes sistemas y servicios registrar, verificar y reutilizar resultados de comportamiento reales.
+              </p>
             </div>
           </div>
         </div>

@@ -37,28 +37,12 @@ function Home() {
                 <h1 className="text-3xl lg:text-5xl lg:leading-normal mb-3 font-bold font-heading wow animate__animated animate__fadeIn">
                   NoKu LLC <br />
                   <span className="text-blue-500">
-                    A Live Ecosystem Powered by WeXun & YuoBo
+                    Platform infrastructure for jobs, marketplace, and verification.
                   </span>
                 </h1>
 
-                <div className="text-blueGray-400 leading-relaxed wow animate__animated animate__fadeIn d-inline text-lg">
-                  Operating Logic:{" "}
-                  <div className="typewrite d-inline text-brand font-bold">
-                    <TextEffect
-                      text1="Facts Happen First"
-                      text2="Records Come After"
-                    />
-                  </div>{" "}
-                  · PledgeDoc issues verifiable proofs only after completion
-                </div>
-
                 <p className="mt-4 text-blueGray-400 leading-loose max-w-2xl mx-auto wow animate__animated animate__fadeIn">
-                  NoKu is not an abstract concept of trust, but a real operating
-                  system in motion.{" "}
-                  <strong className="text-blue-600">WeXun</strong> captures real-world labor, jobs, and order
-                  fulfillment. <strong className="text-green-600">YuoBo</strong> captures real transaction
-                  and collaboration outcomes. <strong className="text-yellow-700">PledgeDoc</strong> only
-                  records facts that have occurred as verifiable credentials (minimal disclosure, authorization).
+                  We build underlying systems that help platforms record real actions and verify results.
                 </p>
               </div>
 
@@ -79,7 +63,7 @@ function Home() {
                     transition
                   "
                 >
-                  Enter WeXun
+                  Learn about WeXun
                 </a>
 
                 <a
@@ -98,7 +82,7 @@ function Home() {
                     transition
                   "
                 >
-                  Enter YuoBo
+                  Learn about YuoBo
                 </a>
               </div>
 
@@ -206,9 +190,10 @@ function Home() {
                   className="block p-12 bg-white shadow rounded hover-up-5 transition duration-500 h-full"
                 >
                   <img
-                    className="h-20 mx-auto mb-4"
+                    className="mx-auto mb-4"
                     src="/assets/imgs/icons/wexun.png"
                     alt="WeXun"
+                    style={{ width: '216px', height: '216px', objectFit: 'contain', display: 'block' }}
                   />
                   <h3 className="mb-2 font-bold font-heading text-2xl text-blue-600">
                     WeXun
@@ -236,9 +221,10 @@ function Home() {
                   className="block p-12 bg-white shadow rounded hover-up-5 transition duration-500 h-full"
                 >
                   <img
-                    className="h-20 mx-auto mb-4"
+                    className="mx-auto mb-4"
                     src="/assets/imgs/icons/yuobo.png"
                     alt="YuoBo"
+                    style={{ width: '216px', height: '216px', objectFit: 'contain', display: 'block' }}
                   />
                   <h3 className="mb-2 font-bold font-heading text-2xl text-blue-600">
                     YuoBo
@@ -252,8 +238,7 @@ function Home() {
                       Local Services
                     </p>
                     <p>
-                      Turning completed deals and cooperation into traceable,
-                      reusable facts.
+                      Records transaction and collaboration outcomes in marketplace activities.
                     </p>
                   </div>
                 </a>
@@ -267,9 +252,10 @@ function Home() {
                   className="block p-12 bg-white shadow rounded hover-up-5 border-2 border-brand transition duration-500 h-full text-center"
                 >
                   <img
-                    className="h-20 mx-auto mb-4"
+                    className="mx-auto mb-4"
                     src="/assets/imgs/icons/pledgedoc.png"
                     alt="PledgeDoc"
+                    style={{ width: '216px', height: '216px', objectFit: 'contain', display: 'block' }}
                   />
                   <h3 className="mb-2 font-bold font-heading text-2xl text-blue-600">
                     PledgeDoc
@@ -355,17 +341,7 @@ function Home() {
             </h2>
             <div className="max-w-3xl mx-auto">
               <p className="text-lg mb-8 leading-loose text-blueGray-600 wow animate__animated animate__fadeIn">
-                We do not score subjectively or create short-term labels. Value
-                comes from long-term real operations and verifiable outcomes.
-              </p>
-              <p
-                className="text-blueGray-500 leading-loose wow animate__animated animate__fadeIn"
-                data-wow-delay=".3s"
-              >
-                Through WeXun's fulfillment and YuoBo's completed transactions,
-                PledgeDoc converts finished facts into verifiable, authorized,
-                and revocable records — a long-term foundation for individuals,
-                merchants, and organizations.
+                NoKu is a technology company focused on building infrastructure that helps platforms document and verify what has actually happened.
               </p>
             </div>
             <div className="mt-10 w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>

@@ -10,7 +10,7 @@ const Contact = () => {
     const form = e.currentTarget;
     const name = form.name?.value?.trim() || "";
     const email = form.email?.value?.trim() || "";
-    const dept = form.dept?.value || "Asociación Comercial";
+    const dept = form.dept?.value || "Consulta General";
     const message = form.message?.value?.trim() || "";
 
     const subject = `NOKU Contact | ${dept}${name ? " | " + name : ""}`;
@@ -44,12 +44,11 @@ const Contact = () => {
               <div className="w-full lg:w-1/2 px-3 mb-10 lg:mb-0">
                 <div className="max-w-md">
                   <h2 className="text-3xl lg:text-5xl font-bold font-heading mb-6">
-                    Conéctate con NoKu <span className="text-blue-600">Ponte en Contacto</span>
+                    Contacta <span className="text-blue-600 text-3xl lg:text-5xl font-bold font-heading">NoKu</span>
                   </h2>
 
                   <p className="text-blueGray-400 leading-relaxed mb-8">
-                    Ya sea que estés integrando el protocolo PromiseBook o explorando mecanismos de confianza multiplataforma y multirregión,
-                    damos la bienvenida a conversaciones serias y a largo plazo.
+                    Para consultas sobre integración de API, colaboración técnica o comunicación profesional, contáctenos.
                   </p>
 
                   <div className="flex items-start mb-6">
@@ -143,19 +142,19 @@ const Contact = () => {
                           className="mr-2"
                           type="radio"
                           name="dept"
-                          value="Asociación Comercial"
+                          value="Consulta General"
                           defaultChecked
                         />{" "}
-                        Asociación Comercial
+                        Consulta General
                       </label>
                       <label className="flex items-center">
                         <input
                           className="mr-2"
                           type="radio"
                           name="dept"
-                          value="Consulta General"
+                          value="Asociación Comercial"
                         />{" "}
-                        Consulta General
+                        Asociación Comercial
                       </label>
                     </div>
 

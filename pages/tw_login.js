@@ -140,20 +140,6 @@ const Login = () => {
                                     </button>
                                 </div>
 
-                                {/* 註冊入口 */}
-                                <div className="w-full mt-12 mx-auto text-center">
-                                    <p>
-                                        還沒有賬號？{" "}
-                                        <Link href="/signup" legacyBehavior>
-                                            <a
-                                                className="inline-block text-xs text-blue-600 hover:text-blue-700 font-semibold leading-none wow animate__animated animate__fadeIn animated"
-                                                data-wow-delay=".1s"
-                                            >
-                                                立即註冊
-                                            </a>
-                                        </Link>
-                                    </p>
-                                </div>
 
                             </div>
                         </div>

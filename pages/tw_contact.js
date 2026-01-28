@@ -10,7 +10,7 @@ const Contact = () => {
     const form = e.currentTarget;
     const name = form.name?.value?.trim() || "";
     const email = form.email?.value?.trim() || "";
-    const dept = form.dept?.value || "商務合作";
+    const dept = form.dept?.value || "一般諮詢";
     const message = form.message?.value?.trim() || "";
 
     const subject = `NOKU Contact | ${dept}${name ? " | " + name : ""}`;
@@ -44,12 +44,11 @@ const Contact = () => {
               <div className="w-full lg:w-1/2 px-3 mb-10 lg:mb-0">
                 <div className="max-w-md">
                   <h2 className="text-3xl lg:text-5xl font-bold font-heading mb-6">
-                    與諾庫 <span className="text-blue-600">建立聯繫</span>
+                    聯繫 <span className="text-blue-600 text-3xl lg:text-5xl font-bold font-heading">NoKu</span>
                   </h2>
 
                   <p className="text-blueGray-400 leading-relaxed mb-8">
-                    無論是尋求 PledgeDoc(諾書) 協議的接口集成，還是探討跨平台、跨地域的信任機制，
-                    我們都歡迎與你進行嚴肅、長期的溝通。
+                    如需了解接口集成、技術協作或專業溝通，歡迎與我們聯繫。
                   </p>
 
                   <div className="flex items-start mb-6">
@@ -102,9 +101,9 @@ const Contact = () => {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-1">全球運營</h4>
+                      <h4 className="font-bold text-gray-900 mb-1">數字化運營</h4>
                       <p className="text-blueGray-400">
-                        Global Presence, Digitally Native
+                        Digitally Operated, Remote-first
                       </p>
                     </div>
                   </div>
@@ -143,19 +142,19 @@ const Contact = () => {
                           className="mr-2"
                           type="radio"
                           name="dept"
-                          value="商務合作"
+                          value="一般諮詢"
                           defaultChecked
                         />{" "}
-                        商務合作
+                        一般諮詢
                       </label>
                       <label className="flex items-center">
                         <input
                           className="mr-2"
                           type="radio"
                           name="dept"
-                          value="一般諮詢"
+                          value="商務合作"
                         />{" "}
-                        一般諮詢
+                        商務合作
                       </label>
                     </div>
 

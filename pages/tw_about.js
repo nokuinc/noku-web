@@ -14,12 +14,11 @@ const About = () => {
               
               <h1 className="text-3xl lg:text-5xl lg:leading-normal mb-3 font-bold font-heading text-blueGray-900 wow animate__animated animate__fadeIn">
                 NoKu LLC <br />
-                <span className="text-blue-500">我們在解決什麼問題？</span>
+                <span className="text-blue-500">用於記錄與驗證現實行為的技術基礎設施。</span>
               </h1>
               
               <p className="mt-6 text-blueGray-400 leading-loose max-w-3xl mx-auto text-xl lg:text-2xl font-medium px-4 wow animate__animated animate__fadeIn">
-                在跨城市、跨國家、跨平台的生活裡，信任經常被迫\"從零開始\"。不是因為你不可靠，
-                而是因為缺少一個能長期工作、可驗證、可複用的事實記錄體系。
+                我們構建事實記錄系統，幫助平台記錄真實發生的行為。
               </p>
             </div>
           </div>
@@ -50,10 +49,10 @@ const About = () => {
         <section className="py-20 bg-blueGray-50">
           <div className="container px-4 mx-auto">
             <div className="flex flex-wrap -mx-5">
-              <div className="w-full lg:w-1/2 px-5 mb-12 lg:mb-0">
+              <div className="w-full lg:w-1/2 px-5 mb-12 lg:mb-0 lg:pt-0">
                 <h2 className="text-3xl lg:text-4xl font-bold font-heading mb-6 text-blueGray-900">NoKu 是什麼？</h2>
                 <p className="text-blueGray-600 leading-relaxed mb-8 text-lg min-h-[80px]">
-                  NoKu（諾庫）是一套\"信任數據機制\"，用來把真實行為轉化為可驗證的信用憑證。它強調長期有效、可遷移、可授權。
+                  NoKu 是一個技術平台，專注構建將真實發生的操作行為轉化為可核驗和可複用存證的基礎設施。我們的服務為不同領域中已完成的行為提供標準化的記錄與驗證。
                 </p>
                 <div className="space-y-4">
                   {[
@@ -61,14 +60,14 @@ const About = () => {
                     { t: "Verify (驗證)", d: "校驗記錄的完整性與一致性，確保可追溯、可核驗。" },
                     { t: "Attest (證明)", d: "以最小披露方式出具\"可信結論\"，不公開不必要的細節。" },
                   ].map((x, i) => (
-                    <div key={i} className="bg-white rounded-2xl p-6 border border-blueGray-100 shadow-sm hover:shadow-md transition-all h-32 flex flex-col justify-center">
-                      <div className="font-bold mb-1 text-xl text-blueGray-900">{x.t}</div>
-                      <div className="text-blueGray-600 text-base">{x.d}</div>
+                    <div key={i} className="bg-white rounded-2xl py-5 px-5 border border-blueGray-100 shadow-sm hover:shadow-md transition-all flex flex-col justify-center">
+                      <div className="font-bold mb-1 text-xl text-blueGray-900 leading-snug">{x.t}</div>
+                      <div className="text-blueGray-600 text-base leading-relaxed">{x.d}</div>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="w-full lg:w-1/2 px-5">
+              <div className="w-full lg:w-1/2 px-5 lg:pt-0">
                 <h2 className="text-3xl lg:text-4xl font-bold font-heading mb-6 text-blueGray-900">我們不做什麼？</h2>
                 <p className="text-blueGray-600 leading-relaxed mb-8 text-lg min-h-[80px]">
                   我們堅持中立與客觀，通過設定清晰的業務邊界來保護信譽的真實性。我們不干預交易，只提供證據。
@@ -81,7 +80,7 @@ const About = () => {
                     { t: "不佔有你的信用", d: "信用屬於行為發生者；你擁有完全的授權權利與使用邊界。" },
                   ].map((x, i) => (
                     <div key={i} className="bg-white rounded-2xl p-4 border border-blueGray-100 shadow-sm hover:shadow-md transition-all flex items-start h-[92px]">
-                      <span className="text-blue-500 mr-4 mt-1">●</span>
+                      <span className="text-blue-500 mr-4 mt-1 text-xl">●</span>
                       <div>
                         <div className="font-bold text-lg text-blueGray-900 leading-tight">{x.t}</div>
                         <div className="text-blueGray-600 text-sm mt-1">{x.d}</div>
@@ -90,6 +89,20 @@ const About = () => {
                   ))}
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* [4] Vision Statement */}
+        <section className="py-20 bg-white">
+          <div className="container px-4 mx-auto">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-4xl mb-6 font-bold font-heading text-blueGray-900">
+                我們不創造信用，只保存事實
+              </h2>
+              <p className="text-lg mb-8 leading-loose text-blueGray-600">
+                NoKu 是一家專注於事實記錄與驗證基礎設施的技術團隊，長期保持中立、克制與邊界清晰。
+              </p>
             </div>
           </div>
         </section>

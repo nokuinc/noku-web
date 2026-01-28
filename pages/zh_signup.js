@@ -78,16 +78,6 @@ const Signup = () => {
                                     <span>使用 Google 注册</span>
                                 </button>
 
-                                <div className="w-full mt-12 mx-auto text-center">
-                                    <p className="text-sm">
-                                        已经有账号？{" "}
-                                        <Link href="/login" legacyBehavior>
-                                            <a className="inline-block text-xs text-blue-600 hover:text-blue-700 font-semibold leading-none wow animate__animated animate__fadeIn animated" data-wow-delay=".1s">
-                                                立即登录
-                                            </a>
-                                        </Link>
-                                    </p>
-                                </div>
                             </div>
 
                             <div>
