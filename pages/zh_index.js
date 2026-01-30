@@ -199,7 +199,7 @@ function Home() {
 
                             <div className="w-full md:w-1/2 lg:w-1/3 px-3 mb-6 flex flex-col items-stretch">
                                 <a
-                                    href="https://www.PledgeDoc.com"
+                                    href="https://pledgedoc.com"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="product-card flex flex-col flex-1 min-h-0 h-full bg-white shadow rounded hover-up-5 border-2 border-pledgedoc-gold transition duration-500 text-center"
