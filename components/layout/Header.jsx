@@ -154,8 +154,17 @@ const Header = ({ handleHidden }) => {
       <header className={scroll ? "bg-transparent sticky-bar stick" : "bg-transparent sticky-bar"}>
         <div className="container bg-transparent">
           <nav className="bg-transparent flex justify-between items-center py-3">
-            <Link href="https://nokuinc.com" className="text-3xl font-semibold leading-none">
-              <Image className="h-10" src="/assets/imgs/logos/noku-noku.png" alt="NoKu" width={125} height={40} />
+            <Link href="https://nokuinc.com" className="inline-flex items-center leading-none">
+              <span className="relative h-9 w-[180px] sm:h-10 sm:w-[220px] lg:w-[260px]">
+                <Image
+                  src="/assets/imgs/logos/noku-noku.png"
+                  alt="NoKu"
+                  fill
+                  priority
+                  sizes="(max-width: 640px) 180px, (max-width: 1024px) 220px, 260px"
+                  style={{ objectFit: "contain" }}
+                />
+              </span>
             </Link>
 
             <ul
