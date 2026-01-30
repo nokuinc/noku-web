@@ -155,13 +155,13 @@ const Header = ({ handleHidden }) => {
         <div className="container bg-transparent">
           <nav className="bg-transparent flex justify-between items-center py-3">
             <Link href="https://nokuinc.com" className="inline-flex items-center leading-none">
-              <span className="relative h-9 w-[180px] sm:h-10 sm:w-[220px] lg:w-[260px]">
+              <span className="relative h-9 sm:h-10 aspect-[1317/382]">
                 <Image
                   src="/assets/imgs/logos/noku-noku.png"
                   alt="NoKu"
                   fill
                   priority
-                  sizes="(max-width: 640px) 180px, (max-width: 1024px) 220px, 260px"
+                  sizes="(max-width: 640px) 124px, 138px"
                   style={{ objectFit: "contain" }}
                 />
               </span>
