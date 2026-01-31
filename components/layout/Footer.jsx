@@ -75,31 +75,31 @@ const Footer = () => {
   const I18N = {
     tw: {
       companyInfoTitle: "公司資訊",
-      companyName: "NoKu LLC",
+      companyName: "NOKU LLC",
       companyDesc: "註冊並營運於美國",
       contactsTitle: "聯絡方式",
-      copyrightText: "NoKu 版權所有/法律主體：NoKu LLC",
+      copyrightText: "NoKu 版權所有/法律主體：NOKU LLC",
     },
     zh: {
       companyInfoTitle: "公司信息",
-      companyName: "NoKu LLC",
+      companyName: "NOKU LLC",
       companyDesc: "注册并运营于美国",
       contactsTitle: "联系方式",
-      copyrightText: "NoKu 版权所有/法律主体：NoKu LLC",
+      copyrightText: "NoKu 版权所有/法律主体：NOKU LLC",
     },
     en: {
       companyInfoTitle: "Company Information",
-      companyName: "NoKu LLC",
+      companyName: "NOKU LLC",
       companyDesc: "Registered and operating in the United States",
       contactsTitle: "Contact",
-      copyrightText: "NoKu All rights reserved/Legal Entity: NoKu LLC",
+      copyrightText: "NoKu All rights reserved/Legal Entity: NOKU LLC",
     },
     es: {
       companyInfoTitle: "Información de la Empresa",
-      companyName: "NoKu LLC",
+      companyName: "NOKU LLC",
       companyDesc: "Registrada y operando en Estados Unidos",
       contactsTitle: "Contacto",
-      copyrightText: "NoKu Todos los derechos reservados/Entidad legal: NoKu LLC",
+      copyrightText: "NoKu Todos los derechos reservados/Entidad legal: NOKU LLC",
     },
   };
   const homeHref = isEn ? "/" : isTw ? "/tw_index" : isEs ? "/es_index" : isZh ? "/zh_index" : "/";

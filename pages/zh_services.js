@@ -75,7 +75,7 @@ const Services = () => {
           <div className="pt-8 text-center">
             <div className="max-w-3xl mx-auto mb-6">
               <h1 className="text-3xl lg:text-5xl lg:leading-normal mb-3 font-bold font-heading text-blueGray-900">
-                NoKu LLC <br /> <span className="text-blue-500">构建跨场景的可验证信任基础设施</span>
+                NOKU LLC <br /> <span className="text-blue-500">构建跨场景的可验证信任基础设施</span>
               </h1>
 
               <p className="mt-4 text-blueGray-400 leading-loose max-w-2xl mx-auto text-lg">
@@ -115,7 +115,7 @@ const Services = () => {
                 记录已发生的事实，让服务具备可验证性
               </h2>
               <p style={{ lineHeight: '1.5' }}>
-                NoKu 提供平台级基础设施，使不同系统与服务能够记录、验证并复用真实发生的行为结果。<br />nokuinc.com 为 Noku LLC 全球唯一官方官网。
+                NoKu 提供平台级基础设施，使不同系统与服务能够记录、验证并复用真实发生的行为结果。<br />nokuinc.com 为 NOKU LLC 全球唯一官方官网。
               </p>
             </div>
           </div>

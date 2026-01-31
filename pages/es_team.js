@@ -137,7 +137,7 @@ const Team = () => {
                     <div className="container px-4 mx-auto text-center">
                         <div className="pt-8 max-w-4xl mx-auto mb-2">
                             <h1 className="text-3xl lg:text-5xl lg:leading-normal mb-3 font-bold font-heading text-blueGray-900 wow animate__animated animate__fadeIn break-words">
-                                NoKu LLC <br />
+                                NOKU LLC <br />
                                 <span className="text-blue-500">Nuestro Equipo</span>
                             </h1>
                         </div>

@@ -36,7 +36,7 @@ function Home() {
             <div className="pt-8 text-center">
               <div className="max-w-3xl mx-auto mb-6">
                 <h1 className="text-3xl lg:text-5xl lg:leading-normal mb-3 font-bold font-heading wow animate__animated animate__fadeIn">
-                  NoKu LLC <br />
+                  NOKU LLC <br />
                   <span className="text-blue-500">
                     Platform infrastructure for jobs, marketplace, and verification.
                   </span>

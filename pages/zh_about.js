@@ -13,7 +13,7 @@ const About = () => {
             <div className="pt-8 max-w-4xl mx-auto mb-8">
               
               <h1 className="text-3xl lg:text-5xl lg:leading-normal mb-3 font-bold font-heading text-blueGray-900 wow animate__animated animate__fadeIn">
-                NoKu LLC <br />
+                NOKU LLC <br />
                 <span className="text-blue-500">用于记录与验证现实行为的技术基础设施。</span>
               </h1>
               
@@ -105,7 +105,7 @@ const About = () => {
                 我们不创造信用，只保存事实
               </h2>
               <p className="text-lg mb-8 leading-loose text-blueGray-600">
-                NoKu 是一家专注于事实记录与验证基础设施的技术团队，长期保持中立、克制与边界清晰。<br />nokuinc.com 为 Noku LLC 全球唯一官方官网。
+                NoKu 是一家专注于事实记录与验证基础设施的技术团队，长期保持中立、克制与边界清晰。<br />nokuinc.com 为 NOKU LLC 全球唯一官方官网。
               </p>
             </div>
           </div>

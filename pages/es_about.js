@@ -13,7 +13,7 @@ const About = () => {
             <div className="pt-8 max-w-4xl mx-auto mb-8">
               
               <h1 className="text-3xl lg:text-5xl lg:leading-normal mb-3 font-bold font-heading text-blueGray-900 wow animate__animated animate__fadeIn">
-                NoKu LLC <br />
+                NOKU LLC <br />
                 <span className="text-blue-500">Infraestructura tecnológica para registrar y verificar acciones del mundo real.</span>
               </h1>
               
@@ -101,7 +101,7 @@ const About = () => {
                 No creamos crédito, solo preservamos hechos
               </h2>
               <p className="text-lg mb-8 leading-loose text-blueGray-600">
-                NoKu es un equipo técnico enfocado en infraestructura de registro y verificación de hechos, manteniendo neutralidad, moderación y límites claros a largo plazo.<br />nokuinc.com es el único sitio web oficial global de Noku LLC.
+                NoKu es un equipo técnico enfocado en infraestructura de registro y verificación de hechos, manteniendo neutralidad, moderación y límites claros a largo plazo.<br />nokuinc.com es el único sitio web oficial global de NOKU LLC.
               </p>
             </div>
           </div>

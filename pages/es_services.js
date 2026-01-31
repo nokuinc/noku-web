@@ -78,7 +78,7 @@ const Services = () => {
         <div className="container px-4 mx-auto pt-8 text-center">
           <div className="max-w-6xl mx-auto mb-10">
             <h1 className="text-3xl lg:text-5xl lg:leading-normal mb-8 font-bold font-heading text-blueGray-900">
-              NoKu LLC <br /> <span className="text-blue-500">Construyendo infraestructura de confianza verificable entre escenarios</span>
+              NOKU LLC <br /> <span className="text-blue-500">Construyendo infraestructura de confianza verificable entre escenarios</span>
             </h1>
 
             <p className="text-blueGray-400 mt-2 mb-10 text-lg leading-relaxed">
@@ -139,7 +139,7 @@ const Services = () => {
                 Registrar lo que ha ocurrido, haciendo los servicios verificables
               </h2>
               <p>
-                NoKu proporciona infraestructura a nivel de plataforma que permite a diferentes sistemas y servicios registrar, verificar y reutilizar resultados de comportamiento reales.<br />nokuinc.com es el único sitio web oficial global de Noku LLC.
+                NoKu proporciona infraestructura a nivel de plataforma que permite a diferentes sistemas y servicios registrar, verificar y reutilizar resultados de comportamiento reales.<br />nokuinc.com es el único sitio web oficial global de NOKU LLC.
               </p>
             </div>
           </div>
