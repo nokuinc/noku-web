@@ -282,7 +282,7 @@ function Home() {
                         </h2>
                         <div className="max-w-3xl mx-auto">
                             <p className="text-lg mb-6 leading-loose text-blueGray-600 wow animate__animated animate__fadeIn">
-                                NoKu 是一家专注于构建事实记录与验证基础设施的技术公司。<br />nokuinc.com 为 Noku LLC 全球唯一官方官网。
+                                NoKu 是一家专注于构建事实记录与验证基础设施的技术公司。<br />nokuinc.com 为 NOKU LLC 全球唯一官方官网。
                             </p>
                         </div>
                         <div className="mt-6 w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>

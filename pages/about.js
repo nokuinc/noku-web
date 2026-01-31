@@ -98,7 +98,7 @@ const About = () => {
           <div className="container px-4 mx-auto">
             <div className="max-w-4xl mx-auto text-center">
               <p className="text-blueGray-800 text-lg leading-loose">
-                Noku LLC is a technology and infrastructure provider.<br />nokuinc.com is the sole global official website of NOKU LLC.
+                NOKU LLC is a technology and infrastructure provider.<br />nokuinc.com is the sole global official website of NOKU LLC.
               </p>
             </div>
           </div>

@@ -25,7 +25,7 @@ const Contact = () => {
       message || "-",
       "",
       "----",
-      "Sent from nokuinc.com (Noku LLC official website) contact form",
+      "Sent from nokuinc.com (NOKU LLC official website) contact form",
     ].join("\n");
 
     const mailto = `mailto:${toEmail}?subject=${encodeURIComponent(
@@ -46,11 +46,11 @@ const Contact = () => {
               <div className="w-full lg:w-1/2 px-3 mb-10 lg:mb-0">
                 <div className="max-w-md">
                   <h2 className="text-3xl lg:text-5xl font-bold font-heading mb-6">
-                    Contactar <span className="text-blue-600 text-3xl lg:text-5xl font-bold font-heading">Noku LLC</span>
+                    Contactar <span className="text-blue-600 text-3xl lg:text-5xl font-bold font-heading">NOKU LLC</span>
                   </h2>
 
                   <p className="text-blueGray-400 leading-relaxed mb-4">
-                    nokuinc.com es el único sitio web oficial global de Noku LLC. Noku LLC es un proveedor de tecnología e infraestructura. No maneja ni custodia fondos de usuarios, no ofrece inversión, gestión patrimonial ni promesas de rentabilidad, y no interviene en transacciones de plataformas ni en decisiones de usuarios.
+                    nokuinc.com es el único sitio web oficial global de NOKU LLC. NOKU LLC es un proveedor de tecnología e infraestructura. No maneja ni custodia fondos de usuarios, no ofrece inversión, gestión patrimonial ni promesas de rentabilidad, y no interviene en transacciones de plataformas ni en decisiones de usuarios.
                   </p>
                   <p className="text-blueGray-500 text-sm leading-relaxed mb-8">
                     Canal oficial para alianzas, due diligence, cumplimiento normativo y consultas técnicas.

@@ -25,7 +25,7 @@ const Contact = () => {
       message || "-",
       "",
       "----",
-      "Sent from nokuinc.com (Noku LLC official website) contact form",
+      "Sent from nokuinc.com (NOKU LLC official website) contact form",
     ].join("\n");
 
     const mailto = `mailto:${toEmail}?subject=${encodeURIComponent(
@@ -46,11 +46,11 @@ const Contact = () => {
               <div className="w-full lg:w-1/2 px-3 mb-10 lg:mb-0">
                 <div className="max-w-md">
                   <h2 className="text-3xl lg:text-5xl font-bold font-heading mb-6">
-                    联系 <span className="text-blue-600 text-3xl lg:text-5xl font-bold font-heading">Noku LLC</span>
+                    联系 <span className="text-blue-600 text-3xl lg:text-5xl font-bold font-heading">NOKU LLC</span>
                   </h2>
 
                   <p className="text-blueGray-400 leading-relaxed mb-4">
-                    nokuinc.com 为 Noku LLC 全球唯一官方官网。Noku LLC 为技术与基础设施提供方，不处理或托管用户资金，不提供投资、理财或收益承诺，不介入平台交易或用户决策。
+                    nokuinc.com 为 NOKU LLC 全球唯一官方官网。NOKU LLC 为技术与基础设施提供方，不处理或托管用户资金，不提供投资、理财或收益承诺，不介入平台交易或用户决策。
                   </p>
                   <p className="text-blueGray-500 text-sm leading-relaxed mb-8">
                     合作、尽调、合规及技术咨询的正式沟通入口。
