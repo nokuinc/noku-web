@@ -10,7 +10,7 @@ const Preloader = () => {
                             src="/assets/imgs/logos/noku-icon.svg"
                             alt="NoKu"
                             className="mx-auto"
-                            style={{ width: 240, maxWidth: "80vw", height: "auto" }}
+                            style={{ width: 320, maxWidth: "86vw", height: "auto" }}
                         />
                     </div>
                 </div>
