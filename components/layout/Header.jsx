@@ -157,7 +157,7 @@ const Header = ({ handleHidden }) => {
             <Link href="https://nokuinc.com" className="inline-flex items-center leading-none">
               <span className="relative inline-block w-[124px] sm:w-[138px] h-9 sm:h-10 shrink-0">
                 <Image
-                  src="/assets/imgs/logos/noku-noku.png"
+                  src="/assets/imgs/logos/noku-noku.png?v=20260131"
                   alt="NoKu"
                   fill
                   priority

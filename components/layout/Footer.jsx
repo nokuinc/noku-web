@@ -122,7 +122,7 @@ const Footer = () => {
                   width={138}
                   height={40}
                   className="h-10 w-auto"
-                  src="/assets/imgs/logos/noku-noku.png"
+                  src="/assets/imgs/logos/noku-noku.png?v=20260131"
                   alt="NoKu"
                 />
               </Link>
