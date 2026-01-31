@@ -155,7 +155,7 @@ const Header = ({ handleHidden }) => {
         <div className="container bg-transparent">
           <nav className="bg-transparent flex justify-between items-center py-3">
             <Link href="https://nokuinc.com" className="inline-flex items-center leading-none">
-              <span className="relative h-9 sm:h-10 aspect-[1317/382]">
+              <span className="relative inline-block h-9 sm:h-10 aspect-[1317/382] shrink-0">
                 <Image
                   src="/assets/imgs/logos/noku-noku.png"
                   alt="NoKu"
