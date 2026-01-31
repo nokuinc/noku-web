@@ -119,10 +119,10 @@ const Footer = () => {
                 className="flex items-center flex-shrink-0 mx-auto lg:mx-0 text-3xl font-semibold leading-none"
               >
                 <Image
-                  width={267}
-                  height={80}
-                  className="h-20 w-auto"
-                  src="/assets/imgs/logos/monst-logo.svg"
+                  width={138}
+                  height={40}
+                  className="h-10 w-auto"
+                  src="/assets/imgs/logos/noku-noku.png"
                   alt="NoKu"
                 />
               </Link>
