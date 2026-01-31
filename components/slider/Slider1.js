@@ -13,14 +13,14 @@ const slides = [
     title: "Revenue Growth",
     subtitle: "YouBo（优博）",
     cta: "View Details",
-    link: "https://youbo.com",
+    link: "https://yuobo.com",
   },
   {
     img: "/assets/imgs/placeholders/img-12.jpg",
     title: "Market Growth",
     subtitle: "PledgeDoc（诺书）",
     cta: "View Details",
-    link: "https://promisebook.net",
+    link: "https://pledgedoc.com",
   },
 ];
 
